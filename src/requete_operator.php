@@ -82,7 +82,7 @@ ORDER BY personnes.id_personne;
 ;"
 );
 
-require_once '../liaison.php';
+require_once '../config.inc.php';
 
 
 try{
