@@ -1,4 +1,29 @@
 <?php 
+/*REQUETE 6 POUR L'ANNE EN COURS (2018 DONC...)
+SELECT
+carte_abonnement.id_type_ab AS 'NO ABONNEMENT'
+,type_abonnement.denom_ab AS 'TYPE ABONNEMENT'
+,concat((
+(sum(if( year(carte_abonnement.date_paiement) = @annee, if(prix_duplicata != 0, 0,
+histo_tarif_abo.tarif),0)))
++
+(sum(if(year(duplicata.date_duplicata) = @annee, duplicata.prix_duplicata, 0)))
+-
+(sum(if(year(resilie.date_resiliation) = @annee, if(prix_duplicata != 0, 0, resilie.montant_remb)
+        ,0
+)))),'€') AS 'CHIFFRE_D_AFFAIRE_TOTAL_SUR_L_ANNEE'
+, @annee AS 'ANNEE'
+from carte_abonnement
+inner join type_abonnement on carte_abonnement.id_type_ab = type_abonnement.id_type_ab
+inner join histo_tarif_abo on carte_abonnement.id_type_ab = histo_tarif_abo.id_type_ab
+left join duplicata on carte_abonnement.id_abonnement = duplicata.id_abonnement
+left join resilie on carte_abonnement.id_abonnement = resilie.id_abonnement
+where (year(histo_tarif_abo.date_prise_effet) = @annee )
+group by type_abonnement.id_type_ab
+
+order by carte_abonnement.id_type_ab;
+*/
+
 //effectue des requetes SQL en fonction de l'argument recu
 //1 - afficher les propriétés des usagers
 $normal_query = array(
@@ -40,7 +65,8 @@ INNER JOIN ville_cp ON adresse.id_ville = ville_cp.id_ville
 ORDER BY personnes.nom ASC;",
 "SELECT 
 
-		year(now()),count(distinct carte_abonnement.id_personne)
+		year(now()) AS 'POUR_L_ANNEE',
+		count(distinct carte_abonnement.id_personne) AS 'MINEURS_AVEC_ABO_VALIDE'
 			
 	FROM 
 		carte_abonnement
@@ -79,7 +105,111 @@ INNER JOIN ville_cp ON adresse.id_ville = ville_cp.id_ville
 LEFT JOIN resilie ON carte_abonnement.id_abonnement = resilie.id_abonnement
 WHERE carte_abonnement.date_fin_validite > now() AND resilie.date_resiliation is null
 ORDER BY personnes.id_personne;
-;"
+;",
+"
+SELECT /*REQUETE 4*/
+nom_commune AS 'VILLE'
+,code_post AS 'CODE POSTAL'
+,personnes.id_personne AS 'USAGER'
+,personnes.prenom AS 'PRENOM'
+,personnes.nom AS 'NOM'
+,date_format(personnes.naissance ,'%d/%m/%Y')
+,concat( num_rue
+,' ',
+rue
+,' ',
+ifnull(residence, ''),
+ifnull(batiment, '')) AS 'ADRESSE'
+FROM carte_abonnement
+INNER JOIN personnes ON carte_abonnement.id_personne = personnes.id_personne
+INNER JOIN habite ON personnes.id_personne = habite.id_personne
+INNER JOIN adresse ON habite.id_adresse = adresse.id_adresse
+INNER JOIN ville_cp ON adresse.id_ville = ville_cp.id_ville
+LEFT JOIN resilie ON carte_abonnement.id_abonnement = resilie.id_abonnement
+WHERE carte_abonnement.date_fin_validite > now() AND resilie.date_resiliation is null
+/* GROUPE PAR PERSONNE ET PAR VILLE */
+
+ORDER BY nom_commune;
+",
+"
+SELECT/*REQUETE 5*/
+carte_abonnement.id_type_ab AS 'NO'
+,type_abonnement.denom_ab AS 'TYPE_ABONNEMENT'
+,count( if(carte_abonnement.date_fin_validite > now(),
+if(resilie.date_resiliation is null,type_abonnement.denom_ab,null),null)) AS 'NOMBRE_D_ABONNEMENTS EN COURS DE VALIDITE'
+,year(now()) AS 'ANNEE'
+FROM type_abonnement
+INNER JOIN carte_abonnement ON carte_abonnement.id_type_ab = type_abonnement.id_type_ab
+LEFT JOIN resilie ON carte_abonnement.id_abonnement = resilie.id_abonnement
+group by carte_abonnement.id_type_ab
+ORDER BY carte_abonnement.id_type_ab;",
+"
+SELECT/*REQUETE 6*/
+carte_abonnement.id_type_ab AS 'NO ABONNEMENT'
+,type_abonnement.denom_ab AS 'TYPE ABONNEMENT'
+,concat((
+(sum(if( year(carte_abonnement.date_paiement) = 2017, if(prix_duplicata != 0, 0,
+histo_tarif_abo.tarif),0)))
++
+(sum(if(year(duplicata.date_duplicata) = 2017, duplicata.prix_duplicata, 0)))
+-
+(sum(if(year(resilie.date_resiliation) = 2017, if(prix_duplicata != 0, 0, resilie.montant_remb)
+        ,0
+)))),'€') AS 'CHIFFRE_D_AFFAIRE_TOTAL_SUR_L_ANNEE'
+, 2017 AS 'ANNEE'
+from carte_abonnement
+inner join type_abonnement on carte_abonnement.id_type_ab = type_abonnement.id_type_ab
+inner join histo_tarif_abo on carte_abonnement.id_type_ab = histo_tarif_abo.id_type_ab
+left join duplicata on carte_abonnement.id_abonnement = duplicata.id_abonnement
+left join resilie on carte_abonnement.id_abonnement = resilie.id_abonnement
+where (year(histo_tarif_abo.date_prise_effet) = 2017 )
+group by type_abonnement.id_type_ab
+order by carte_abonnement.id_type_ab;",
+"
+SELECT /*REQUETE 7 MON GARS!!*/
+personnes.id_personne
+AS 'USAGER N°'
+,concat(personnes.prenom, ' ',personnes.nom)
+AS 'USAGER'
+,concat(year(now()) - year(personnes.naissance), ' ans')
+AS 'AGE'
+,concat(representant.prenom, ' ',representant.nom)
+AS 'REPRESENTANT'
+,concat( r_adresse.num_rue
+,' ',
+r_adresse.rue
+,' ',
+ifnull(r_adresse.residence, ''),
+ifnull(r_adresse.batiment, ''))
+AS 'ADRESSE REPRESENTANT'
+,r_ville_cp.nom_commune
+AS 'VILLE REPRESENTANT'
+,r_ville_cp.code_post
+AS 'CODE POSTAL REPRESENTANT'
+,representant.email
+AS 'E-MAIL REPRESENTANT'
+,r_telephone.num_telephone
+AS 'N° de TELEPHONE TUTEUR'
+,r_type_telephone.denom_typ_tel
+AS 'TYPE de TELEPHONE REPRESENTANT'/* table 'personne' pour les informations du mineur */
+FROM personnes
+INNER JOIN joindre ON personnes.id_personne = joindre.id_personne
+INNER JOIN telephone ON joindre.id_tel = telephone.id_tel
+INNER JOIN type_telephone ON telephone.id_type_tel = type_telephone.id_type_tel
+INNER JOIN habite ON personnes.id_personne = habite.id_personne
+INNER JOIN adresse ON habite.id_adresse = adresse.id_adresse
+INNER JOIN ville_cp ON adresse.id_ville = ville_cp.id_ville
+/* table 'personne' renommée 'représentant' pour associer les informations du tuteur au mineur */
+left join personnes as representant on personnes.id_personne_1 = representant.id_personne
+inner join joindre as r_joindre on representant.id_personne = r_joindre.id_personne
+inner join telephone as r_telephone on r_joindre.id_tel = r_telephone.id_tel
+inner join type_telephone as r_type_telephone on r_telephone.id_type_tel =
+r_type_telephone.id_type_tel
+inner join habite as r_habite on representant.id_personne = r_habite.id_personne
+inner join adresse as r_adresse on r_habite.id_adresse = r_adresse.id_adresse
+inner join ville_cp as r_ville_cp on r_adresse.id_ville = r_ville_cp.id_ville
+where year(now()) - year(personnes.naissance) < 18;
+"
 );
 
 require_once '../config.inc.php';
@@ -108,13 +238,25 @@ if(isset($_POST['predifined_query'])){
 			}
 		}
 	}
-	else if($request==3){
-		$statement = $db->prepare($normal_query[2]);
+
+	else if($request==2){
+		$statement = $db->prepare($normal_query[1]);
 		if ($statement->execute()) {
 			echo'requete reussie <br/>!';
 			//$item = $statement->fetchObject();
 			while($item = $statement->fetchObject()){
-				echo $item->NOM;
+				echo $item->POUR_L_ANNEE;
+				echo $item->MINEURS_AVEC_ABO_VALIDE;
+			}
+		}
+	}
+	else if($request==3){//if de test
+		$statement = $db->prepare($normal_query[4]);
+		if ($statement->execute()) {
+			echo'requete reussie <br/>!';
+			//$item = $statement->fetchObject();
+			while($item = $statement->fetchObject()){
+				echo $item->TYPE_ABONNEMENT;
 			}
 		}
 	}
