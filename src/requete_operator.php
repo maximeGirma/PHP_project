@@ -166,7 +166,8 @@ where (year(histo_tarif_abo.date_prise_effet) = 2017 )
 group by type_abonnement.id_type_ab
 order by carte_abonnement.id_type_ab;",
 "
-SELECT /*REQUETE 7 MON GARS!!*/
+set @id_mineur = $optional_parameter;
+SELECT /*!!!!!! SET OPTIONNAL_PARAMETER BEFORE REQUEST AND CHECK EMPTY RETURN*/
 personnes.id_personne
 AS 'USAGER N°'
 ,concat(personnes.prenom, ' ',personnes.nom)
@@ -208,8 +209,23 @@ r_type_telephone.id_type_tel
 inner join habite as r_habite on representant.id_personne = r_habite.id_personne
 inner join adresse as r_adresse on r_habite.id_adresse = r_adresse.id_adresse
 inner join ville_cp as r_ville_cp on r_adresse.id_ville = r_ville_cp.id_ville
-where year(now()) - year(personnes.naissance) < 18;
+where personnes.id_personne = @id_mineur
+group by r_telephone.num_telephone, r_adresse.num_rue, r_adresse.rue, r_adresse.residence, r_adresse.batiment, r_ville_cp.nom_commune, r_ville_cp.code_post
+;
+",
 "
+select/*REQUETE 8*/
+year(descend_point.date_debut_descent) AS 'ANNEE'
+,list_etablissement.id_etablissement AS 'NO_ETAB'
+,list_etablissement.denomination_etablissement AS 'ETABLISSEMENT'
+,count(descend_point.date_debut_descent) AS 'NOMBRE_USAGERS'
+FROM descend_point
+inner join passe
+inner join arrets on descend_point.id_arret = arrets.id_arret
+left join list_etablissement on list_etablissement.id_etablissement = passe.id_etablissement 
+inner join carte_abonnement on descend_point.id_abonnement = carte_abonnement.id_abonnement
+GROUP BY ANNEE, list_etablissement.denomination_etablissement, passe.id_etablissement
+order by ANNEE desc, passe.id_etablissement;"
 );
 
 require_once '../config.inc.php';
