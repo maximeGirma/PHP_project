@@ -1,31 +1,35 @@
 <?php 
-/*REQUETE 6 POUR L'ANNE EN COURS (2018 DONC...)
-SELECT
-carte_abonnement.id_type_ab AS 'NO ABONNEMENT'
-,type_abonnement.denom_ab AS 'TYPE ABONNEMENT'
-,concat((
-(sum(if( year(carte_abonnement.date_paiement) = @annee, if(prix_duplicata != 0, 0,
-histo_tarif_abo.tarif),0)))
-+
-(sum(if(year(duplicata.date_duplicata) = @annee, duplicata.prix_duplicata, 0)))
--
-(sum(if(year(resilie.date_resiliation) = @annee, if(prix_duplicata != 0, 0, resilie.montant_remb)
-        ,0
-)))),'€') AS 'CHIFFRE_D_AFFAIRE_TOTAL_SUR_L_ANNEE'
-, @annee AS 'ANNEE'
-from carte_abonnement
-inner join type_abonnement on carte_abonnement.id_type_ab = type_abonnement.id_type_ab
-inner join histo_tarif_abo on carte_abonnement.id_type_ab = histo_tarif_abo.id_type_ab
-left join duplicata on carte_abonnement.id_abonnement = duplicata.id_abonnement
-left join resilie on carte_abonnement.id_abonnement = resilie.id_abonnement
-where (year(histo_tarif_abo.date_prise_effet) = @annee )
-group by type_abonnement.id_type_ab
 
-order by carte_abonnement.id_type_ab;
-*/
+$interface="<!DOCTYPE html>
+<html lang=\"FR\">
+	<head>
+		<meta charset=\"utf-8\">
+		<title>consultation données</title>
+		<link href=\"css/connexion.css\" rel=\"stylesheet\" />
+	</head>
 
-//effectue des requetes SQL en fonction de l'argument recu
+	<body>
+		<header>
+		</header>
 
+		<fieldset>
+			<legend>requete</legend>
+			<form action=\"requete_operator.php\" method=\"post\">
+				<p>
+				<label for=\"predifined_query\"></label>
+				<input type=\"text\" name=\"predifined_query\">
+				<!--On ne peut cocher qu'un radio pour un name donné-->
+				</p>
+				<p>
+					<input type=\"submit\" name=\"REQUEST!\">
+				</p>
+			</form>
+		</fieldset>
+
+
+";
+$interface_2 ="	</body>
+</html>";
 
 require_once '../config.inc.php';
 require_once 'requetes_file.php';
@@ -46,20 +50,39 @@ if(isset($_POST['predifined_query'])){
 	if(strlen($_POST['predifined_query']) == 1 || strlen($_POST['predifined_query']) == 2 ) {
 
 
-		echo 'kabla2';
-		$statement = $db->prepare($normal_query[$_POST['predifined_query'] - 1]);// arg 1-16/ array 0-15
-		if ($statement->execute()) {
-			echo 'requete reussie <br/>!';
-			while ($item = $statement->fetch()) {
-				echo'<pre>';
-				print_r($item);
-				echo'</pre>';
-			}
-		}
+        echo 'kabla2';
+        $statement = $db->prepare($normal_query[$_POST['predifined_query'] - 1]);// arg 1-16/ array 0-15
+        if ($statement->execute()) {
+            $cols_id_activator = true;
+
+            echo $interface;
+            echo '<table>';
+            echo '<tr>';
+
+            while ($item = $statement->fetch(PDO::FETCH_ASSOC)) {
+                if($cols_id_activator) {
+                    foreach ($item as $key => $element) {
+                        echo '<th>' . $key . '</th>';
+                    }
+                    $cols_id_activator = false;
+                }
+                echo '</tr> <tr>';
+                foreach ($item as $value) {
+
+                    echo '<td>';
+
+                    echo $value;
+                    echo '</td>';
+                }
+                echo '</tr>';
+            }
+            echo '</table>';
+            echo $interface_2;
+        }
 
     }
-	else{echo 'pas kabla';}
-	
+    else{echo 'pas kabla';}
+
 }
 
 
