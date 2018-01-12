@@ -36,13 +36,13 @@ if(isset ($_POST['ID']) && isset($_POST['PSW'])){
 			switch($item->id_type_utilisateur){
 
 				case 1 :
-                    header('Location: pages_html/consultation_donnees.html');
+                    header('Location: requete_operator.php');
 					break;
 				case 2:
 					echo 'gestionnaire';
 					break;
 				case 3:
-                    echo 'all praise the administrator! ';
+                    header('Location: CRUD_interface.php');
                     exit();
 					break;
 				default:

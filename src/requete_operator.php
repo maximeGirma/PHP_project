@@ -1,35 +1,5 @@
 <?php 
 
-$interface="<!DOCTYPE html>
-<html lang=\"FR\">
-	<head>
-		<meta charset=\"utf-8\">
-		<title>consultation données</title>
-		<link href=\"css/connexion.css\" rel=\"stylesheet\" />
-	</head>
-
-	<body>
-		<header>
-		</header>
-
-		<fieldset>
-			<legend>requete</legend>
-			<form action=\"requete_operator.php\" method=\"post\">
-				<p>
-				<label for=\"predifined_query\"></label>
-				<input type=\"text\" name=\"predifined_query\">
-				<!--On ne peut cocher qu'un radio pour un name donné-->
-				</p>
-				<p>
-					<input type=\"submit\" name=\"REQUEST!\">
-				</p>
-			</form>
-		</fieldset>
-
-
-";
-$interface_2 ="	</body>
-</html>";
 
 require_once '../config.inc.php';
 require_once 'requetes_file.php';
@@ -45,6 +15,8 @@ catch (PDOException $e){ //on catch, on type ce qu'on à attrapé et on le stock
 	die();
 }
 
+echo include ("pages_html/consultation_donnees.html");
+
 if(isset($_POST['predifined_query'])){
 
 	if(strlen($_POST['predifined_query']) == 1 || strlen($_POST['predifined_query']) == 2 ) {
@@ -55,7 +27,7 @@ if(isset($_POST['predifined_query'])){
         if ($statement->execute()) {
             $cols_id_activator = true;
 
-            echo $interface;
+
             echo '<table>';
             echo '<tr>';
 
@@ -77,7 +49,7 @@ if(isset($_POST['predifined_query'])){
                 echo '</tr>';
             }
             echo '</table>';
-            echo $interface_2;
+
         }
 
     }
