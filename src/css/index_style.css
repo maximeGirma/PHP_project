@@ -1,0 +1,268 @@
+/*
+STAPA ACCES - shared style sheet
+
+V 0.1.04/
+
+/*
+valeur {
+	arguments: donnée;
+}
+*/
+
+/*	background-color: #707ca0; /* http://www.colorhexa.com/707ca0 */
+/*	background-color: #e0bAf0; */
+/*	background-color: #ced2df ;*/
+/*	background-color: #fdfefe;*/
+/*	justify-content: Space-between;	*/
+
+/*body, html {	 
+	margin: auto;
+	width: 1000px;
+	padding: 0;
+	border: 0;
+	overflow: auto;									
+	font-family: 'Palanquin', sans-serif;
+}
+
+section {							
+	margin: auto;
+	background-color: #e0bAf0;
+}
+
+header {							
+	margin: auto;
+}
+
+
+picture#logo > img{							
+	height: 100px;
+	border: 0;
+}
+nav {							
+	float: right;
+}
+
+header > a {							
+	margin: 2px;
+	background-color: green;
+}
+
+
+picture#bann > img{							
+	width: 1000px;
+	border: 0;
+}
+
+*/
+
+	
+html {	 
+	margin: auto;
+	width: 1300px;
+	padding: 0;
+	border: 0;
+	overflow: auto;									
+	font-family: 'Palanquin', sans-serif;
+	background-color: #0f1016;
+}
+
+body {	 
+	margin: auto;
+	width: 1300px;
+	padding: 0;
+	border: 0;
+	overflow: auto;									
+	background-color: #fdfefe;
+}
+
+#content {	 
+}
+
+header {	 
+	margin: auto;
+	width: 1100px;
+	height: 100px;
+	padding-right: 20px;
+	padding-left: 20px;
+	background-color: #707ca0 ;
+}
+
+#bann_m {	 									/* bannière main (/co) */
+	margin: 20px;
+	width: 1100px;
+	height: 100px;
+	padding: 20px;
+	font-weight: bold;
+	background-color: #ced2df ;
+	float: right;
+}
+		#bann_m h2 {	 
+			margin: 30px;
+			width: 1100px;
+			height: 100px;
+			color: #5d698c;
+			font-size: 34px;
+/*			text-align: center;		*/
+			float: right;
+		}
+		
+		#bann_m h2 a {
+		margin: 20px;
+		margin-left: 180px;
+	
+		}
+
+		#logo_m {	 
+			margin-right: 100px;
+			margin-top: -95px;
+			width: 180px;
+			border: 0px;
+			float: right;
+		}
+
+#bann_o_bg {	 
+	margin: auto;
+	width: 1100px;
+	height: 80px;
+	background-color: #707ca0 ;
+	position: fixed;
+}
+
+#bann_o {	 									/* bannière opé (user?) */
+	margin: 20px;
+	margin-left: -60px;
+	width: 1140px;
+	height: 60px;
+	background-color: #ced2df ;
+	position: fixed;
+}
+	#welcome {	 
+		margin-top: 14px;
+		text-align: left;	
+/*	float: right;				*/
+	}
+	
+		#welcome a {
+			margin: 20px;
+			margin-left: 80px;
+			font-size: 24px;
+			font-weight: bold;
+			color: #5d698c;
+		}
+
+	#deconnect {
+		margin-top: -56px;
+		margin-right: 160px;
+		padding-top: 10px;
+		width: 180px;
+		height: 30px;
+		background-color: #5d698c ;
+		text-align: center;
+		float: right;
+	}
+
+		#deconnect a {
+			margin: 10px;
+			margin-top: 0px;
+			text-decoration: none;
+			color: #ced2df;
+			font-weight: bold;
+			font-size: 18px;
+		}
+		
+	#logo_o {	 
+		margin-right: 40px;
+		margin-top: -76px;
+		float: right;
+	}
+
+		#logo_o img {	 
+			width: 85px;
+			border: 0px;
+		}
+
+
+#connect {
+	margin: 10px;
+	margin-top: 60px;
+	margin-left: 220px;
+	width: 240px;
+	padding: 10px;
+	background-color: #5d698c ;
+	text-align: center;
+	float: left;
+}
+
+	#connect p a {
+		text-decoration: none;
+		color: #ced2df;
+		font-weight: bold;
+		font-size: 18px;
+	}
+
+	#input {
+		background-color: #ced2df;
+		border: 0px;
+	}
+
+	#sub {
+		width: 160px;
+		padding: 10px;
+		border: 0px;
+		color: #ced2df;
+		font-weight: bold;
+		font-size: 20px;
+		background-color: #5d698c ;
+	}
+
+#main_m {
+	margin: auto;
+	width: 1100px;
+	height: 360px;
+	padding: 20px;
+	background-color: #707ca0 ;
+}
+
+#main_o {
+	margin: auto;
+	width: 1100px;
+	height: 880px;
+	padding: 20px;
+	background-color: #707ca0 ;
+}
+
+
+#end {	 
+	margin: auto;
+	width: 1100px;
+	padding: 20px;
+	background-color: #707ca0 ;
+}
+
+	footer {	 
+		margin-top: 20px;
+	}
+
+	footer {	 
+		margin-top: 20px;
+		margin-left: 20px;
+		width: 1140px;
+		padding-top: 10px;
+		height: 60px;
+		background-color: #1e222e;
+	/*	float: right;	*/
+	/*	justify-content: Space-between;	*/
+	}
+
+	footer p a {	 
+		margin: 60px;
+		margin-left: 100px;
+		padding: 20px;
+		color: #5d698c;
+		text-align: center;
+		font-size: 16px;
+	}
+
+
+
+
