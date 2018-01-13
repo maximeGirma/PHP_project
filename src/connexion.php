@@ -49,7 +49,7 @@ if(isset ($_POST['ID']) && isset($_POST['PSW'])){
 					echo'something gone wrong...';
 			}
 
-		}else{echo'Echec lors de l\'identification';}
+		}else{header("Location:pages_html/error_connect.html");}
 	}else{echo 'echec requete';}
 }
 

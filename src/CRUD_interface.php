@@ -7,6 +7,7 @@
  */
 
 echo include("pages_html/CRUD_display.html");
+require_once '../config.inc.php';
 
 if(isset($_POST['afficher'])) {
 
@@ -17,6 +18,7 @@ FROM
 utilisateur
 WHERE id_type_utilisateur =";
 $cols_id_activator = true;
+
     if (strlen($_POST['afficher']) == 1) {
         try {
             $db = new  PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
@@ -25,14 +27,15 @@ $cols_id_activator = true;
             getMessage();
             die();
         }
-        $i = 1;
-        while ($i < 3) {
-            $statement = $db->prepare($display_query . $i . ';');// arg 1-16/ array 0-15
+
+
+            $statement = $db->prepare($display_query . $_POST['afficher']. ';');// arg 1-16/ array 0-15
             if ($statement->execute()) {
                 echo '<table>';
-                echo '<tr>';
+
 
                 while ($item = $statement->fetch(PDO::FETCH_ASSOC)) {
+                    echo '<tr>';
                     if($cols_id_activator) {
                         foreach ($item as $key => $element) {
                             echo '<th>' . $key . '</th>';
@@ -47,11 +50,15 @@ $cols_id_activator = true;
                         echo $value;
                         echo '</td>';
                     }
+                    echo '<td>';
+                    echo include("pages_html/CRUD_admin.html");
+                    echo '</td>';
                     echo '</tr>';
                 }
                 echo '</table>';
             }
-            $i++;
-        }
+
     }
 }
+
+if (isset($_POST["modifier"])){echo $_POST['modifier'];}

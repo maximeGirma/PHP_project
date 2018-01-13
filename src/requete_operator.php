@@ -3,6 +3,7 @@
 
 require_once '../config.inc.php';
 require_once 'requetes_file.php';
+require_once "display.php";
 
 
 try{
@@ -15,46 +16,49 @@ catch (PDOException $e){ //on catch, on type ce qu'on à attrapé et on le stock
 	die();
 }
 
-echo include ("pages_html/consultation_donnees.html");
+
 
 if(isset($_POST['predifined_query'])){
 
 	if(strlen($_POST['predifined_query']) == 1 || strlen($_POST['predifined_query']) == 2 ) {
 
 
-        echo 'kabla2';
+
         $statement = $db->prepare($normal_query[$_POST['predifined_query'] - 1]);// arg 1-16/ array 0-15
         if ($statement->execute()) {
             $cols_id_activator = true;
+            $display_content="";
 
-
-            echo '<table>';
-            echo '<tr>';
+            $display_content .= '<table>';
+            $display_content .= '<tr>';
 
             while ($item = $statement->fetch(PDO::FETCH_ASSOC)) {
                 if($cols_id_activator) {
                     foreach ($item as $key => $element) {
-                        echo '<th>' . $key . '</th>';
+                        $display_content .= '<th>' . $key . '</th>';
                     }
                     $cols_id_activator = false;
                 }
-                echo '</tr> <tr>';
+                $display_content .= '</tr> <tr>';
                 foreach ($item as $value) {
 
-                    echo '<td>';
+                    $display_content .= '<td>';
 
-                    echo $value;
-                    echo '</td>';
+                    $display_content .= $value;
+                    $display_content .= '</td>';
                 }
-                echo '</tr>';
+                $display_content .= '</tr>';
             }
-            echo '</table>';
-
+            $display_content .= '</table>';
+            display_interface($display_content);
         }
 
     }
     else{echo 'pas kabla';}
 
+}else{
+    require_once "display.php";
+    display_interface();
 }
 
 
