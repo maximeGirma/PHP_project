@@ -3,7 +3,6 @@
 /*
  LE CHEVAL LE CHEVAL C'EST GENIAL ! !
 */
-ini_set('display_errors','On');
 
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
