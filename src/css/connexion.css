@@ -1,8 +1,124 @@
+/* *****************************
+STAPA ACCES - ?co / consult / style sheet
+
+V 0.1.06
+***************************** */
+
+/* ***********COLOR************
+**************CHART********* */
+/* http://www.colorhexa.com/707ca0 */
+
+/*	background-color: #0f1016;	> noir*/	
+/*	background-color: #1e222e;	*/
+/*	background-color: #707ca0;	> principale*/
+/*	background-color: #ced2df;	*/
+/*	background-color: #fdfefe;	> blanc*/
+
+/*	box-shadow: 0 4px 10px rgba(7,8,10,0.5);	*/
+
+/*	color: #0f1016;	défaut?	titres*/
+/*	color: #1e222e;	défaut?	principale*/
+/*	color: #5d698c;	*/
+/*	color: #ced2df;	*/
+
+/* *****************************
+***************************** */
+html {	 
+	margin: auto;
+	width: 1300px;
+	padding: 0;
+	border: 0;
+	overflow: auto;									
+	font-family: 'Palanquin', sans-serif;
+	color: #1e222e;
+	background-color: #0f1016;
+}
+
+body {	 
+	margin: auto;
+	width: 1300px;
+	padding: 0;
+	border: 0;
+	overflow: auto;									
+	background-color: #fdfefe;
+}
+
 
 fieldset{
-	max-width: 100%;
+	margin: auto;
+	width: 1140px;
+	padding: 5px 60px 10px 60px;
+	background-color: #707ca0;
 }
-p{
+
+legend{
+	font-size: 24px;
+	font-weight: bold;
+	color: #5d698c;
+}
+
+form select{
 	margin:auto;
-	width :200px;
+	width: 620px;
+	background-color: #ced2df;
+	border: 3px solid #1e222e;
 }
+
+form p{
+	padding: 16px;
+	width: 420px;
+	height: 108px;
+	background-color: #ced2df;
+	border: 3px solid #1e222e;
+	font-size: 16px;
+	font-weight: bold;
+	color: #5d698c;
+	text-align: justify;
+	overflow: auto;									
+}
+
+option {
+	font-size: 18px;
+	font-weight: bold;
+	color: #1e222e;
+	font-family: 'Palanquin', sans-serif;
+}
+
+nav {
+	margin: -51px 160px 0 0;
+	padding-top: 4px;
+	width: 180px;
+	height: 30px;
+	background-color: #5d698c ;
+	text-align: center;
+	float: right;
+	box-shadow: 0 -1px 2px rgba(7,8,10,0.4)
+}
+
+	nav a {
+		font-weight: bold;
+		font-size: 16px;
+	}
+	
+		#sub_req {
+			border: 0px;
+			color: #1e222e;
+			font-weight: bold;
+			font-size: 20px;
+			background-color: #5d698c ;
+			font-family: 'Palanquin', sans-serif;
+		}
+
+
+
+
+
+
+
+
+p{
+}
+
+
+
+

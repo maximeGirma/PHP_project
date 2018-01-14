@@ -5,6 +5,12 @@
  * Date: 13/01/18
  * Time: 09:54
  */
+/*-- ---------------------------
+STAPA ACCES - page opérateur (utilisateurs)
+PHP diplay
+V 0.1.06
+---------------------------- */
+
 
 function display_interface($content_1 = '',$content_2='',$content_3='',$content_4=''){
 
@@ -21,75 +27,125 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 
 	<link href=\"images/favicon.png\" rel=\"shortcut icon\" type=\"image/png\">
 	<link href=\"css/index_style.css\" rel=\"stylesheet\" type=\"text/css\">
-	<!-- 	<link href=\"js/script.js\" type=\"text/javascript\">
+	<!-- 	<link href=\"js/script.js\" type=\"text/javascript\"> -->
 
-    </head>
+</head>
 
-    <body>
+<body>
 
-        <section id=\"content\">
+	<section id=\"content\">
 
-            <section>															<!-- début header -->
+		<section>															<!-- début header -->
 
-	<header>
+			<header>
 
-		<hgroup id=\"bann_m\">
-			<h2>
-				<a>S T A P A</a>
-				<a>A C C E S</a>
-				<picture  id=\"logo_m\">
-					<img src=\"images/bus_t.png\"  alt=\"-image-\">
-				</picture>
-			</h2>
-		</hgroup>
+				<div id=\"bann_o_bg\"></div>
+				<hgroup id=\"bann_o\">
+				
+					<h2 id=\"welcome\">
+						<a >\$Opérateur \$Machin, bienvenue.</a>
+					</h2>
+					
+					<nav id=\"deconnect\">
+						<a href=\"index.html\" target=\"_self\">DECONNEXION</a>
+					</nav>
 
-	</header>
+					<picture id=\"logo_o\">
+						<img src=\"images/bus_t.png\" alt=\"-image-\">
+					</picture>
+					
+				</hgroup>
 
-	</section>
+			</header>
 
-	<section>															<!-- début main -->
+		</section>
 
-		<main>
+		<section>															<!-- début main -->
 
-			<section id=\"main_m\">
+			<main>
+			<div id=\"main_bg\">
+
+				<section id=\"main_o\">
 
 				<fieldset>
-					<legend>requete</legend>
-					<form action=\"requete_operator.php\" method=\"post\">
-						<p>
-							<label for=\"predifined_query\"></label>
-							<input type=\"text\" name=\"predifined_query\">
-							<!--On ne peut cocher qu'un radio pour un name donné-->
-						</p>
-						<p>
-							<input type=\"submit\" name=\"REQUEST!\">
-						</p>
+				
+					<legend>CHOIX DE REQUETE</legend>
+					<form id=\"requetes\" action=\"requete_operator.php\" method=\post\">
+					
+						<div>
+						
+							<label for=\"predifined_query\">
+							<select id=\"t_requetes\" name=\"predifined_query\" size=\"8\">
+								<option selected>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+								<option>7</option>
+								<option>8</option>
+								<option>9</option>
+								<option>10 - Spam</option>
+								<option>11 - Spam</option>
+								<option>12 - Spam</option>
+								<option>13 - Spam</option>
+								<option>14 - Spam</option>
+								<option>15 - Spam</option>
+								<option>16 - Spam</option>
+
+							<!-- ?? possible remplir par alimentation de \"table requetes\" (csv?,avec pramettres, pour ajouter des préset) ?? -->
+							</label>	
+							</select>
+							
+						</div>
+						<div>
+						
+							<p id=\"desc_requetes\">
+							Maecenas ultrices justo non ante lacinia, et rutrum ante mattis. Aliquam euismod sapien in gravida placerat. Mauris fringilla, neque non laoreet aliquet, ante nulla molestie sem, vitae eleifend urna nisi nec quam. Nunc sed diam neque. Morbi rhoncus est et consequat bibendum. 
+							<input type=\"text\" name=\"additional_parameter\">
+							</p>
+			
+
+						</div>
+				
+						<div>
+							<nav>
+								<input id=\"sub_req\" value=\"AFFICHER\" name=\"REQUEST!\" type=\"submit\>
+							</nav>
+						
+						</div>
+					
+					
 					</form>
+				
 				</fieldset>
-			</section>
 
-		</main>
+				</section>
 
-	</section>															<!-- fin phrasing -->
+			</div>	
+			</main>
 
-	<section id=\"end\">															<!-- début footer -->
+		</section>															<!-- fin phrasing -->
+
 ";
 
-    $footer="		<footer>
-
-			<p>
-				<a>MENTION LÉGALE</a>
-				<a>CONTACT</a>
+    $footer="		<section id=\"end\">									<!-- début footer -->
+	
+			<footer>
+			
+				<p>
+				<a>MENTIONS LÉGALES</a>
+				<a href=\"pages_html/contact.html\" target=\"_self\">CONTACT</a>
 				<a>&copy TEAM SEVEN</a>
-			</p>
+				</p>
+				
+			</footer>		
 
-		</footer>
-
-	</section>															<!-- fin footer -->
+		</section>															<!-- fin footer -->
 
 	</section>																<!-- fin corps -->
 
-	</body>
+</body>
 
 
 </html>";

@@ -1,87 +1,75 @@
+<!-- ---------------------------
+STAPA ACCES - choix consultation (utilisateurs)
 
+V 0.1.06
+---------------------------- -->
 
-<head>
+<!DOCTYPE html>
+<html lang="FR">
+	<head>
+		<meta charset="utf-8">
+		<title>consultation données</title>
+		<link href="css/index_style.css" rel="stylesheet" />
+	</head>
 
-	<title>Stapa Access</title>
-	<meta charset="utf-8">
-	<meta name="description" content="page">
-	<meta name="robots" content="noindex,nofollow">
+	<body>
+		<header>
+		</header>
 
+		<fieldset>
+		
+			<legend>CHOIX DE REQUETE</legend>
+			<form id="requetes" action="requete_operator.php" method="post">
+			
+				<div>
+				
+					<label for="predifined_query">
+					<select id="t_requetes" name="predifined_query" size="8">
+						<option selected>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+						<option>10 - Spam</option>
+						<option>11 - Spam</option>
+						<option>12 - Spam</option>
+						<option>13 - Spam</option>
+						<option>14 - Spam</option>
+						<option>15 - Spam</option>
+						<option>16 - Spam</option>
 
-	<meta name="author" content="Team_Seven">
-	<meta name="copyright" content="Team_Seven">
+					<!-- ?? possible remplir par alimentation de "table requetes" (csv?,avec pramettres, pour ajouter des préset) ?? -->
+					</label>	
+					</select>
+					
+				</div>
+				<div>
+				
+					<p desc_requetes>
+					Maecenas ultrices justo non ante lacinia, et rutrum ante mattis. Aliquam euismod sapien in gravida placerat. Mauris fringilla, neque non laoreet aliquet, ante nulla molestie sem, vitae eleifend urna nisi nec quam. Nunc sed diam neque. Morbi rhoncus est et consequat bibendum. 
+					<input type="text" name="additional_parameter">
+					</p>
+	
 
-	<link href="images/favicon.png" rel="shortcut icon" type="image/png">
-	<link href="css/index_style.css" rel="stylesheet" type="text/css">
-	<!-- 	<link href="js/script.js" type="text/javascript">
+				</div>
+		
+				<div>
+					<nav>
+						<input id="sub_req" value="AFFICHER" name="REQUEST!" type="submit">
+					</nav>
+				
+				</div>
+			
+			
+			</form>
+		
+		</fieldset>
 
-    </head>
-
-    <body>
-
-        <section id="content">
-
-            <section>															<!-- début header -->
-
-	<header>
-
-		<hgroup id="bann_m">
-			<h2>
-				<a>S T A P A</a>
-				<a>A C C E S</a>
-				<picture  id="logo_m">
-					<img src="images/bus_t.png"  alt="-image-">
-				</picture>
-			</h2>
-		</hgroup>
-
-	</header>
-
-	</section>
-
-	<section>															<!-- début main -->
-
-		<main>
-
-			<section id="main_m">
-
-				<fieldset>
-					<legend>requete</legend>
-					<form action="requete_operator.php" method="post">
-						<p>
-							<label for="predifined_query"></label>
-							<input type="text" name="predifined_query">
-							<!--On ne peut cocher qu'un radio pour un name donné-->
-						</p>
-						<p>
-							<input type="submit" name="REQUEST!">
-						</p>
-					</form>
-				</fieldset>
-			</section>
-
-		</main>
-
-	</section>															<!-- fin phrasing -->
-
-	<section id="end">															<!-- début footer -->
-
-		<footer>
-
-			<p>
-				<a>MENTION LÉGALE</a>
-				<a>CONTACT</a>
-				<a>&copy TEAM SEVEN</a>
-			</p>
-
-		</footer>
-
-	</section>															<!-- fin footer -->
-
-	</section>																<!-- fin corps -->
 
 	</body>
-
-
 </html>
 

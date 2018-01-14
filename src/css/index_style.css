@@ -1,7 +1,7 @@
 /* *****************************
 STAPA ACCES - shared style sheet
 
-V 0.1.05
+V 0.1.06
 ***************************** */
 
 /* ***********COLOR************
@@ -16,8 +16,8 @@ V 0.1.05
 
 /*	box-shadow: 0 4px 10px rgba(7,8,10,0.5);	*/
 
-/*	color: #0f1016;	défaut?	*/
-/*	color: #1e222e;	défaut?	*/
+/*	color: #0f1016;	défaut?	titres*/
+/*	color: #1e222e;	défaut?	principale*/
 /*	color: #5d698c;	*/
 /*	color: #ced2df;	*/
 
@@ -66,31 +66,31 @@ header {
 	float: right;
 	box-shadow: 0 2px 7px rgba(7,8,10,0.6);
 }
-		#bann_m h2 {	 
-			margin: 30px;
-			width: 1100px;
-			height: 100px;
-			color: #5d698c;
-			font-size: 34px;
+	#bann_m h2 {	 
+		margin: 30px;
+		width: 1100px;
+		height: 100px;
+		color: #5d698c;
+		font-size: 34px;
 /*			text-align: center;		*/
-			float: right;
-		}
-		
-		#bann_m h2 a {
-		margin: 20px;
-		margin-left: 180px;
+		float: right;
+	}
 	
-		}
+	#bann_m h2 a {
+	margin: 20px;
+	margin-left: 180px;
 
-		#logo_m {	 
-			margin: -67px 10px 0 0;
-			float: right;
-		}
+	}
 
-			#logo_m img {	 
-				width: 240px;
-				border: 0px;
-			}
+	#logo_m {	 
+		margin: -67px 10px 0 0;
+		float: right;
+	}
+
+		#logo_m img {	 
+			width: 240px;
+			border: 0px;
+		}
 
 #bann_o_bg {	 	 								/* bannière opé (user?) */
 	margin: 0 0 0 -20px;
@@ -109,6 +109,7 @@ header {
 	position: fixed;
 	box-shadow: 0 2px 6px rgba(7,8,10,0.4);
 }
+
 	#welcome {	 
 		margin: 14px 20px 20px 70px;
 		text-align: left;	
@@ -149,7 +150,7 @@ header {
 			border: 0px;
 		}
 
-main div {	 
+#main_bg {	 
 	margin: auto;
 	width: 1140px;
 	height: auto;
@@ -193,12 +194,79 @@ main div {
 			font-weight: bold;
 			font-size: 20px;
 			background-color: #5d698c ;
+			font-family: 'Palanquin', sans-serif;
 		}
 
 #main_o {	 									/* main opé (user?) */
 	margin: auto;
 	padding: 40px 60px 40px 60px;
 }
+
+	#main_o fieldset{
+		margin: auto;
+		padding:5px 10px 10px 10px;
+		background-color: #707ca0;
+		border: 2px solid #5d698c;
+	}
+
+	#main_o legend{
+		font-size: 24px;
+		font-weight: bold;
+		color: #5d698c;
+	}
+
+	#t_requetes{								/* table choix requêtes */
+		margin:auto;
+		width: 520px;
+		background-color: #ced2df;
+		border: 2px solid #1e222e;
+	}
+
+		#t_requetes option {
+			font-size: 18px;
+			font-weight: bold;
+			color: #1e222e;
+			font-family: 'Palanquin', sans-serif;
+		}
+
+	#desc_requetes{
+		padding: 16px;
+		width: 320px;
+		height: 138px;
+		background-color: #ced2df;
+		border: 2px solid #1e222e;
+		font-size: 16px;
+		font-weight: bold;
+		color: #5d698c;
+		text-align: justify;
+		overflow: auto;									
+	}
+
+	#requetes nav {
+		margin: -51px 160px 0 0;
+		padding-top: 4px;
+		width: 180px;
+		height: 30px;
+		background-color: #5d698c ;
+		text-align: center;
+		float: right;
+		box-shadow: 0 -1px 2px rgba(7,8,10,0.4)
+	}
+
+		#requetes nav a {
+			font-weight: bold;
+			font-size: 16px;
+		}
+		
+			#sub_req {
+				border: 0px;
+				color: #1e222e;
+				font-weight: bold;
+				font-size: 20px;
+				background-color: #5d698c ;
+				font-family: 'Palanquin', sans-serif;
+			}
+
 
 
 #contact {	 	 								/* main contact */
@@ -215,7 +283,7 @@ main div {
 	background-color: #707ca0 ;
 }
 
-	footer {	 
+	#end footer {	 
 		margin: 20px 0 0 20px;
 		width: 1140px;
 		padding-top: 10px;
@@ -224,7 +292,7 @@ main div {
 		box-shadow: 0 -2px 7px rgba(7,8,10,0.6)
 	}
 
-	footer p a {	 
+	#end footer a {	 
 		text-decoration: none;
 		margin: 0 0 0 170px;
 		color: #5d698c;
