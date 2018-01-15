@@ -150,7 +150,7 @@ header {
 			border: 0px;
 		}
 
-#main_bg {	 
+#main_bg, table {
 	margin: auto;
 	width: 1140px;
 	height: auto;
@@ -259,7 +259,7 @@ header {
 			font-size: 16px;
 		}
 		
-			#sub_req {
+			#sub_req, #effacer_button {
 				border: 0px;
 				color: #1e222e;
 				font-weight: bold;
@@ -268,6 +268,7 @@ header {
 				font-family: 'Palanquin', sans-serif;
 
 			}
+
 
 
 
@@ -304,4 +305,15 @@ header {
 
 	#random_id{
 		clear: both;
+
 	}
+
+	#tableau_operateur{
+	border-collapse: collapse;
+
+	}
+	td{
+	border: 1px solid;
+	text-align: center;
+	}
+

@@ -87,15 +87,15 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 						<div>
 						
 							<label for=\"predifined_query\">
-							<select id=\"t_requetes\" name=\"liste\" size=\"8\" >
-                                <option selected onclick=\"description_query(0);\"> Afficher les propriétés des usagers (Nom, Prénom, Adresse complète, Téléphone, Date de naissance)</option>
-                                <option onclick=\"description_query(1);\"> Afficher le nombre d’usagers mineurs ayant un abonnement en cours de validité.</option>
-                                <option onclick=\"description_query(2);\"> Afficher la liste des usagers ayant des abonnements en cours de validité</option>
-                                <option onclick=\"description_query(3);\"> Afficher la liste des usagers ayant des abonnements en cours de validité et classée par commune</option>
-                                <option onclick=\"description_query(4);\"> Afficher le nombre d’abonnements en cours de validité pour chacun des types d’abonnements</option>
-                                <option onclick=\"description_query(5);\"> Afficher le chiffre d’affaires réalisé sur l’année en cours pour chacun des types d’abonnements</option>
-                                <option onclick=\"description_query(6);\"> Afficher les informations du représentant légal d’un usager donné</option>
-                                <option onclick=\"description_query(7);\"> Afficher le nombre d’usagers par année et par établissement scolaire</option>
+							<select id=\"t_requetes\" name=\"predifined_query\" size=\"8\" >
+                                <option value='0' selected onclick=\"description_query(0);\"> Afficher les propriétés des usagers</option>
+                                <option value='1' onclick=\"description_query(1);\"> Usagers mineurs avec abonnement</option>
+                                <option value='2' onclick=\"description_query(2);\"> Usagers avec abonnement valide</option>
+                                <option value='3' onclick=\"description_query(3);\"> Usagers avec abonnement par commune</option>
+                                <option value='4' onclick=\"description_query(4);\"> Abonnements valides</option>
+                                <option value='5' onclick=\"description_query(5);\"> Chiffre d'affaire</option>
+                                <option value='6' onclick=\"description_query(6);\"> Informations représentant légal</option>
+                                <option value='7' onclick=\"description_query(7);\"> Usagers par année et établissement</option>
 								<option>9</option>
 								<option>10 - Spam</option>
 								<option>11 - Spam</option>
@@ -124,13 +124,17 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 						<div id=\"random_id\">
 							<nav>
 								<input id=\"sub_req\" value=\"AFFICHER\" name=\"REQUEST!\" type=\"submit\">
+                                   			
 							</nav>
-						
+						    <form id=\"requetes\" action=\"requete_operator.php\" method=\"POST\">
+                                <input id=\"effacer_button\" value=\"EFFACER\" name=\"REQUEST!\" type=\"submit\">
+                            </form>		
 						</div>
 					
 					
 					</form>
-				
+			
+</form>
 				</fieldset>
 
 				</section>

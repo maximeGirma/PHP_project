@@ -24,12 +24,12 @@ if(isset($_POST['predifined_query'])){
 
 
 
-        $statement = $db->prepare($normal_query[$_POST['predifined_query'] - 1]);// arg 1-16/ array 0-15
+        $statement = $db->prepare($normal_query[$_POST['predifined_query']]);// arg 1-16/ array 0-15
         if ($statement->execute()) {
             $cols_id_activator = true;
             $display_content="";
 
-            $display_content .= '<table>';
+            $display_content .= '<table id="tableau_operateur">';
             $display_content .= '<tr>';
 
             while ($item = $statement->fetch(PDO::FETCH_ASSOC)) {
