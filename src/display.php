@@ -27,6 +27,7 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 
 	<link href=\"images/favicon.png\" rel=\"shortcut icon\" type=\"image/png\">
 	<link href=\"css/index_style.css\" rel=\"stylesheet\" type=\"text/css\">
+	<script src=\"js/description_operator_query.js\"></script>
 	<!-- 	<link href=\"js/script.js\" type=\"text/javascript\"> -->
 
 </head>
@@ -70,20 +71,20 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 				<fieldset>
 				
 					<legend>CHOIX DE REQUETE</legend>
-					<form id=\"requetes\" action=\"requete_operator.php\" method=\post\">
+					<form id=\"requetes\" action=\"requete_operator.php\" method=\"POST\">
 					
 						<div>
 						
 							<label for=\"predifined_query\">
 							<select id=\"t_requetes\" name=\"predifined_query\" size=\"8\">
-								<option selected>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-								<option>6</option>
-								<option>7</option>
-								<option>8</option>
+                                <option selected value=\"1\"> Afficher les propriétés des usagers (Nom, Prénom, Adresse complète, Téléphone, Date de naissance)</option>
+                                <option value=\"2\"> Afficher le nombre d’usagers mineurs ayant un abonnement en cours de validité.</option>
+                                <option value=\"3\"> Afficher la liste des usagers ayant des abonnements en cours de validité</option>
+                                <option value=\"4\"> Afficher la liste des usagers ayant des abonnements en cours de validité et classée par commune</option>
+                                <option value=\"5\"> Afficher le nombre d’abonnements en cours de validité pour chacun des types d’abonnements</option>
+                                <option value=\"6\"> Afficher le chiffre d’affaires réalisé sur l’année en cours pour chacun des types d’abonnements</option>
+                                <option value=\"7\"> Afficher les informations du représentant légal d’un usager donné</option>
+                                <option value=\"8\"> Afficher le nombre d’usagers par année et par établissement scolaire</option>
 								<option>9</option>
 								<option>10 - Spam</option>
 								<option>11 - Spam</option>
@@ -108,9 +109,9 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 
 						</div>
 				
-						<div>
+						<div id=\"random_id\">
 							<nav>
-								<input id=\"sub_req\" value=\"AFFICHER\" name=\"REQUEST!\" type=\"submit\>
+								<input id=\"sub_req\" value=\"AFFICHER\" name=\"REQUEST!\" type=\"submit\">
 							</nav>
 						
 						</div>
