@@ -14,7 +14,18 @@ V 0.1.06
 
 function display_interface($content_1 = '',$content_2='',$content_3='',$content_4=''){
 
-    $header="<head>
+    $header="
+    <!-- ---------------------------
+	STAPA ACCES - page opérateur (utilisateurs)
+
+	V 0.1.06
+	---------------------------- -->
+
+	<!DOCTYPE html>
+	<html lang="fr">
+
+    
+    <head>
 
 	<title>Stapa Access</title>
 	<meta charset=\"utf-8\">
@@ -76,9 +87,9 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 						<div>
 						
 							<label for=\"predifined_query\">
-							<select id=\"t_requetes\" name=\"predifined_query\" size=\"8\">
-                                <option selected value=\"1\"> Afficher les propriétés des usagers (Nom, Prénom, Adresse complète, Téléphone, Date de naissance)</option>
-                                <option value=\"2\"> Afficher le nombre d’usagers mineurs ayant un abonnement en cours de validité.</option>
+							<select id=\"t_requetes\" name=\"liste\" size=\"8\" >
+                                <option selected value=\"1\" name='query_1' onclick=\"description_query(query_1);\"> Afficher les propriétés des usagers (Nom, Prénom, Adresse complète, Téléphone, Date de naissance)</option>
+                                <option id=\"pouet\" value=\"2\"> Afficher le nombre d’usagers mineurs ayant un abonnement en cours de validité.</option>
                                 <option value=\"3\"> Afficher la liste des usagers ayant des abonnements en cours de validité</option>
                                 <option value=\"4\"> Afficher la liste des usagers ayant des abonnements en cours de validité et classée par commune</option>
                                 <option value=\"5\"> Afficher le nombre d’abonnements en cours de validité pour chacun des types d’abonnements</option>
@@ -101,8 +112,9 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 						</div>
 						<div>
 						
-							<p id=\"desc_requetes\">
+							<p id=\"desc_requetes\"><span>
 							Maecenas ultrices justo non ante lacinia, et rutrum ante mattis. Aliquam euismod sapien in gravida placerat. Mauris fringilla, neque non laoreet aliquet, ante nulla molestie sem, vitae eleifend urna nisi nec quam. Nunc sed diam neque. Morbi rhoncus est et consequat bibendum. 
+							</span>
 							<input type=\"text\" name=\"additional_parameter\">
 							</p>
 			
