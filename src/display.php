@@ -22,7 +22,7 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 	---------------------------- -->
 
 	<!DOCTYPE html>
-	<html lang="fr">
+	<html lang=\"fr\">
 
     
     <head>
@@ -88,14 +88,14 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 						
 							<label for=\"predifined_query\">
 							<select id=\"t_requetes\" name=\"liste\" size=\"8\" >
-                                <option selected value=\"1\" name='query_1' onclick=\"description_query(query_1);\"> Afficher les propriétés des usagers (Nom, Prénom, Adresse complète, Téléphone, Date de naissance)</option>
-                                <option id=\"pouet\" value=\"2\"> Afficher le nombre d’usagers mineurs ayant un abonnement en cours de validité.</option>
-                                <option value=\"3\"> Afficher la liste des usagers ayant des abonnements en cours de validité</option>
-                                <option value=\"4\"> Afficher la liste des usagers ayant des abonnements en cours de validité et classée par commune</option>
-                                <option value=\"5\"> Afficher le nombre d’abonnements en cours de validité pour chacun des types d’abonnements</option>
-                                <option value=\"6\"> Afficher le chiffre d’affaires réalisé sur l’année en cours pour chacun des types d’abonnements</option>
-                                <option value=\"7\"> Afficher les informations du représentant légal d’un usager donné</option>
-                                <option value=\"8\"> Afficher le nombre d’usagers par année et par établissement scolaire</option>
+                                <option selected onclick=\"description_query(0);\"> Afficher les propriétés des usagers (Nom, Prénom, Adresse complète, Téléphone, Date de naissance)</option>
+                                <option onclick=\"description_query(1);\"> Afficher le nombre d’usagers mineurs ayant un abonnement en cours de validité.</option>
+                                <option onclick=\"description_query(2);\"> Afficher la liste des usagers ayant des abonnements en cours de validité</option>
+                                <option onclick=\"description_query(3);\"> Afficher la liste des usagers ayant des abonnements en cours de validité et classée par commune</option>
+                                <option onclick=\"description_query(4);\"> Afficher le nombre d’abonnements en cours de validité pour chacun des types d’abonnements</option>
+                                <option onclick=\"description_query(5);\"> Afficher le chiffre d’affaires réalisé sur l’année en cours pour chacun des types d’abonnements</option>
+                                <option onclick=\"description_query(6);\"> Afficher les informations du représentant légal d’un usager donné</option>
+                                <option onclick=\"description_query(7);\"> Afficher le nombre d’usagers par année et par établissement scolaire</option>
 								<option>9</option>
 								<option>10 - Spam</option>
 								<option>11 - Spam</option>
@@ -113,9 +113,9 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 						<div>
 						
 							<p id=\"desc_requetes\"><span>
-							Maecenas ultrices justo non ante lacinia, et rutrum ante mattis. Aliquam euismod sapien in gravida placerat. Mauris fringilla, neque non laoreet aliquet, ante nulla molestie sem, vitae eleifend urna nisi nec quam. Nunc sed diam neque. Morbi rhoncus est et consequat bibendum. 
+							 
 							</span>
-							<input type=\"text\" name=\"additional_parameter\">
+							
 							</p>
 			
 
