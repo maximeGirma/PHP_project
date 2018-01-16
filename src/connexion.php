@@ -1,5 +1,5 @@
 <?php
-
+//sessionstart
 require_once '../config.inc.php';
 require_once 'session.php';
 
@@ -38,9 +38,12 @@ if(isset ($_POST['ID']) && isset($_POST['PSW'])){
 
 		$item = $statement->fetchObject();
 		if(isset($item->id_type_utilisateur)){
+
 			
 //            while ($item = $statement->fetch() {	//
-			switch($item->id_type_utilisateur){
+
+		    switch($item->id_type_utilisateur){
+
 
 				case 1 :
                     header('Location: requete_operator.php');
