@@ -6,15 +6,7 @@ require_once 'requetes_file.php';
 require_once "display.php";
 
 
-try{
-	$db = new  PDO('mysql:host='.DB_HOST. ';dbname='. DB_NAME, DB_USER, DB_PASS);
-}
 
-catch (PDOException $e){ //on catch, on type ce qu'on à attrapé et on le stocke dans e
-	echo '<strong>PDO Exception</strong><br />' , $e->
-	getMessage();
-	die();
-}
 
 
 
@@ -22,7 +14,15 @@ if(isset($_POST['predifined_query'])){
 
 	if(strlen($_POST['predifined_query']) == 1 || strlen($_POST['predifined_query']) == 2 ) {
 
+        try{
+            $db = new  PDO('mysql:host='.DB_HOST. ';dbname='. DB_NAME, DB_USER, DB_PASS);
+        }
 
+        catch (PDOException $e){ //on catch, on type ce qu'on à attrapé et on le stocke dans e
+            echo '<strong>PDO Exception</strong><br />' , $e->
+            getMessage();
+            die();
+        }
 
         $statement = $db->prepare($normal_query[$_POST['predifined_query']]);// arg 1-16/ array 0-15
         if ($statement->execute()) {
@@ -50,7 +50,7 @@ if(isset($_POST['predifined_query'])){
                 $display_content .= '</tr>';
             }
             $display_content .= '</table>';
-            display_interface($display_content);
+            display_interface($display_content,'','','','admin','alain');
         }
 
     }

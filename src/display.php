@@ -12,7 +12,8 @@ V 0.1.06
 ---------------------------- */
 
 
-function display_interface($content_1 = '',$content_2='',$content_3='',$content_4=''){
+function display_interface($content_1 = '',$content_2='',$content_3='',$content_4='',
+                           $type_utilisateur="", $nom_utilisateur=""){
 
     $header="
     <!-- ---------------------------
@@ -55,7 +56,7 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 				<hgroup id=\"bann_o\">
 				
 					<h2 id=\"welcome\">
-						<a >\$Opérateur \$Machin, bienvenue.</a>
+						<a >$type_utilisateur $nom_utilisateur, bienvenue.</a>
 					</h2>
 					
 					<nav id=\"deconnect\">
@@ -126,14 +127,14 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 								<input id=\"sub_req\" value=\"AFFICHER\" name=\"REQUEST!\" type=\"submit\">
                                    			
 							</nav>
-						    <form id=\"requetes\" action=\"requete_operator.php\" method=\"POST\">
-                                <input id=\"effacer_button\" value=\"EFFACER\" name=\"REQUEST!\" type=\"submit\">
-                            </form>		
-						</div>
+	
 					
 					
 					</form>
-			
+                    <form id=\"requetes\" action=\"requete_operator.php\" method=\"POST\">
+                        <input id=\"effacer_button\" value=\"EFFACER\" name=\"REQUEST!\" type=\"submit\">
+                    </form>		
+						</div>		
 </form>
 				</fieldset>
 
