@@ -1,14 +1,12 @@
 <?php
+session_start();
 require_once 'session.php';
-
 require_once '../config.inc.php';
 require_once 'requetes_file.php';
 require_once "display.php";
 
-session_start();
 
-
-
+is_connected([1,2,3]);
 
 if(isset($_POST['predifined_query'])){
 

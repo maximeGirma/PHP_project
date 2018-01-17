@@ -6,6 +6,10 @@
  * Time: 14:51
  */
 
+require_once 'session.php';
+session_start();
+is_connected([3]);
+
 include("pages_html/CRUD_display.php");
 require_once '../config.inc.php';
 require_once 'display.php';

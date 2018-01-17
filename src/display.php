@@ -15,6 +15,22 @@ V 0.1.08
 function display_interface($content_1 = '',$content_2='',$content_3='',$content_4='',
                            $type_utilisateur="", $nom_utilisateur=""){
 
+    $type_and_name_user ="";// '<p id = "username">';
+
+    switch($_SESSION['id_type_utilisateur']){
+        case 1: $type_and_name_user .= "Operateur ";
+            break;
+        case 2: $type_and_name_user .= "Gestionnaire ";
+            break;
+        case 3: $type_and_name_user .= "Administrateur ";
+            break;
+        default:
+            ;
+    }
+    $type_and_name_user .= $_SESSION['prenom_utilisateur'] ." ".$_SESSION['nom_utilisateur'];
+    //$type_and_name_user .= '</p>';
+
+
     $header="
     <!-- ---------------------------
 	STAPA ACCES - page opérateur (utilisateurs)
@@ -25,6 +41,7 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 	<!DOCTYPE html>
 	<html lang=\"fr\">
 
+    
     
     <head>
 
@@ -56,7 +73,7 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 				<hgroup id=\"bann_o\">
 				
 					<h2 id=\"welcome\">
-						<a >$nom_utilisateur $type_utilisateur le type utilisateur, bienvenue.</a>
+						<a > Bienvenue ".$type_and_name_user."</a>
 					</h2>
 					
 					<ul id= 'menu_utilisateur'>                         
@@ -64,7 +81,7 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 						<li id='sous_menu_2_on'><a href='operateur.html'>Gestionnaire</a></li>
 						<li id='sous_menu_3_on'><a href='CRUD_interface.php'>Administrateur</a></li>
 						<nav id=\"deconnect\">
-							<a href=\"index.html\" target=\"_self\">Quitter</a>
+							<a href=\"end_session.php\" target=\"_self\">Quitter</a>
 						</nav>
 					</ul>
 

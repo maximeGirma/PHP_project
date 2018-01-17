@@ -1,4 +1,3 @@
-
 <?php
 
 function init_session($id_utilisateur="", $id_type_utilisateur="", $prenom_utilisateur="", $nom_utilisateur="") {
@@ -25,12 +24,31 @@ function init_session($id_utilisateur="", $id_type_utilisateur="", $prenom_utili
 
 function timeout_session(){
 	
-	$_SESSION['started_time'] = time();
-	$_SESSION['timeout'] = 600;
-	$_SESSION['connected'] = TRUE;
-
 	if(time() > $started_time + $timeout)	{
 		$connected = FALSE;
 		header('Location: end_session.php');
 	}	
+}
+
+
+function is_connected(array $type_user_allowed){
+
+    session_start();
+
+    if(isset($_SESSION['connected']))
+    {
+        if ($_SESSION['connected'] != TRUE){
+            header("Location: connect.html");
+        }
+        $compteur = 0;
+        foreach ($type_user_allowed as $element) {
+            if ($element == $_SESSION['id_type_utilisateur']) {
+                $compteur++;
+            }
+        }
+        if ($compteur == 0){
+            header("Location: connect.html");
+        }
+
+    }else header("Location: connect.html");
 }
