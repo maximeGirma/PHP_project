@@ -17,3 +17,24 @@ function init_session($id_utilisateur="", $id_type_utilisateur="", $prenom_utili
 
 }
 
+function is_connected(array $type_user_allowed){
+
+    session_start();
+
+    if(isset($_SESSION['connected']))
+    {
+        if ($_SESSION['connected'] != TRUE){
+            header("Location: connect.html");
+        }
+        $compteur = 0;
+        foreach ($type_user_allowed as $element) {
+            if ($element == $_SESSION['id_type_utilisateur']) {
+                $compteur++;
+            }
+        }
+        if ($compteur == 0){
+            header("Location: connect.html");
+        }
+
+    }else header("Location: connect.html");
+}

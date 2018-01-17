@@ -24,7 +24,7 @@ V 0.1.08
 /* *****************************
 ***************************** */
 	
-html {	 
+html {
 	margin: auto;
 	width: 1300px;
 	padding: 0;
@@ -110,7 +110,7 @@ header {
 }
 
 	#welcome {	 
-		margin: 19px 10px 19px 50px;
+		margin: 0px 10px 0px 50px;
 		width: 285px;
 		text-align: left;
 		float: left;
@@ -121,6 +121,11 @@ header {
 			font-weight: bold;
 			color: #5d698c;
 		}
+
+		#username{
+			font-size: small;
+		}
+
 	#menu_utilisateur{
 		list-style: none;
 		width: 650px;
