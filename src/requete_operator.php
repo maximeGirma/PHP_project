@@ -1,11 +1,11 @@
-<?php 
-
+<?php
+require_once 'session.php';
 
 require_once '../config.inc.php';
 require_once 'requetes_file.php';
 require_once "display.php";
 
-
+session_start();
 
 
 

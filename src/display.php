@@ -56,10 +56,19 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 				<hgroup id=\"bann_o\">
 				
 					<h2 id=\"welcome\">
-						<a >$type_utilisateur $nom_utilisateur, bienvenue.</a>
+						<a >$type_utilisateur $nom_utilisateur Bienvenue.</a>
 					</h2>
 					
+			            <ul id= 'menu_utilisateur'>                         
+	                        <li id='sous-menu_1'><a href='requete_operator.php'>Operateur</a></li>
+	                        <li id='sous_menu_2'><a href='operateur.html'>Gestionnaire</a></li>
+	                        <li><a href='CRUD_interface.php'>Administrateur</a></li>
+	                    </ul>
+
+			
 					<nav id=\"deconnect\">
+
+         		
 						<a href=\"index.html\" target=\"_self\">DECONNEXION</a>
 					</nav>
 
@@ -68,6 +77,8 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 					</picture>
 					
 				</hgroup>
+
+				
 
 			</header>
 

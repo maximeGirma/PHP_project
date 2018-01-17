@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<?php
+$crud_form_1='<!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
@@ -22,4 +23,4 @@
     </fieldset>
 
     </body>
-</html>
+</html>';

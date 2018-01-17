@@ -112,8 +112,8 @@ header {
 
 	#welcome {	 
 		margin: 14px 20px 20px 70px;
-		text-align: left;	
-/*	float: right;				*/
+		text-align: left;
+		float: left;
 	}
 	
 		#welcome a {
@@ -121,6 +121,20 @@ header {
 			font-weight: bold;
 			color: #5d698c;
 		}
+#menu_utilisateur{
+	list-style: none;
+	width: 900px;
+	margin-left:300px;
+	color: #ced2df;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+#sous-menu_1, #sous_menu_2
+{
+	float:left;
+	margin-right:50px;
+}
 
 	#deconnect {
 		margin: -51px 160px 0 0;
@@ -140,6 +154,8 @@ header {
 			font-size: 16px;
 		}
 		
+
+
 	#logo_o {	 
 		margin: -69px 40px 0 0;
 		float: right;

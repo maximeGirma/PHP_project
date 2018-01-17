@@ -23,8 +23,8 @@ if(isset ($_POST['ID']) && isset($_POST['PSW'])){
 
     $loginQuery ="
 	SELECT 
-		id_type_utilisateur,
 		id_utilisateur,
+		id_type_utilisateur,
 		prenom_utilisateur,
 		nom_utilisateur
 	FROM 
@@ -34,20 +34,23 @@ if(isset ($_POST['ID']) && isset($_POST['PSW'])){
 
 	$statement = $db->prepare($loginQuery);
 	if($statement->execute()) {
-			echo'oooooooooooooooouuuuuuuuuuuuuuuuuuiiiiiiiiiiiiiiiiiiiii !<br>';
+
 
 		$item = $statement->fetchObject();
-		if(isset($item->id_type_utilisateur)){
+		if(isset($item->id_type_utilisateur))
+		{
 
-			
-//            while ($item = $statement->fetch() {	//
+            init_session($item->id_utilisateur,
+                $item->id_type_utilisateur,
+                $item->prenom_utilisateur,
+                $item->nom_utilisateur);
+
 
 		    switch($item->id_type_utilisateur){
 
 
 				case 1 :
                     header('Location: requete_operator.php');
-			init_session($id_utilisateur=$item->id_utilisateur, $id_type_utilisateur=$item->id_type_utilisateur, $prenom_utilisateur=$item->prenom_utilisateur, $nom_utilisateur=$item->nom_utilisateur);
 					break;
 				case 2:
 					echo 'gestionnaire';
@@ -61,6 +64,7 @@ if(isset ($_POST['ID']) && isset($_POST['PSW'])){
 			}
 
 		}else{header("Location:pages_html/error_connect.html");}
-	}else{echo 'echec requete';}
+
+    }else{echo 'echec requete';}
 }
 

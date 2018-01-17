@@ -6,8 +6,41 @@
  * Time: 14:51
  */
 
-echo include("pages_html/CRUD_display.html");
+
+
+function bdd_acces($query){
+
+    try {
+        $db = new  PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
+    } catch (PDOException $e) { //on catch, on type ce qu'on à attrapé et on le stocke dans e
+        echo '<strong>PDO Exception</strong><br />', $e->
+        getMessage();
+        die();
+    }
+
+    $statement = $db->prepare($query);
+    if ($statement->execute()) {
+
+        return $statement;
+    }else
+    {
+        echo 'something is wrong with the query';
+        echo 'did you send a full SQL request?';
+        return FALSE;
+    }
+
+
+}
+
+
+
+include("pages_html/CRUD_display.php");
+require_once("pages_html/CRUD_admin.php");
 require_once '../config.inc.php';
+require_once 'display.php';
+
+
+display_interface($crud_form_1);
 
 if(isset($_POST['afficher'])) {
 
@@ -20,45 +53,136 @@ WHERE id_type_utilisateur =";
 $cols_id_activator = true;
 
     if (strlen($_POST['afficher']) == 1) {
-        try {
-            $db = new  PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
-        } catch (PDOException $e) { //on catch, on type ce qu'on à attrapé et on le stocke dans e
-            echo '<strong>PDO Exception</strong><br />', $e->
-            getMessage();
-            die();
-        }
 
+        if ($statement= bdd_acces($display_query . $_POST['afficher']. ';')) {
 
-            $statement = $db->prepare($display_query . $_POST['afficher']. ';');// arg 1-16/ array 0-15
-            if ($statement->execute()) {
-                echo '<table>';
+            $id='valeur initiale';
 
-
-                while ($item = $statement->fetch(PDO::FETCH_ASSOC)) {
-                    echo '<tr>';
-                    if($cols_id_activator) {
-                        foreach ($item as $key => $element) {
-                            echo '<th>' . $key . '</th>';
-                        }
-                        $cols_id_activator = false;
+            while ($item = $statement->fetch(PDO::FETCH_ASSOC)) {
+                echo '<form action="CRUD_interface.php" method="post"><table>';
+                echo '<tr>';
+                if($cols_id_activator) {
+                    foreach ($item as $key => $element) {
+                        echo '<th>' . $key . '</th>';
                     }
-                    echo '</tr> <tr>';
-                    foreach ($item as $value) {
-
-                        echo '<td>';
-
-                        echo $value;
-                        echo '</td>';
+                    $cols_id_activator = false;
+                }
+                echo '</tr> <tr>';
+                foreach ($item as $key => $value) {
+                    if($key == 'id_utilisateur'){
+                        echo '<input name="modifier" type="hidden" value = "'.$value.'">';
                     }
                     echo '<td>';
-                    echo include("pages_html/CRUD_admin.html");
+
+                    echo $value;
                     echo '</td>';
-                    echo '</tr>';
+
                 }
-                echo '</table>';
+                echo '<td>';
+
+
+                echo $crud_admin;
+                echo '</td>';
+                echo '</tr>';
+                echo '</table></form>';
+
             }
+
+        }
 
     }
 }
+if(isset($_POST['modifier'])) {
 
-if (isset($_POST["modifier"])){echo $_POST['modifier'];}
+    $display_query_update = "    
+    SELECT 
+    `id_utilisateur`,`nom_utilisateur`,`prenom_utilisateur` 
+    FROM
+    utilisateur
+    WHERE id_utilisateur =";
+
+    $modifier=$_POST['modifier'];
+
+    if ($statement= bdd_acces($display_query_update . $modifier. ';')) {
+
+
+        $cols_id_activator = TRUE;
+        while ($item = $statement->fetch(PDO::FETCH_ASSOC)) {
+            echo '<form action="CRUD_interface.php" method="post"><table>';
+            echo '<tr>';
+            if($cols_id_activator) {
+                foreach ($item as $key => $element) {
+                    echo '<th>' . $key . '</th>';
+                }
+                $cols_id_activator = false;
+
+            }
+            echo '</tr> <tr>';
+            foreach ($item as $value) {
+                echo '<td>';
+                echo $value;
+                echo '</td>';
+            }
+        }
+        echo '</tr>';
+        echo '</table>
+        
+        </form>';
+
+
+        $statement->execute();
+        $item = $statement->fetchObject();
+
+        echo '<form action="CRUD_interface.php" method="post">
+        <label for="nom">nom : </label>
+        <input name="nom" type="text" required value="' . $item->nom_utilisateur . '">
+        <label for="prenom">prenom : </label>
+        <input name="prenom" type="text" required value="' . $item->prenom_utilisateur . '">
+        <br/>
+        <label for="new_ID">nouveau login: </label>
+        <input name="new_ID" type="text" required>
+        <label for="new_PSW">nouveau mot de passe: </label>
+        <input name="new_PSW" type="password" required>
+        <label for="id_type_user">type d\'utilisateur</label>
+        <br/>
+        <input type="radio"  name="id_type_user" value="1"><label>Opérateurs</label>
+        <br/>
+        <input type="radio"  name="id_type_user" value="2"><label>Gestionnaires</label>
+        <br/>
+        <input type="radio"  name="id_type_user" value="3"><label>Administrateurs</label>
+        <input name="update" type="hidden" value = "1">
+        <input name="id_utilisateur" type="hidden" value = "' . $item->id_utilisateur . '">
+        <input type="submit" value="Modifier">
+        </form>
+        <form><input name="delete" type="hidden" value = "1">
+        <input type="submit" value="supprimer utilisateur">
+        </form>';
+
+
+    }
+
+
+
+}
+
+if(isset($_POST['update'])) {
+    $update_query = '
+UPDATE 
+  `utilisateur` 
+SET 
+  `nom_utilisateur`= \'' . $_POST['nom'] . '\',
+  `prenom_utilisateur`= \'' . $_POST['prenom'] . '\',
+  `login`= \'' . $_POST['new_ID'] . '\',
+  `password_utilisateur`= \'' . $_POST['new_PSW'] . '\',
+  `id_type_utilisateur`= \'' . $_POST['id_type_user'] . '\' 
+WHERE 
+  `id_utilisateur`= \'' . $_POST['id_utilisateur'] . '\';';
+
+    if ($statement = bdd_acces($update_query))
+    {
+
+        echo 'modification effectuée !';
+        //echo '<a href="CRUD_interface.php">Revenir à l\'interface administrateur</a>';
+
+    } else echo 'on s\'est chouffés!';
+}

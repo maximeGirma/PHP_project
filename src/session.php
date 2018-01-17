@@ -2,7 +2,7 @@
 <?php
 
 function init_session($id_utilisateur="", $id_type_utilisateur="", $prenom_utilisateur="", $nom_utilisateur=""){
-	echo'<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>';
+
 	$a = session_id();
 	if(empty($a)) session_start();
 	
@@ -12,7 +12,8 @@ function init_session($id_utilisateur="", $id_type_utilisateur="", $prenom_utili
 	$_SESSION['nom_utilisateur'] = $nom_utilisateur;
 	$_SESSION['connected'] = TRUE;
 
-	echo 'Bienvenue ' . $_SESSION['prenom_utilisateur'] . $_SESSION['nom_utilisateur'], '.';
-	echo "SID: ".SID."<br>session_id(): ".session_id()."<br>COOKIE: ".$_COOKIE["PHPSESSID"];
+	//echo 'Bienvenue ' . $_SESSION['prenom_utilisateur'] . $_SESSION['nom_utilisateur'], '.';
+	//echo "SID: ".SID."<br>session_id(): ".session_id()."<br>COOKIE: ".$_COOKIE["PHPSESSID"];
 
 }
+
