@@ -17,6 +17,27 @@ function init_session($id_utilisateur="", $id_type_utilisateur="", $prenom_utili
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function is_connected(array $type_user_allowed){
 
     session_start();
