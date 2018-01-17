@@ -1,7 +1,7 @@
 /* *****************************
 STAPA ACCES - shared style sheet
 
-V 0.1.06
+V 0.1.08
 ***************************** */
 
 /* ***********COLOR************
@@ -101,8 +101,7 @@ header {
 }
 
 #bann_o {
-	margin: 20px;
-	margin-left: -60px;
+	margin: 20px 20px 20px -60px;
 	width: 1140px;
 	height: 60px;
 	background-color: #ced2df ;
@@ -111,53 +110,108 @@ header {
 }
 
 	#welcome {	 
-		margin: 14px 20px 20px 70px;
+		margin: 19px 10px 19px 50px;
+		width: 285px;
 		text-align: left;
 		float: left;
 	}
 	
 		#welcome a {
-			font-size: 24px;
+			font-size: 18px;
 			font-weight: bold;
 			color: #5d698c;
 		}
-#menu_utilisateur{
-	list-style: none;
-	width: 900px;
-	margin-left:300px;
-	color: #ced2df;
-	font-weight: bold;
-	font-size: 16px;
-}
-
-#sous-menu_1, #sous_menu_2
-{
-	float:left;
-	margin-right:50px;
-}
-
-	#deconnect {
-		margin: -51px 160px 0 0;
-		padding-top: 8px;
-		width: 180px;
-		height: 30px;
+	#menu_utilisateur{
+		list-style: none;
+		width: 650px;
+		margin: 10px 0px 10px 10px;
+		padding-left: 0px;
+		height: 40px;
+		color: #ced2df;
 		background-color: #5d698c ;
-		text-align: center;
-		float: right;
-		box-shadow: 0 -1px 2px rgba(7,8,10,0.4)
+		float: left;
+		box-shadow: 0 -1px 2px rgba(7,8,10,0.4);
 	}
 
+		#sous_menu_1_current,
+		#sous_menu_2_current,
+		#sous_menu_3_current {
+			margin: 0px 0px 0 0px;
+			width: 180px;
+			text-align: center;
+			background-color: #ced2df ;
+			box-shadow: 0 1px 2px rgba(7,8,10,0.4);
+			float:left;
+		}
+
+		#sous_menu_1_on,
+		#sous_menu_2_on,
+		#sous_menu_3_on {
+			margin: 0px 0px 0 0px;
+			width: 180px;
+			text-align: center;
+			box-shadow: 0 -1px 2px rgba(7,8,10,0.4);
+			float:left;
+		}
+
+		#sous_menu_1_off,
+		#sous_menu_2_off,
+		#sous_menu_3_off {
+			margin: 0px 0px 0 0px;
+			width: 180px;
+			text-align: center;
+			box-shadow: 0 -1px 2px rgba(7,8,10,0.4);
+			float:left;
+		}
+
+		#deconnect {
+			width: 110px;
+			background-color: #1e222e ;
+			box-shadow: 0 -1px 2px rgba(7,8,10,0.4);
+			float: right;
+		}
+
+		#sous_menu_1_current a,
+		#sous_menu_2_current a,
+		#sous_menu_3_current a {
+			text-decoration: none;
+			width: 110px;
+			margin: 10px 30px 10px 30px;
+			color: #1e222e;
+			font-weight: bold;
+			font-size: 16px;
+			float:left;
+		}
+
+		#sous_menu_1_on a,
+		#sous_menu_2_on a,
+		#sous_menu_3_on a,
 		#deconnect a {
 			text-decoration: none;
+			width: 110px;
+			margin: 10px 30px 10px 30px;
 			color: #ced2df;
 			font-weight: bold;
 			font-size: 16px;
+			float:left;
 		}
+
+		#sous_menu_1_off a,
+		#sous_menu_2_off a,
+		#sous_menu_3_off a {
 		
+			text-decoration: none;
+			width: 110px;
+			margin: 10px 30px 10px 30px;
+			color: #82858e;
+			font-weight: bold;
+			font-size: 16px;
+			float:left;
+		}
 
 
 	#logo_o {	 
-		margin: -69px 40px 0 0;
+		margin: -8px 30px 0 0;
 		float: right;
 	}
 

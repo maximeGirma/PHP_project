@@ -8,7 +8,7 @@
 /*-- ---------------------------
 STAPA ACCES - page opérateur (utilisateurs)
 PHP diplay
-V 0.1.06
+V 0.1.08
 ---------------------------- */
 
 
@@ -56,21 +56,17 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 				<hgroup id=\"bann_o\">
 				
 					<h2 id=\"welcome\">
-						<a >$type_utilisateur $nom_utilisateur Bienvenue.</a>
+						<a >$nom_utilisateur $type_utilisateur le type utilisateur, bienvenue.</a>
 					</h2>
 					
-			            <ul id= 'menu_utilisateur'>                         
-	                        <li id='sous-menu_1'><a href='requete_operator.php'>Operateur</a></li>
-	                        <li id='sous_menu_2'><a href='operateur.html'>Gestionnaire</a></li>
-	                        <li><a href='CRUD_interface.php'>Administrateur</a></li>
-	                    </ul>
-
-			
-					<nav id=\"deconnect\">
-
-         		
-						<a href=\"index.html\" target=\"_self\">DECONNEXION</a>
-					</nav>
+					<ul id= 'menu_utilisateur'>                         
+						<li id='sous_menu_1_on'><a href='requete_operator.php'>Operateur</a></li>
+						<li id='sous_menu_2_on'><a href='operateur.html'>Gestionnaire</a></li>
+						<li id='sous_menu_3_on'><a href='CRUD_interface.php'>Administrateur</a></li>
+						<nav id=\"deconnect\">
+							<a href=\"index.html\" target=\"_self\">Quitter</a>
+						</nav>
+					</ul>
 
 					<picture id=\"logo_o\">
 						<img src=\"images/bus_t.png\" alt=\"-image-\">
@@ -100,7 +96,7 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 						
 							<label for=\"predifined_query\">
 							<select id=\"t_requetes\" name=\"predifined_query\" size=\"8\" >
-                                <option value='0' selected onclick=\"description_query(0);\"> Afficher les propriétés des usagers</option>
+                                <option value='0' selected onclick=\"description_query(0);\"> Propriétés des usagers</option>
                                 <option value='1' onclick=\"description_query(1);\"> Usagers mineurs avec abonnement</option>
                                 <option value='2' onclick=\"description_query(2);\"> Usagers avec abonnement valide</option>
                                 <option value='3' onclick=\"description_query(3);\"> Usagers avec abonnement par commune</option>
@@ -108,7 +104,7 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
                                 <option value='5' onclick=\"description_query(5);\"> Chiffre d'affaire</option>
                                 <option value='6' onclick=\"description_query(6);\"> Informations représentant légal</option>
                                 <option value='7' onclick=\"description_query(7);\"> Usagers par année et établissement</option>
-								<option>9</option>
+								<option>9 - Spam</option>
 								<option>10 - Spam</option>
 								<option>11 - Spam</option>
 								<option>12 - Spam</option>
