@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d3e18af-3cb2-4cfc-81b5-0ef7ac4585e7" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/connect.php" />
       <change beforePath="" afterPath="$PROJECT_DIR$/src/error.php" />
       <change beforePath="" afterPath="$PROJECT_DIR$/src/index.php" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/config.inc.php" afterPath="$PROJECT_DIR$/config.inc.php" />
       <change beforePath="$PROJECT_DIR$/src/CRUD_interface.php" afterPath="$PROJECT_DIR$/src/CRUD_interface.php" />
-      <change beforePath="$PROJECT_DIR$/src/connect.html" afterPath="$PROJECT_DIR$/src/connect.php" />
+      <change beforePath="$PROJECT_DIR$/src/connect.html" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/connexion.php" afterPath="$PROJECT_DIR$/src/connexion.php" />
       <change beforePath="$PROJECT_DIR$/src/display.php" afterPath="$PROJECT_DIR$/src/display.php" />
       <change beforePath="$PROJECT_DIR$/src/end_session.php" afterPath="$PROJECT_DIR$/src/end_session.php" />
@@ -505,12 +506,12 @@
       <workItem from="1516178651401" duration="20425000" />
       <workItem from="1516280072484" duration="64000" />
       <workItem from="1516290726610" duration="12000" />
-      <workItem from="1516297425091" duration="10268000" />
+      <workItem from="1516297425091" duration="10305000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98715000" />
+    <option name="totallyTimeSpent" value="98752000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="715" y="-4" width="1303" height="780" extended-state="6" />
