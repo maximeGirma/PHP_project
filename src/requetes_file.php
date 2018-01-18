@@ -140,7 +140,7 @@ where (year(histo_tarif_abo.date_prise_effet) = 2017 )
 group by type_abonnement.id_type_ab
 order by carte_abonnement.id_type_ab;",
 "
-SET @id_mineur = $optional_parameter;
+SET @id_mineur = $optional_parameter
 SELECT /*!!!!!! SET OPTIONNAL_PARAMETER BEFORE REQUEST AND CHECK EMPTY RETURN REQUEST 6*/
 personnes.id_personne
 AS 'USAGER N°'

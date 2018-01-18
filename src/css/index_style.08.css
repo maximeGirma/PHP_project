@@ -1,0 +1,394 @@
+/* *****************************
+STAPA ACCES - shared style sheet
+
+V 0.1.08
+***************************** */
+
+/* ***********COLOR************
+**************CHART********* */
+/* http://www.colorhexa.com/707ca0 */
+
+/*	background-color: #0f1016;	> noir*/	
+/*	background-color: #1e222e;	*/
+/*	background-color: #707ca0;	> principale*/
+/*	background-color: #ced2df;	*/
+/*	background-color: #fdfefe;	> blanc*/
+
+/*	box-shadow: 0 4px 10px rgba(7,8,10,0.5);	*/
+
+/*	color: #0f1016;	défaut?	titres*/
+/*	color: #1e222e;	défaut?	principale*/
+/*	color: #5d698c;	*/
+/*	color: #ced2df;	*/
+
+/* *****************************
+***************************** */
+	
+html {
+	margin: auto;
+	width: 1300px;
+	padding: 0;
+	border: 0;
+	overflow: auto;									
+	font-family: 'Palanquin', sans-serif;
+	color: #1e222e;
+	background-color: #0f1016;
+}
+
+body {	 
+	margin: auto;
+	width: 1300px;
+	padding: 0;
+	border: 0;
+	overflow: auto;									
+	background-color: #fdfefe;
+}
+
+#content {	 
+}
+
+header {	 
+	margin: auto;
+	width: 1100px;
+	height: 100px;
+	padding-right: 20px;
+	padding-left: 20px;
+	background-color: #707ca0 ;
+}
+
+#bann_m {	 										/* bannière main index (/co) */
+	margin: 20px;
+	width: 1100px;
+	height: 100px;
+	padding: 20px;
+	font-weight: bold;
+	background-color: #ced2df ;
+	float: right;
+	box-shadow: 0 2px 7px rgba(7,8,10,0.6);
+}
+	#bann_m h2 {	 
+		margin: 30px;
+		width: 1100px;
+		height: 100px;
+		color: #5d698c;
+		font-size: 34px;
+/*			text-align: center;		*/
+		float: right;
+	}
+	
+	#bann_m h2 a {
+	margin: 20px;
+	margin-left: 180px;
+
+	}
+
+	#logo_m {	 
+		margin: -67px 10px 0 0;
+		float: right;
+	}
+
+		#logo_m img {	 
+			width: 240px;
+			border: 0px;
+		}
+
+#bann_o_bg {	 	 								/* bannière opé (user?) */
+	margin: 0 0 0 -20px;
+	width: 1140px;
+	height: 80px;
+	background-color: #707ca0 ;
+	position: fixed;
+}
+
+#bann_o {
+	margin: 20px 20px 20px -60px;
+	width: 1140px;
+	height: 60px;
+	background-color: #ced2df ;
+	position: fixed;
+	box-shadow: 0 2px 6px rgba(7,8,10,0.4);
+}
+
+	#welcome {	 
+		margin: 0px 10px 0px 50px;
+		width: 285px;
+		text-align: left;
+		float: left;
+	}
+	
+		#welcome a {
+			font-size: 18px;
+			font-weight: bold;
+			color: #5d698c;
+		}
+
+		#username{
+			font-size: small;
+		}
+
+	#menu_utilisateur{
+		list-style: none;
+		width: 650px;
+		margin: 10px 0px 10px 10px;
+		padding-left: 0px;
+		height: 40px;
+		color: #ced2df;
+		background-color: #5d698c ;
+		float: left;
+		box-shadow: 0 -1px 2px rgba(7,8,10,0.4);
+	}
+
+		#sous_menu_1_current,
+		#sous_menu_2_current,
+		#sous_menu_3_current {
+			margin: 0px 0px 0 0px;
+			width: 180px;
+			text-align: center;
+			background-color: #ced2df ;
+			box-shadow: 0 1px 2px rgba(7,8,10,0.4);
+			float:left;
+		}
+
+		#sous_menu_1_on,
+		#sous_menu_2_on,
+		#sous_menu_3_on {
+			margin: 0px 0px 0 0px;
+			width: 180px;
+			text-align: center;
+			box-shadow: 0 -1px 2px rgba(7,8,10,0.4);
+			float:left;
+		}
+
+		#sous_menu_1_off,
+		#sous_menu_2_off,
+		#sous_menu_3_off {
+			margin: 0px 0px 0 0px;
+			width: 180px;
+			text-align: center;
+			box-shadow: 0 -1px 2px rgba(7,8,10,0.4);
+			float:left;
+		}
+
+		#deconnect {
+			width: 110px;
+			background-color: #1e222e ;
+			box-shadow: 0 -1px 2px rgba(7,8,10,0.4);
+			float: right;
+		}
+
+		#sous_menu_1_current a,
+		#sous_menu_2_current a,
+		#sous_menu_3_current a {
+			text-decoration: none;
+			width: 110px;
+			margin: 10px 30px 10px 30px;
+			color: #1e222e;
+			font-weight: bold;
+			font-size: 16px;
+			float:left;
+		}
+
+		#sous_menu_1_on a,
+		#sous_menu_2_on a,
+		#sous_menu_3_on a,
+		#deconnect a {
+			text-decoration: none;
+			width: 110px;
+			margin: 10px 30px 10px 30px;
+			color: #ced2df;
+			font-weight: bold;
+			font-size: 16px;
+			float:left;
+		}
+
+		#sous_menu_1_off a,
+		#sous_menu_2_off a,
+		#sous_menu_3_off a {
+		
+			text-decoration: none;
+			width: 110px;
+			margin: 10px 30px 10px 30px;
+			color: #82858e;
+			font-weight: bold;
+			font-size: 16px;
+			float:left;
+		}
+
+
+	#logo_o {	 
+		margin: -8px 30px 0 0;
+		float: right;
+	}
+
+		#logo_o img {	 
+			width: 80px;
+			border: 0px;
+		}
+
+#main_bg, table {
+	margin: auto;
+	width: 1140px;
+	height: auto;
+	background-color: #707ca0 ;
+}
+
+#main_m {	 									/* main index (co, 'monopage') */
+	margin: auto;
+	height: 360px;
+	padding: 40px 60px 40px 60px;
+	background-color: #707ca0 ;
+}
+
+	#connect {	 								/* 'bouton/champs" connexion */
+		margin: 80px 10px 10px 200px;
+		width: 240px;
+		padding: 10px;
+		background-color: #5d698c ;
+		text-align: center;
+		float: left;
+		box-shadow: 0 1px 8px rgba(7,8,10,0.7)
+	}
+
+		#connect p a {
+			text-decoration: none;
+			color: #ced2df;
+			font-weight: bold;
+			font-size: 18px;
+		}
+
+		#input {
+			background-color: #ced2df;
+			border: 0px;
+		}
+
+		#sub {
+			width: 160px;
+			padding: 10px;
+			border: 0px;
+			color: #ced2df;
+			font-weight: bold;
+			font-size: 20px;
+			background-color: #5d698c ;
+			font-family: 'Palanquin', sans-serif;
+		}
+
+#main_o {	 									/* main opé (user?) */
+	margin: auto;
+	padding: 40px 60px 40px 60px;
+}
+
+	#main_o fieldset{
+		margin: auto;
+		padding:5px 10px 10px 10px;
+		background-color: #707ca0;
+		border: 2px solid #5d698c;
+	}
+
+	#main_o legend{
+		font-size: 24px;
+		font-weight: bold;
+		color: #5d698c;
+	}
+
+	#t_requetes{								/* table choix requêtes */
+		margin:auto;
+		width: 520px;
+		background-color: #ced2df;
+		border: 2px solid #1e222e;
+		float:left;
+	}
+
+		#t_requetes option {
+			font-size: 18px;
+			font-weight: bold;
+			color: #1e222e;
+			font-family: 'Palanquin', sans-serif;
+		}
+
+	#desc_requetes{
+		padding: 16px;
+		width: 320px;
+		height: 138px;
+		background-color: #ced2df;
+		border: 2px solid #1e222e;
+		font-size: 16px;
+		font-weight: bold;
+		color: #5d698c;
+		text-align: justify;
+		overflow: auto;									
+	}
+
+	#requetes nav {
+		margin: -51px 160px 0 0;
+		padding-top: 4px;
+		width: 180px;
+		height: 30px;
+		background-color: #5d698c ;
+		text-align: center;
+		/*float: right;*/
+		box-shadow: 0 -1px 2px rgba(7,8,10,0.4)
+	}
+
+		#requetes nav a {
+			font-weight: bold;
+			font-size: 16px;
+		}
+		
+			#sub_req, #effacer_button {
+				border: 0px;
+				color: #1e222e;
+				font-weight: bold;
+				font-size: 20px;
+				background-color: #5d698c ;
+				font-family: 'Palanquin', sans-serif;
+
+			}
+
+
+
+
+#contact {	 	 								/* main contact */
+	margin: auto;
+	margin-left: 20px;
+	width: 1100px;
+	padding: 20px;
+}
+
+#end {	 	 									/* pied de page (partagé) */
+	margin: auto;
+	width: 1100px;
+	padding: 20px;
+	background-color: #707ca0 ;
+}
+
+	#end footer {	 
+		margin: 20px 0 0 20px;
+		width: 1140px;
+		padding-top: 10px;
+		height: 60px;
+		background-color: #1e222e;
+		box-shadow: 0 -2px 7px rgba(7,8,10,0.6)
+	}
+
+	#end footer a {	 
+		text-decoration: none;
+		margin: 0 0 0 170px;
+		color: #5d698c;
+		text-align: center;
+		font-size: 16px;
+	}
+
+	#random_id{
+		clear: both;
+
+	}
+
+	#tableau_operateur{
+	border-collapse: collapse;
+
+	}
+	td{
+	border: 1px solid;
+	text-align: center;
+	}
+

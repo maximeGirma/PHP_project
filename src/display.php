@@ -27,7 +27,7 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
         default:
             ;
     }
-    $type_and_name_user .= $_SESSION['prenom_utilisateur'] ." ".$_SESSION['nom_utilisateur'];
+    $type_and_name_user .= "<br>" . $_SESSION['prenom_utilisateur'] ." ".$_SESSION['nom_utilisateur'];
     //$type_and_name_user .= '</p>';
 
 
@@ -106,13 +106,13 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 
 				<fieldset>
 				
-					<legend>CHOIX DE REQUETE</legend>
+					<legend>Sélection</legend>
 					<form id=\"requetes\" action=\"requete_operator.php\" method=\"POST\">
 					
 						<div>
 						
 							<label for=\"predifined_query\">
-							<select id=\"t_requetes\" name=\"predifined_query\" size=\"8\" >
+							<select id=\"t_requetes\" name=\"predifined_query\" size=\"6\" >
                                 <option value='0' selected onclick=\"description_query(0);\"> Propriétés des usagers</option>
                                 <option value='1' onclick=\"description_query(1);\"> Usagers mineurs avec abonnement</option>
                                 <option value='2' onclick=\"description_query(2);\"> Usagers avec abonnement valide</option>
@@ -145,26 +145,24 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 			
 
 						</div>
-				
 						<div id=\"random_id\">
-							<nav>
+						
+							<nav id=\"query\">
 								<input id=\"sub_req\" value=\"AFFICHER\" name=\"REQUEST!\" type=\"submit\">
                                    			
 							</nav>
-	
-					
-					
+							
+							<nav id=\"clear\" action=\"requete_operator.php\" method=\"POST\">
+								<input id=\"effacer_button\" value=\"EFFACER\" name=\"REQUEST!\" type=\"submit\">
+							</nav>	
+							
+						</div>	
+						
 					</form>
-                    <form id=\"requetes\" action=\"requete_operator.php\" method=\"POST\">
-                        <input id=\"effacer_button\" value=\"EFFACER\" name=\"REQUEST!\" type=\"submit\">
-                    </form>		
-						</div>		
-</form>
+					
 				</fieldset>
-
 				</section>
 
-			</div>	
 			</main>
 
 		</section>															<!-- fin phrasing -->

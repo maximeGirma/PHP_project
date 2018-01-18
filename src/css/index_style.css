@@ -1,7 +1,7 @@
 /* *****************************
 STAPA ACCES - shared style sheet
 
-V 0.1.08
+V 0.1.09
 ***************************** */
 
 /* ***********COLOR************
@@ -56,13 +56,14 @@ header {
 	background-color: #707ca0 ;
 }
 
-#bann_m {	 										/* bannière main index (/co) */
+#bann_m {	 							/* bannière main index (/co) */
 	margin: 20px;
 	width: 1100px;
 	height: 100px;
 	padding: 20px;
 	font-weight: bold;
 	background-color: #ced2df ;
+	border-radius: 8px;
 	float: right;
 	box-shadow: 0 2px 7px rgba(7,8,10,0.6);
 }
@@ -92,7 +93,7 @@ header {
 			border: 0px;
 		}
 
-#bann_o_bg {	 	 								/* bannière opé (user?) */
+#bann_o_bg {	 	 					/* bannière opé (user?) */
 	margin: 0 0 0 -20px;
 	width: 1140px;
 	height: 80px;
@@ -106,14 +107,16 @@ header {
 	height: 60px;
 	background-color: #ced2df ;
 	position: fixed;
+	border-radius: 8px;
 	box-shadow: 0 2px 6px rgba(7,8,10,0.4);
 }
 
 	#welcome {	 
-		margin: 0px 10px 0px 50px;
-		width: 285px;
+		margin: 10px 10px 10px 60px;
+		width: 280px;
 		text-align: left;
 		float: left;
+		line-height: 18px;
 	}
 	
 		#welcome a {
@@ -171,6 +174,8 @@ header {
 
 		#deconnect {
 			width: 110px;
+			height: 99.99%;
+			margin-top: 0.01%;
 			background-color: #1e222e ;
 			box-shadow: 0 -1px 2px rgba(7,8,10,0.4);
 			float: right;
@@ -204,7 +209,6 @@ header {
 		#sous_menu_1_off a,
 		#sous_menu_2_off a,
 		#sous_menu_3_off a {
-		
 			text-decoration: none;
 			width: 110px;
 			margin: 10px 30px 10px 30px;
@@ -232,20 +236,21 @@ header {
 	background-color: #707ca0 ;
 }
 
-#main_m {	 									/* main index (co, 'monopage') */
+#main_m {	 						/* main index (co, 'monopage') */
 	margin: auto;
 	height: 360px;
 	padding: 40px 60px 40px 60px;
 	background-color: #707ca0 ;
 }
 
-	#connect {	 								/* 'bouton/champs" connexion */
+	#connect {	 					/* 'bouton/champs" connexion */
 		margin: 80px 10px 10px 200px;
 		width: 240px;
 		padding: 10px;
 		background-color: #5d698c ;
 		text-align: center;
 		float: left;
+		border-radius: 8px;
 		box-shadow: 0 1px 8px rgba(7,8,10,0.7)
 	}
 
@@ -272,33 +277,46 @@ header {
 			font-family: 'Palanquin', sans-serif;
 		}
 
-#main_o {	 									/* main opé (user?) */
+#main_o {	 						/* main opé (user?) */
 	margin: auto;
 	padding: 40px 60px 40px 60px;
 }
 
 	#main_o fieldset{
 		margin: auto;
-		padding:5px 10px 10px 10px;
-		background-color: #707ca0;
-		border: 2px solid #5d698c;
-	}
-
-	#main_o legend{
-		font-size: 24px;
-		font-weight: bold;
-		color: #5d698c;
-	}
-
-	#t_requetes{								/* table choix requêtes */
-		margin:auto;
-		width: 520px;
+		padding: 20px 20px 20px 20px;
+		/* height: 400px; */
 		background-color: #ced2df;
-		border: 2px solid #1e222e;
+		border: 8px double #5d698c;
+		border-radius: 8px;
+	}
+
+		#main_o legend{
+			height: 23px;
+			width: 180px;
+			font-size: 20px;
+			font-weight: bold;
+			text-align: center;
+			color: #ced2df;
+			background-color: #5d698c;
+			border: 8px double;
+			border-radius: 4px;
+			border-color: #5d698c;
+			box-shadow: 0 1px 2px rgba(7,8,10,0.4)
+		}
+
+	#t_requetes{					/* table choix requêtes */
+		/* margin: 10px 30px 0 20px; */
+		width: 460px;
+		background-color: #fdfefe;
+		border-radius: 4px;
 		float:left;
+		clear: both;
 	}
 
 		#t_requetes option {
+		padding-top: 5px;
+		height: 30px;
 			font-size: 18px;
 			font-weight: bold;
 			color: #1e222e;
@@ -306,39 +324,53 @@ header {
 		}
 
 	#desc_requetes{
+		margin: 0 20px 0 10px;
 		padding: 16px;
-		width: 320px;
-		height: 138px;
-		background-color: #ced2df;
-		border: 2px solid #1e222e;
+		width: 420px;
+		height: 80px;
 		font-size: 16px;
 		font-weight: bold;
 		color: #5d698c;
 		text-align: justify;
-		overflow: auto;									
+		background-color: #ced2df;
+		border-radius: 4px;
+		border: 2px solid #1e222e;
+		float: right;
+		/* clear: both; */
 	}
 
-	#requetes nav {
-		margin: -51px 160px 0 0;
-		padding-top: 4px;
-		width: 180px;
-		height: 30px;
-		background-color: #5d698c ;
-		text-align: center;
-		/*float: right;*/
-		box-shadow: 0 -1px 2px rgba(7,8,10,0.4)
+	#random_id{
+		clear: both;
+		float: right;
 	}
 
-		#requetes nav a {
+		#random_id nav {
+			padding-top: 8px;
+			width: 180px;
+			height: 30px;
+			background-color: #5d698c ;
+			text-align: center;
 			font-weight: bold;
-			font-size: 16px;
+			border-radius: 4px;
+			box-shadow: 0 -1px 2px rgba(7,8,10,0.4)
 		}
+
 		
-			#sub_req, #effacer_button {
+			#query {
+			margin: -65px 270px 0 0;
+
+			}
+
+			#clear{
+			margin: -37px 0px 0 210px;
+
+			}
+
+			#random_id nav input {
 				border: 0px;
 				color: #1e222e;
 				font-weight: bold;
-				font-size: 20px;
+				font-size: 18px;
 				background-color: #5d698c ;
 				font-family: 'Palanquin', sans-serif;
 
@@ -347,14 +379,14 @@ header {
 
 
 
-#contact {	 	 								/* main contact */
+#contact {	 	 					/* main contact */
 	margin: auto;
 	margin-left: 20px;
 	width: 1100px;
 	padding: 20px;
 }
 
-#end {	 	 									/* pied de page (partagé) */
+#end {	 	 						/* pied de page (partagé) */
 	margin: auto;
 	width: 1100px;
 	padding: 20px;
@@ -367,6 +399,7 @@ header {
 		padding-top: 10px;
 		height: 60px;
 		background-color: #1e222e;
+		border-radius: 4px;
 		box-shadow: 0 -2px 7px rgba(7,8,10,0.6)
 	}
 
@@ -376,11 +409,6 @@ header {
 		color: #5d698c;
 		text-align: center;
 		font-size: 16px;
-	}
-
-	#random_id{
-		clear: both;
-
 	}
 
 	#tableau_operateur{
