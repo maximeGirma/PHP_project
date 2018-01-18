@@ -32,11 +32,11 @@ if(!is_connected())
 
 if(isset($_POST['interface_choice'])){
     switch ($_POST['interface_choice']){
-        case 1://;
+        case 1: if($_SESSION['id_type_utilisateur']>= 1)operator_interface();
             break;
-        case 2://gestionnaire;
+        case 2:echo 'yep...<br/>Euh...Comment dire...<br/>C\'est pas finis finis quoi...';
             break;
-        case 3://admin
+        case 3:if($_SESSION['id_type_utilisateur']>= 3)crud_interface();
             break;
         default:
             save_error("index.php->ligne 19 to 29 : error interface_choice");
@@ -47,11 +47,11 @@ if(isset($_POST['interface_choice'])){
 
 }else{
     switch ($_SESSION['id_type_utilisateur']){
-        case 1: operator_interface();
+        case 1: if($_SESSION['id_type_utilisateur']>= 1)operator_interface();
             break;
         case 2:echo 'yep...<br/>Euh...Comment dire...<br/>C\'est pas finis finis quoi...';
             break;
-        case 3:crud_interface();
+        case 3:if($_SESSION['id_type_utilisateur']>= 3)crud_interface();
             break;
         default:
             save_error("index.php->ligne 31 to 39 : error id_type_utilisateur");

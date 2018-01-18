@@ -12,8 +12,8 @@ V 0.1.08
 ---------------------------- */
 
 
-function display_interface($content_1 = '',$content_2='',$content_3='',$content_4='',
-                           $type_utilisateur="", $nom_utilisateur=""){
+function display_interface($content_1 = '',$content_2='',$content_3='',$content_4=''
+                           ){
 
     $type_and_name_user ="";// '<p id = "username">';
 
@@ -78,9 +78,24 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 					
 					<ul id= 'menu_utilisateur'>                         
 	
-						<li id='sous_menu_1_on'><a href='requete_operator.php'>Operateur</a></li>
-						<li id='sous_menu_2_on'><a href='operateur.html'>Gestionnaire</a></li>
-						<li id='sous_menu_3_off'><a href='CRUD_interface.php'>Administrateur</a></li>
+						<li id='sous_menu_1_on'>
+                            <form id='oui' action='index.php' method='POST'>
+                                <input type='hidden' name='interface_choice' value='1'/>
+                                <input type='submit' value='Operateur'/>
+                            </form>
+                        </li>
+						<li id='sous_menu_2_on'>
+                            <form id='oui' action='index.php' method='POST'>
+                                <input type='hidden' name='interface_choice' value='2'/>
+                                <input type='submit' value='Gestionnaire'/>
+                            </form>
+						</li>
+						<li id='sous_menu_3_off'>
+                            <form id='oui' action='index.php' method='POST'>
+                                <input type='hidden' name='interface_choice' value='3'/>
+                                <input type='submit' value='Administrateur'/>
+                            </form>
+                        </li>
 						<nav id=\"deconnect\">
 							<a href=\"end_session.php\" target=\"_self\">Quitter</a>
 						</nav>
@@ -105,72 +120,18 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 
 				<section id=\"main_o\">
 
-				<fieldset>
 				
-					<legend>Sélection</legend>
-					<form id=\"requetes\" action=\"index.php\" method=\"POST\">
-					
-						<div>
-						
-							<label for=\"predifined_query\">
-							<select id=\"t_requetes\" name=\"predifined_query\" size=\"6\" >
-                                <option value='0' selected onclick=\"description_query(0);\"> Propriétés des usagers</option>
-                                <option value='1' onclick=\"description_query(1);\"> Usagers mineurs avec abonnement</option>
-                                <option value='2' onclick=\"description_query(2);\"> Usagers avec abonnement valide</option>
-                                <option value='3' onclick=\"description_query(3);\"> Usagers avec abonnement par commune</option>
-                                <option value='4' onclick=\"description_query(4);\"> Abonnements valides</option>
-                                <option value='5' onclick=\"description_query(5);\"> Chiffre d'affaire</option>
-                                <option value='6' onclick=\"description_query(6);\"> Informations représentant légal</option>
-                                <option value='7' onclick=\"description_query(7);\"> Usagers par année et établissement</option>
-								<option>9 - Spam</option>
-								<option>10 - Spam</option>
-								<option>11 - Spam</option>
-								<option>12 - Spam</option>
-								<option>13 - Spam</option>
-								<option>14 - Spam</option>
-								<option>15 - Spam</option>
-								<option>16 - Spam</option>
-
-							<!-- ?? possible remplir par alimentation de \"table requetes\" (csv?,avec pramettres, pour ajouter des préset) ?? -->
-							</label>	
-							</select>
-							
-						</div>
-						<div>
-						
-							<p id=\"desc_requetes\"><span>
-							 
-							</span>
-							
-							</p>
-			
-
-						</div>
-						<div id=\"random_id\">
-						
-							<nav id=\"query\">
-								<input id=\"sub_req\" value=\"AFFICHER\" name=\"REQUEST!\" type=\"submit\">
-                                   			
-							</nav>
-							
-							<nav id=\"clear\" action=\"index.php\" method=\"POST\">
-								<input id=\"effacer_button\" value=\"EFFACER\" name=\"REQUEST!\" type=\"submit\">
-							</nav>	
-							
-						</div>	
-						
-					</form>
-					
-				</fieldset>
-				</section>
-
-			</main>
-
-		</section>															<!-- fin phrasing -->
-
+				
 ";
 
-    $footer="		<section id=\"end\">									<!-- début footer -->
+    $footer="	    </section>
+
+	    		</main>
+
+    		</section>															<!-- fin phrasing -->
+
+		        
+				<section id=\"end\">									<!-- début footer -->
 	
 			<footer>
 			
