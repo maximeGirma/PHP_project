@@ -77,9 +77,10 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 					</h2>
 					
 					<ul id= 'menu_utilisateur'>                         
+	
 						<li id='sous_menu_1_on'><a href='requete_operator.php'>Operateur</a></li>
 						<li id='sous_menu_2_on'><a href='operateur.html'>Gestionnaire</a></li>
-						<li id='sous_menu_3_on'><a href='CRUD_interface.php'>Administrateur</a></li>
+						<li id='sous_menu_3_off'><a href='CRUD_interface.php'>Administrateur</a></li>
 						<nav id=\"deconnect\">
 							<a href=\"end_session.php\" target=\"_self\">Quitter</a>
 						</nav>
@@ -107,7 +108,7 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 				<fieldset>
 				
 					<legend>Sélection</legend>
-					<form id=\"requetes\" action=\"requete_operator.php\" method=\"POST\">
+					<form id=\"requetes\" action=\"index.php\" method=\"POST\">
 					
 						<div>
 						
@@ -152,7 +153,7 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
                                    			
 							</nav>
 							
-							<nav id=\"clear\" action=\"requete_operator.php\" method=\"POST\">
+							<nav id=\"clear\" action=\"index.php\" method=\"POST\">
 								<input id=\"effacer_button\" value=\"EFFACER\" name=\"REQUEST!\" type=\"submit\">
 							</nav>	
 							

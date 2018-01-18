@@ -10,4 +10,4 @@ session_start();
 session_unset();
 session_destroy();
 
-header('Location: connect.html');
+header('Location: connect.php');

@@ -9,7 +9,7 @@ $crud_form_1='<!DOCTYPE html>
 
     <fieldset>
         <legend>ADMIN</legend>
-        <form action="CRUD_interface.php" method="post">
+        <form action="index.php" method="post">
             <label for="afficher">Afficher les informations relatives aux:</label>
             <br/>
             <input type="radio" id="operateurs" name="afficher" value="1"><label>Opérateurs</label>
