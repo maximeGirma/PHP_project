@@ -14,8 +14,7 @@ V 0.1.08
 require_once "custom_nav.php";
 
 
-function display_interface($content_1 = '',$content_2='',$content_3='',$content_4=''
-                           ){
+function display_interface($content_1 = '',$content_2='',$content_3='',$content_4='' ){
 
     $type_and_name_user ="";// '<p id = "username">';
 
@@ -81,24 +80,7 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 					<ul id= 'menu_utilisateur'>                         
 						
 						" . custom_nav() ."
-							<li id='sous_menu_1_current'>
-                            <form id='oui' action='index.php' method='POST'>
-                                <input type='hidden' name='interface_choice' value='1'/>
-                                <input type='submit' value='Operateur'/>
-                            </form>
-                        </li>
-						<li id='sous_menu_2_on'>
-                            <form id='oui' action='index.php' method='POST'>
-                                <input type='hidden' name='interface_choice' value='2'/>
-                                <input type='submit' value='Gestionnaire'/>
-                            </form>
-						</li>
-						<li id='sous_menu_3_off'>
-                            <form id='oui' action='index.php' method='POST'>
-                                <input type='hidden' name='interface_choice' value='3'/>
-                                <input type='submit' value='Administrateur'/>
-                            </form>
-                        </li>
+							
 						
 						<nav id=\"deconnect\">
 							<a href=\"end_session.php\" target=\"_self\">Quitter</a>
