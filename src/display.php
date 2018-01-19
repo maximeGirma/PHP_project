@@ -11,6 +11,8 @@ PHP diplay
 V 0.1.08
 ---------------------------- */
 
+require_once "custom_nav.php";
+
 
 function display_interface($content_1 = '',$content_2='',$content_3='',$content_4=''
                            ){
@@ -77,8 +79,9 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 					</h2>
 					
 					<ul id= 'menu_utilisateur'>                         
-	
-						<li id='sous_menu_1_on'>
+						
+						" . custom_nav() ."
+							<li id='sous_menu_1_current'>
                             <form id='oui' action='index.php' method='POST'>
                                 <input type='hidden' name='interface_choice' value='1'/>
                                 <input type='submit' value='Operateur'/>
@@ -96,6 +99,7 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
                                 <input type='submit' value='Administrateur'/>
                             </form>
                         </li>
+						
 						<nav id=\"deconnect\">
 							<a href=\"end_session.php\" target=\"_self\">Quitter</a>
 						</nav>

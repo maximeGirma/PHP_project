@@ -429,17 +429,18 @@ header {
 	}
 	
 	td{
-		padding: 0 4x 0 4px;
+		padding: 0 4px 0 4px;
 		font-size: 12px;
 		color: #1e222e;
 		/* text-align: center; */
-		border-radius: 2px;
 		background-color: #ced2df ;
 		border: 1px solid;
 	}
 	
  tr:nth-child(1) { 
-	 background-color: #fdfefe; 
+	font-size: 14px;
+	color: #fdfefe;
+	background-color: #1e222e; 
  }
 
  tr:nth-child(3) { 
@@ -447,7 +448,7 @@ header {
  }
 
  tr:nth-child(5) { 
-	 background-color: #fdfefe; 
+	 background-color: #ced2df; 
  }
 
  tr:nth-child(7) { 
@@ -455,7 +456,7 @@ header {
  }
 
  tr:nth-child(9) { 
-	 background-color: #fdfefe; 
+	 background-color: #ced2df; 
  }
 
  tr:nth-child(11) { 
