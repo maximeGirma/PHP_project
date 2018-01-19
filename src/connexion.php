@@ -46,5 +46,5 @@ function connexion()
         } else {
             echo 'echec requete';
         }
-    }else{echo 'nicolas est une bite';}
+    }else 'pouet';
 }

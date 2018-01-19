@@ -162,3 +162,41 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
     echo $content_4;
     echo $footer;
 }
+
+
+function display_query_result($statement, $optionnal_string = "", $optionnal_string_2 = "")
+{
+    $cols_id_activator = TRUE;
+    while ($item = $statement->fetch(PDO::FETCH_ASSOC)) {
+        echo '<form action="index.php" method="post">';
+        echo '<table>';
+        echo '<tr>';
+        if ($cols_id_activator) {
+            foreach ($item as $key => $element) {
+                echo '<th>' . $key . '</th>';
+            }
+            $cols_id_activator = false;
+        }
+        echo '</tr> <tr>';
+        foreach ($item as $key => $value) {
+
+            if ($key == 'id_utilisateur') {
+                echo '<input name="modifier" type="hidden" value = "' . $value . '">';
+            }
+            echo '<td>';
+
+            echo $value;
+            echo '</td>';
+
+        }
+        echo '<td>';
+
+
+        echo $optionnal_string;
+        echo '</td>';
+        echo '</tr>';
+        echo '</table></form>';
+
+    }
+    echo $optionnal_string_2;
+}

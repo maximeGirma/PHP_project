@@ -12,6 +12,8 @@ require_once 'connexion.php';
 require_once 'connect.php';
 require_once 'requete_operator.php';
 require_once 'CRUD_interface.php';
+require_once 'bdd_access.php';
+
 session_start();
 
 
