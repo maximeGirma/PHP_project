@@ -280,7 +280,7 @@ header {
 	CORPS DE PAGE : m > pages index, connex, contact, etc
 	
 	- main phrasing
-		- bloc connexion	> page connexion
+		- bloc connexion	> page connexion seulement
 			- champs ID/PSW
 
 *********************************************************** */
@@ -486,9 +486,8 @@ header {
  }
 
 
-
 /* ***********************************************************
-	CORPS DE PAGE : contact.
+	CORPS DE PAGE : contact
 	
 	- phrasing contact
 
@@ -500,30 +499,31 @@ header {
 	padding: 20px;
 }
 
+
 /* ***********************************************************
-	PIED DE PAGE : contact.
+	PIED DE PAGE
 	
 	- arrière-plan (raccord au header)
 	- bannière petite 
 		- liens
 	
 *********************************************************** */
-#end {	 	 						/* pied de page (partagé) */
+#end {
 	margin: auto;
 	width: 1100px;
 	padding: 20px;
 	background-color: #707ca0 ;
 }
 
-	#end footer {	 
-		margin: 20px 0 0 20px;
-		width: 1140px;
-		padding-top: 10px;
-		height: 60px;
-		background-color: #1e222e;
-		border-radius: 4px;
-		box-shadow: 0 -2px 7px rgba(7,8,10,0.6)
-	}
+#end footer {	 
+	margin: 20px 0 0 20px;
+	width: 1140px;
+	padding-top: 10px;
+	height: 60px;
+	background-color: #1e222e;
+	border-radius: 4px;
+	box-shadow: 0 -2px 7px rgba(7,8,10,0.6)
+}
 
 	#end footer a {	 
 		text-decoration: none;
