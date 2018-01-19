@@ -14,8 +14,7 @@ V 0.1.08
 require_once "custom_nav.php";
 
 
-function display_interface($content_1 = '',$content_2='',$content_3='',$content_4=''
-                           ){
+function display_interface($content_1 = '',$content_2='',$content_3='',$content_4='' ){
 
     $type_and_name_user ="";// '<p id = "username">';
 
@@ -81,6 +80,7 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 					<ul id= 'menu_utilisateur'>                         
 						
 						" . custom_nav() ."
+							
 						
 						<nav id=\"deconnect\">
 							<a href=\"end_session.php\" target=\"_self\">Quitter</a>
