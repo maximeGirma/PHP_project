@@ -2,7 +2,7 @@
 
 function custom_nav(){
 
-	if ($id_type_utilisateur == 1) && $_SESSION['tracker'] == 1 {
+	if ($_SESSION['id_type_utilisateur'] == 1 && $_SESSION['tracker']) == 1) {
 
 		return "<li id='sous_menu_1_current'>
 			<form id='oui' action='index.php' method='POST'>
@@ -24,7 +24,7 @@ function custom_nav(){
 		</li>";
 	}				
 
-	else if ($id_type_utilisateur == 2) && $_SESSION [tracker] == 1 {
+	else if ($_SESSION['id_type_utilisateur'] == 2 && $_SESSION ['tracker']) == 1) {
 
 		return "<li id='sous_menu_1_on'>
 			<form id='oui' action='index.php' method='POST'>
@@ -46,7 +46,7 @@ function custom_nav(){
 		</li>";
 	}				
 		
-	else if ($id_type_utilisateur == 2 && $_SESSION['tracker'] == 2 {
+	else if ($_SESSION['id_type_utilisateur'] == 2 && $_SESSION['tracker']) == 2) {
 
 		return "<li id='sous_menu_1_current'>
 			<form id='oui' action='index.php' method='POST'>
@@ -68,7 +68,7 @@ function custom_nav(){
 		</li>";
 	}				
 
-	else if ($id_type_utilisateur == 3) && $_SESSION['tracker'] == 1 {
+	else if ($_SESSION['id_type_utilisateur'] == 3 && $_SESSION['tracker']) == 1) {
 
 		return "<li id='sous_menu_1_current'>
 			<form id='oui' action='index.php' method='POST'>
@@ -90,7 +90,7 @@ function custom_nav(){
 		</li>";
 	}				
 		
-	else if ($id_type_utilisateur == 3) && $_SESSION['tracker'] == 2 {
+	else if ($_SESSION['id_type_utilisateur'] == 3 && $_SESSION['tracker']) == 2) {
 
 		return "<li id='sous_menu_1_on'>
 			<form id='oui' action='index.php' method='POST'>
@@ -112,7 +112,7 @@ function custom_nav(){
 		</li>";
 	}				
 		
-	else if ($id_type_utilisateur == 3) && $_SESSION['tracker'] == 3 {
+	else if ($_SESSION['id_type_utilisateur'] == 3 && $_SESSION['tracker']) == 3) {
 
 		return "<li id='sous_menu_1_on'>
 			<form id='oui' action='index.php' method='POST'>

@@ -1,29 +1,29 @@
-/* *****************************
+/* ***********************************************************
 STAPA ACCES - shared style sheet
 
 V 0.1.11
-***************************** */
+*********************************************************** */
 
-/* ***********COLOR************
-**************CHART********* */
-/* http://www.colorhexa.com/707ca0 */
+/* **************************COLOR****************************
+*****************************CHART************************* */
+/* http://www.colorhexa.com/707ca0 							*/
 
-/*	background-color: #0f1016;	> noir*/	
-/*	background-color: #1e222e;	*/
-/*	background-color: #707ca0;	> principale*/
-/*	background-color: #ced2df;	*/
-/*	background-color: #fdfefe;	> blanc*/
+/*	background-color: #0f1016;	> noir						*/	
+/*	background-color: #1e222e;								*/
+/*	background-color: #707ca0;	> principale				*/
+/*	background-color: #ced2df;								*/
+/*	background-color: #fdfefe;	> blanc						*/
 
-/*	box-shadow: 0 4px 10px rgba(7,8,10,0.5);	*/
+/*	box-shadow: 0 4px 10px rgba(7,8,10,0.5);				*/
 
-/*	color: #0f1016;	défaut?	titres*/
-/*	color: #1e222e;	défaut?	principale*/
-/*	color: #5d698c;	*/
-/*	color: #ced2df;	*/
+/*	color: #0f1016;	défaut	titres							*/
+/*	color: #1e222e;	défaut	principale						*/
+/*	color: #5d698c;											*/
+/*	color: #ced2df;											*/
 
-/* *****************************
-***************************** */
-	
+/* ***********************************************************
+*********************************************************** */
+															
 html {
 	margin: auto;
 	width: 1300px;
@@ -56,7 +56,15 @@ header {
 	background-color: #707ca0 ;
 }
 
-#bann_m {	 							/* bannière main index (/co) */
+/* ***********************************************************
+	HEADER : m > pages index, conn, contact, etc
+	
+	- bannière grande
+		- titre
+		- logo grand
+		
+*********************************************************** */
+#bann_m {
 	margin: 20px;
 	width: 1100px;
 	height: 100px;
@@ -67,6 +75,7 @@ header {
 	float: right;
 	box-shadow: 0 2px 7px rgba(7,8,10,0.6);
 }
+
 	#bann_m h2 {	 
 		margin: 30px;
 		width: 1100px;
@@ -93,7 +102,21 @@ header {
 			border: 0px;
 		}
 
-#bann_o_bg {	 	 					/* bannière opé (user?) */
+/* ***********************************************************
+	HEADER :  o > pages interfaces utils.
+	
+	- arrière-plan bannière (cache le texte défilant en arrière plan)
+	- bannière petite statique
+		- Message accueil, nom utils
+		- menu
+			- boutons page actuelle
+			- boutons page accessible
+			- boutons page non accessible
+			- déconnexion
+		- logo petit
+
+*********************************************************** */
+#bann_o_bg {
 	margin: 0 0 0 -20px;
 	width: 1140px;
 	height: 80px;
@@ -152,6 +175,21 @@ header {
 			float:left;
 		}
 
+			#sous_menu_1_current input,
+			#sous_menu_2_current input,
+			#sous_menu_3_current input {
+				text-decoration: none;
+				width: 140px;
+				margin: 10px 20px 10px 20px;
+				color: #1e222e;
+				/* text-align: center; */
+				font-weight: bold;
+				font-size: 16px;
+				border: 0;
+				background-color: rgba(0,0,0,0) ;
+				font-family: 'Palanquin', sans-serif;
+			}
+
 		#sous_menu_1_on,
 		#sous_menu_2_on,
 		#sous_menu_3_on,
@@ -166,6 +204,35 @@ header {
 			float:left;
 		}
 
+			#sous_menu_1_on input,
+			#sous_menu_2_on input,
+			#sous_menu_3_on input {
+				text-decoration: none;
+				width: 140px;
+				margin: 10px 20px 10px 20px;
+				color: #ced2df;
+				font-weight: bold;
+				font-size: 16px;
+				border: 0;
+				background-color: rgba(0,0,0,0) ;
+				font-family: 'Palanquin', sans-serif;
+			}
+
+			#sous_menu_1_off input,
+			#sous_menu_2_off input,
+			#sous_menu_3_off input {
+				text-decoration: none;
+				width: 140px;
+				margin: 10px 20px 10px 20px;
+				color: #82858e;
+				text-align: center;
+				font-weight: bold;
+				font-size: 16px;
+				border: 0;
+				background-color: rgba(0,0,0,0) ;
+				font-family: 'Palanquin', sans-serif;
+			}
+
 		#deconnect {
 			width: 110px;
 			height: 99.99%;
@@ -175,36 +242,7 @@ header {
 			float: right;
 		}
 
-		#sous_menu_1_current input,
-		#sous_menu_2_current input,
-		#sous_menu_3_current input {
-			text-decoration: none;
-			width: 140px;
-			margin: 10px 20px 10px 20px;
-			color: #1e222e;
-			/* text-align: center; */
-			font-weight: bold;
-			font-size: 16px;
-			border: 0;
-			background-color: rgba(0,0,0,0) ;
-			font-family: 'Palanquin', sans-serif;
-		}
-
-		#sous_menu_1_on input,
-		#sous_menu_2_on input,
-		#sous_menu_3_on input {
-			text-decoration: none;
-			width: 140px;
-			margin: 10px 20px 10px 20px;
-			color: #ced2df;
-			font-weight: bold;
-			font-size: 16px;
-			border: 0;
-			background-color: rgba(0,0,0,0) ;
-			font-family: 'Palanquin', sans-serif;
-		}
-
-		#deconnect a {
+			#deconnect a {
 			text-decoration: none;
 			width: 70px;
 			margin: 10px 20px 10px 20px;
@@ -214,22 +252,6 @@ header {
 			font-size: 16px;
 			float:left;
 		}
-
-		#sous_menu_1_off input,
-		#sous_menu_2_off input,
-		#sous_menu_3_off input {
-			text-decoration: none;
-			width: 140px;
-			margin: 10px 20px 10px 20px;
-			color: #82858e;
-			text-align: center;
-			font-weight: bold;
-			font-size: 16px;
-			border: 0;
-			background-color: rgba(0,0,0,0) ;
-			font-family: 'Palanquin', sans-serif;
-		}
-
 
 	#logo_o {	 
 		margin: -8px 30px 0 0;
@@ -241,6 +263,12 @@ header {
 			border: 0px;
 		}
 
+/* ***********************************************************
+	CORPS DE PAGE :
+	
+	- arrière-plan (raccord au header)
+
+*********************************************************** */
 #main_bg {
 	margin: auto;
 	width: 1140px;
@@ -248,14 +276,22 @@ header {
 	background-color: #707ca0 ;
 }
 
-#main_m {	 						/* main index (co, 'monopage') */
+/* ***********************************************************
+	CORPS DE PAGE : m > pages index, connex, contact, etc
+	
+	- main phrasing
+		- bloc connexion	> page connexion
+			- champs ID/PSW
+
+*********************************************************** */
+#main_m {
 	margin: auto;
 	height: 360px;
 	padding: 40px 60px 40px 60px;
 	background-color: #707ca0 ;
 }
 
-	#connect {	 					/* 'bouton/champs" connexion */
+	#connect {
 		margin: 80px 10px 10px 200px;
 		width: 240px;
 		padding: 10px;
@@ -289,7 +325,20 @@ header {
 			font-family: 'Palanquin', sans-serif;
 		}
 
-#main_o {	 						/* main opé (user?) */
+/* ***********************************************************
+	CORPS DE PAGE : o > pages interfaces utils.
+	
+	- phrasing interfaces
+		- fieldset / légende
+			-  page actuelle
+			- liste choix requêtes
+			- description de la requete selectionnée
+			- boutons
+				- lance-requête
+				- clear selection
+
+*********************************************************** */
+#main_o {
 	margin: auto;
 	padding: 40px 60px 40px 60px;
 }
@@ -303,125 +352,98 @@ header {
 		border-radius: 8px;
 	}
 
-		#main_o legend{
-			height: 23px;
-			width: 180px;
-			font-size: 20px;
-			font-weight: bold;
-			text-align: center;
-			color: #ced2df;
-			background-color: #5d698c;
-			border: 8px double;
-			border-radius: 4px;
-			border-color: #5d698c;
-			box-shadow: 0 1px 2px rgba(7,8,10,0.4)
-		}
-
-	#t_requetes{					/* table choix requêtes */
-		/* margin: 10px 30px 0 20px; */
-		width: 460px;
-		background-color: #fdfefe;
-		border-radius: 4px;
-		float:left;
-		clear: both;
-	}
-
-		#t_requetes option {
-			padding-top: 5px;
-			height: 30px;
-			font-size: 18px;
-			font-weight: bold;
-			color: #1e222e;
-			font-family: 'Palanquin', sans-serif;
-		}
-
-	#desc_requetes{
-		margin: 0 20px 0 10px;
-		padding: 16px;
-		width: 420px;
-		height: 80px;
-		font-size: 16px;
+	#main_o legend{
+		height: 23px;
+		width: 180px;
+		font-size: 20px;
 		font-weight: bold;
-		color: #5d698c;
-		text-align: justify;
-		background-color: #ced2df;
-		border-radius: 4px;
-		border: 2px solid #1e222e;
-		float: right;
-		/* clear: both; */
-	}
-
-	#random_id{
-		clear: both;
-		float: right;
-	}
-
-		#random_id nav {
-			padding-top: 8px;
-			width: 180px;
-			height: 30px;
-			background-color: #5d698c ;
-			text-align: center;
-			font-weight: bold;
-			border-radius: 4px;
-			box-shadow: 0 -1px 2px rgba(7,8,10,0.4)
-		}
-		
-			#query {
-			margin: -65px 270px 0 0;
-
-			}
-
-			#clear{
-			margin: -37px 0px 0 210px;
-
-			}
-
-			#random_id nav input {
-				border: 0px;
-				color: #1e222e;
-				font-weight: bold;
-				font-size: 18px;
-				background-color: #5d698c ;
-				font-family: 'Palanquin', sans-serif;
-
-			}
-
-
-
-
-#contact {	 	 					/* main contact */
-	margin: auto;
-	margin-left: 20px;
-	width: 1100px;
-	padding: 20px;
-}
-
-#end {	 	 						/* pied de page (partagé) */
-	margin: auto;
-	width: 1100px;
-	padding: 20px;
-	background-color: #707ca0 ;
-}
-
-	#end footer {	 
-		margin: 20px 0 0 20px;
-		width: 1140px;
-		padding-top: 10px;
-		height: 60px;
-		background-color: #1e222e;
-		border-radius: 4px;
-		box-shadow: 0 -2px 7px rgba(7,8,10,0.6)
-	}
-
-	#end footer a {	 
-		text-decoration: none;
-		margin: 0 0 0 170px;
-		color: #5d698c;
 		text-align: center;
-		font-size: 16px;
+		color: #ced2df;
+		background-color: #5d698c;
+		border: 8px double;
+		border-radius: 4px;
+		border-color: #5d698c;
+		box-shadow: 0 1px 2px rgba(7,8,10,0.4)
 	}
 
+		#t_requetes{
+			/* margin: 10px 30px 0 20px; */
+			width: 460px;
+			background-color: #fdfefe;
+			border-radius: 4px;
+			float:left;
+			clear: both;
+		}
+
+			#t_requetes option {
+				padding-top: 5px;
+				height: 30px;
+				font-size: 18px;
+				font-weight: bold;
+				color: #1e222e;
+				font-family: 'Palanquin', sans-serif;
+			}
+
+		#desc_requetes{
+			margin: 0 20px 0 10px;
+			padding: 16px;
+			width: 420px;
+			height: 80px;
+			font-size: 16px;
+			font-weight: bold;
+			color: #5d698c;
+			text-align: justify;
+			background-color: #ced2df;
+			border-radius: 4px;
+			border: 2px solid #1e222e;
+			float: right;
+			/* clear: both; */
+		}
+
+		#random_id{
+			clear: both;
+			float: right;
+		}
+
+			#random_id nav {
+				padding-top: 8px;
+				width: 180px;
+				height: 30px;
+				background-color: #5d698c ;
+				text-align: center;
+				font-weight: bold;
+				border-radius: 4px;
+				box-shadow: 0 -1px 2px rgba(7,8,10,0.4)
+			}
+			
+				#query {
+				margin: -65px 270px 0 0;
+
+				}
+
+				#clear{
+				margin: -37px 0px 0 210px;
+
+				}
+
+				#random_id nav input {
+					border: 0px;
+					color: #1e222e;
+					font-weight: bold;
+					font-size: 18px;
+					background-color: #5d698c ;
+					font-family: 'Palanquin', sans-serif;
+
+				}
+
+
+
+/* ***********************************************************
+	CORPS DE PAGE : : resultat requete operateur.
+	
+	- tableau
+	
+*********************************************************** */
 	#tableau_operateur{
 		margin: auto;
 		height: auto;
@@ -464,3 +486,53 @@ header {
  }
 
 
+
+/* ***********************************************************
+	CORPS DE PAGE : contact.
+	
+	- phrasing contact
+
+*********************************************************** */
+#contact {
+	margin: auto;
+	margin-left: 20px;
+	width: 1100px;
+	padding: 20px;
+}
+
+/* ***********************************************************
+	PIED DE PAGE : contact.
+	
+	- arrière-plan (raccord au header)
+	- bannière petite 
+		- liens
+	
+*********************************************************** */
+#end {	 	 						/* pied de page (partagé) */
+	margin: auto;
+	width: 1100px;
+	padding: 20px;
+	background-color: #707ca0 ;
+}
+
+	#end footer {	 
+		margin: 20px 0 0 20px;
+		width: 1140px;
+		padding-top: 10px;
+		height: 60px;
+		background-color: #1e222e;
+		border-radius: 4px;
+		box-shadow: 0 -2px 7px rgba(7,8,10,0.6)
+	}
+
+	#end footer a {	 
+		text-decoration: none;
+		margin: 0 0 0 170px;
+		color: #5d698c;
+		text-align: center;
+		font-size: 16px;
+	}
+
+
+	
+	
