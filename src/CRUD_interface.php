@@ -10,6 +10,7 @@ function crud_interface()
 {
 
 
+    $_SESSION['tracker']=3;
     include("pages_html/CRUD_display.php");
     require_once 'display.php';
 

@@ -22,6 +22,8 @@ function init_session(array $infos_utilisateur) {
 	$_SESSION['started_time'] = time();
 	$_SESSION['timeout'] = 600;
 	$_SESSION['connected'] = TRUE;
+	$_SESSION['tracker'] = 0;
+
 }
 
 
@@ -36,10 +38,12 @@ function timeout_session(){
 
 function is_connected(){
 
-    if(timeout_session())return FALSE;
+
 
     if(isset($_SESSION['connected']))
     {
+        if(timeout_session())return FALSE;
+
         if ($_SESSION['connected'] != TRUE)
         {
             return FALSE;

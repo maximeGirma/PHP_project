@@ -4,7 +4,7 @@
 
 function operator_interface()
 {
-
+    $_SESSION['tracker']=1;
 
     $op_interface_html="<fieldset>
 				
