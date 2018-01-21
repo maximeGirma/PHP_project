@@ -54,7 +54,7 @@ function operator_interface()
                                    			
 							</nav>
 							
-							<nav id=\"clear\" action=\"index.php\" method=\"POST\">
+							<nav id=\"clear\" >
 								<input id=\"effacer_button\" value=\"EFFACER\" name=\"REQUEST!\" type=\"submit\">
 							</nav>	
 							
@@ -69,31 +69,40 @@ function operator_interface()
 
 
 
-    require_once 'requetes_file.php';
+    include 'requetes_file.php';
     require_once "display.php";
+    require_once 'bdd_access.php';
+
+    if(isset($_POST['additional_parameter'])){
+
+        $optional_parameter = $_POST['additional_parameter'];
+        $normal_query[$_POST['predifined_query']] .= $optional_parameter. "
+                                    group by r_telephone.num_telephone, r_adresse.num_rue, 
+                                    r_adresse.rue, r_adresse.residence, r_adresse.batiment, 
+                                    r_ville_cp.nom_commune, r_ville_cp.code_post
+                                    ;
+                                    ";
+
+    }
 
     if (isset($_POST['predifined_query'])) {
 
         if (strlen($_POST['predifined_query']) == 1 || strlen($_POST['predifined_query']) == 2) {
 
-            try {
-                $db = new  PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
-            } catch (PDOException $e) { //on catch, on type ce qu'on à attrapé et on le stocke dans e
-                echo '<strong>PDO Exception</strong><br />', $e->
-                getMessage();
-                die();
-            }
 
-            $statement = $db->prepare($normal_query[$_POST['predifined_query']]);// arg 1-16/ array 0-15
-            if ($statement->execute()) {
+            if ($statement = bdd_acces($normal_query[$_POST['predifined_query']])) {
+                //echo $statement->execute();
                 $cols_id_activator = true;
                 $display_content = "";
 
                 $display_content .= '<table id="tableau_operateur">';
                 $display_content .= '<tr>';
 
+
                 while ($item = $statement->fetch(PDO::FETCH_ASSOC)) {
+
                     if ($cols_id_activator) {
+
                         foreach ($item as $key => $element) {
                             $display_content .= '<th>' . $key . '</th>';
                         }

@@ -13,59 +13,68 @@ require_once 'connect.php';
 require_once 'requete_operator.php';
 require_once 'CRUD_interface.php';
 require_once 'bdd_access.php';
+require_once 'gestionnaire.php';
+
+
+
 
 session_start();
 
-
-
-if(!is_connected())
+if(is_connected() == False)
 {
     end_session();
     if(!isset($_POST['ID']) || !isset($_POST['PSW']))display_connect_page();
     else{
         $infos_utilisateur = connexion();
         if($infos_utilisateur==FALSE)display_connect_page('error');
-        init_session($infos_utilisateur);
+        else init_session($infos_utilisateur);
     }
-}
+}else {
 
+    if (isset($_POST['deconnexion']) && $_POST['deconnexion'] == 1) {
 
+        session_destroy();;
+        display_connect_page();
+    }else {
 
+        if (isset($_POST['interface_choice'])) {
+            switch ($_POST['interface_choice']) {
+                case 1:
+                    if ($_SESSION['id_type_utilisateur'] >= 1) operator_interface();
+                    break;
+                case 2:
+                    if ($_SESSION['id_type_utilisateur'] >= 2) gestionnaire();
+                    break;
+                case 3:
+                    if ($_SESSION['id_type_utilisateur'] >= 3) crud_interface();
+                    break;
+                default:
+                    save_error("index.php->ligne 19 to 29 : error interface_choice");
+                    error_alert();
+                    end_session();
 
-if(isset($_POST['interface_choice'])){
-    switch ($_POST['interface_choice']){
-        case 1: if($_SESSION['id_type_utilisateur']>= 1)operator_interface();
-            break;
-        case 2:echo 'yep...<br/>Euh...Comment dire...<br/>C\'est pas finis finis quoi...';
-            break;
-        case 3:if($_SESSION['id_type_utilisateur']>= 3)crud_interface();
-            break;
-        default:
-            save_error("index.php->ligne 19 to 29 : error interface_choice");
-            error_alert();
-            end_session();
-            header('Location: connect.php');
+            }
+        } elseif ($_SESSION['tracker'] == 1 && $_SESSION['id_type_utilisateur'] >= 1) operator_interface();
+        elseif ($_SESSION['tracker'] == 2 && $_SESSION['id_type_utilisateur'] >= 2) gestionnaire();
+        elseif ($_SESSION['tracker'] == 3 && $_SESSION['id_type_utilisateur'] >= 3) crud_interface();
+        else {
+            switch ($_SESSION['id_type_utilisateur']) {
+                case 1:
+                    if ($_SESSION['id_type_utilisateur'] >= 1) operator_interface();
+                    break;
+                case 2:
+                    if ($_SESSION['id_type_utilisateur'] >= 2) gestionnaire();
+                    break;
+                case 3:
+                    if ($_SESSION['id_type_utilisateur'] >= 3) crud_interface();
+                    break;
+                default:
+                    save_error("index.php->ligne 31 to 39 : error id_type_utilisateur");
+                    error_alert();
+                    end_session();
+                    echo 'pouet';// header('Location: connect.php');
+            }
+        }
     }
-}
 
-elseif ($_SESSION['tracker'] == 1 && $_SESSION['id_type_utilisateur'] >= 1) operator_interface();
-elseif ($_SESSION['tracker'] == 2 && $_SESSION['id_type_utilisateur'] >= 2) echo 'nope';
-elseif ($_SESSION['tracker'] == 3 && $_SESSION['id_type_utilisateur'] >= 3) crud_interface();
-else{
-    switch ($_SESSION['id_type_utilisateur']) {
-        case 1:
-            if ($_SESSION['id_type_utilisateur'] >= 1) operator_interface();
-            break;
-        case 2:
-            echo 'yep...<br/>Euh...Comment dire...<br/>C\'est pas finis finis quoi...';
-            break;
-        case 3:
-            if ($_SESSION['id_type_utilisateur'] >= 3) crud_interface();
-            break;
-        default:
-            save_error("index.php->ligne 31 to 39 : error id_type_utilisateur");
-            error_alert();
-            end_session();
-            echo 'pouet';// header('Location: connect.php');
-    }
 }

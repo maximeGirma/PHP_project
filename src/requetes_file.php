@@ -2,7 +2,9 @@
 //1 - afficher les propriétés des usagers
 $normal_query = array(
 "SELECT
-personnes.prenom
+personnes.id_personne
+AS 'id_utilisateur'
+,personnes.prenom
 AS 'PRENOM'
 ,personnes.nom
 AS 'NOM'
@@ -36,7 +38,7 @@ INNER JOIN type_telephone ON telephone.id_type_tel = type_telephone.id_type_tel
 INNER JOIN habite ON personnes.id_personne = habite.id_personne
 INNER JOIN adresse ON habite.id_adresse = adresse.id_adresse
 INNER JOIN ville_cp ON adresse.id_ville = ville_cp.id_ville
-ORDER BY personnes.nom ASC;",
+ORDER BY personnes.nom ASC",
 "SELECT
 
 year(now()) AS 'POUR_L_ANNEE',
@@ -140,10 +142,9 @@ where (year(histo_tarif_abo.date_prise_effet) = 2017 )
 group by type_abonnement.id_type_ab
 order by carte_abonnement.id_type_ab;",
 "
-SET @id_mineur = $optional_parameter
-SELECT /*!!!!!! SET OPTIONNAL_PARAMETER BEFORE REQUEST AND CHECK EMPTY RETURN REQUEST 6*/
+SELECT 
 personnes.id_personne
-AS 'USAGER N°'
+AS 'USAGER_No'
 ,concat(personnes.prenom, ' ',personnes.nom)
 AS 'USAGER'
 ,concat(year(now()) - year(personnes.naissance), ' ans')
@@ -156,17 +157,17 @@ r_adresse.rue
 ,' ',
 ifnull(r_adresse.residence, ''),
 ifnull(r_adresse.batiment, ''))
-AS 'ADRESSE REPRESENTANT'
+AS 'ADRESSE_REPRESENTANT'
 ,r_ville_cp.nom_commune
-AS 'VILLE REPRESENTANT'
+AS 'VILLE_REPRESENTANT'
 ,r_ville_cp.code_post
-AS 'CODE POSTAL REPRESENTANT'
+AS 'CODE_POSTAL_REPRESENTANT'
 ,representant.email
-AS 'E-MAIL REPRESENTANT'
+AS 'E-MAIL_REPRESENTANT'
 ,r_telephone.num_telephone
-AS 'N° de TELEPHONE TUTEUR'
+AS 'No_de_TELEPHONE_TUTEUR'
 ,r_type_telephone.denom_typ_tel
-AS 'TYPE de TELEPHONE REPRESENTANT'/* table 'personne' pour les informations du mineur */
+AS 'TYPE_de_TELEPHONE_REPRESENTANT'
 FROM personnes
 INNER JOIN joindre ON personnes.id_personne = joindre.id_personne
 INNER JOIN telephone ON joindre.id_tel = telephone.id_tel
@@ -174,7 +175,7 @@ INNER JOIN type_telephone ON telephone.id_type_tel = type_telephone.id_type_tel
 INNER JOIN habite ON personnes.id_personne = habite.id_personne
 INNER JOIN adresse ON habite.id_adresse = adresse.id_adresse
 INNER JOIN ville_cp ON adresse.id_ville = ville_cp.id_ville
-/* table 'personne' renommée 'représentant' pour associer les informations du tuteur au mineur */
+
 left join personnes as representant on personnes.id_personne_1 = representant.id_personne
 inner join joindre as r_joindre on representant.id_personne = r_joindre.id_personne
 inner join telephone as r_telephone on r_joindre.id_tel = r_telephone.id_tel
@@ -183,9 +184,7 @@ r_type_telephone.id_type_tel
 inner join habite as r_habite on representant.id_personne = r_habite.id_personne
 inner join adresse as r_adresse on r_habite.id_adresse = r_adresse.id_adresse
 inner join ville_cp as r_ville_cp on r_adresse.id_ville = r_ville_cp.id_ville
-where personnes.id_personne = @id_mineur
-group by r_telephone.num_telephone, r_adresse.num_rue, r_adresse.rue, r_adresse.residence, r_adresse.batiment, r_ville_cp.nom_commune, r_ville_cp.code_post
-;
+where personnes.id_personne = 
 ",
 "
 SELECT/*REQUETE 8*/
@@ -201,3 +200,46 @@ inner join carte_abonnement on descend_point.id_abonnement = carte_abonnement.id
 GROUP BY ANNEE, list_etablissement.denomination_etablissement, passe.id_etablissement
 order by ANNEE desc, passe.id_etablissement;"
 );
+
+$gestion_query="SELECT
+personnes.id_personne
+AS 'id_utilisateur'
+,personnes.prenom
+AS 'PRENOM'
+,personnes.nom
+AS 'NOM'
+,personnes.email
+AS 'EMAIL'
+,date_format(personnes.naissance ,'%d/%m/%Y') AS 'DATE_DE_NAISSANCE'
+/* fonction 'date_format()' utilisée pour changer la forme de la date en jj/mm/aaa */
+,concat( adresse.num_rue
+,' ',
+/* fonction 'concat()' utilisée pour rassembler differentes données dans une seule colonne */
+adresse.rue
+,' ',
+ifnull(adresse.residence, ''),
+/* fonction 'ifnull()' utilisée pour remplacer les valeurs 'null' par la valeur souhaitée */
+ifnull(adresse.batiment, '')
+)
+AS 'ADRESSE'
+,ville_cp.nom_commune
+AS 'VILLE'
+,ville_cp.code_post
+AS 'CODE POSTAL'
+,telephone.num_telephone
+AS 'NUMERO DE TELEPHONE'
+,type_telephone.denom_typ_tel
+AS 'TYPE DE TELEPHONE'
+/*venant de la table personnes: */
+FROM
+personnes
+/*jointe avec les tables suivantes*/
+INNER JOIN joindre ON personnes.id_personne = joindre.id_personne
+INNER JOIN telephone ON joindre.id_tel = telephone.id_tel
+INNER JOIN type_telephone ON telephone.id_type_tel = type_telephone.id_type_tel
+INNER JOIN habite ON personnes.id_personne = habite.id_personne
+INNER JOIN adresse ON habite.id_adresse = adresse.id_adresse
+INNER JOIN ville_cp ON adresse.id_ville = ville_cp.id_ville
+WHERE ";
+
+

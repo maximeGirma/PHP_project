@@ -18,12 +18,13 @@ function crud_display_update_interface(){
     $modifier = $_POST['modifier'];
 
     if ($statement = bdd_acces($display_query_update . $modifier . ';')) {
-        display_query_result($statement);
 
+        //$string_to_return = display_query_result($statement);
+        $string_to_return ="";
         $statement->execute();
         $item = $statement->fetchObject();
 
-        echo '<form action="index.php" method="post">
+        $string_to_return.= '<form action="index.php" method="post">
                 <label for="nom">nom : </label>
                 <input name="nom" type="text" required value="' . $item->nom_utilisateur . '">
                 <label for="prenom">prenom : </label>
@@ -50,7 +51,7 @@ function crud_display_update_interface(){
                 <input type="submit" value="supprimer utilisateur">
                 </form>';
 
-
+                return $string_to_return;
     }
 
 
@@ -72,9 +73,9 @@ function crud_update(){
 
     if ($statement = bdd_acces($update_query)) {
 
-        echo '<p>modification effectuée !</p>';
-        echo '<a href="CRUD_interface.php">Revenir à l\'interface administrateur</a>';
+        return '<p>modification effectuée !</p>';
 
-    } else echo 'ERREUR : La modification n\'a pas pu etre effectuée';
+
+    } else return 'ERREUR : La modification n\'a pas pu etre effectuée';
 }
 

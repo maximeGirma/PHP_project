@@ -20,21 +20,22 @@ function crud_interface()
 
 
 
-    display_interface($crud_form_1);
-
-    if (isset($_POST['afficher'])) crud_select();
 
 
-    if (isset($_POST['modifier'])) crud_display_update_interface();
+    if (isset($_POST['afficher'])) display_interface($crud_form_1,crud_select());
 
 
-    if (isset($_POST['update'])) crud_update();
-
-    if (isset($_POST['create']) && $_POST['create'] == 1) crud_display_create_interface();
-
-    if (isset($_POST['create']) && $_POST['create'] == 2) crud_create();
-
-    if (isset($_POST['delete']) && $_POST['delete'] == 1) crud_delete();
+    elseif (isset($_POST['modifier']))display_interface($crud_form_1,crud_display_update_interface());
 
 
+    elseif (isset($_POST['update'])) display_interface($crud_form_1,crud_update());
+
+    elseif (isset($_POST['create']) && $_POST['create'] == 1) crud_display_create_interface();
+
+    elseif (isset($_POST['create']) && $_POST['create'] == 2) crud_create();
+
+    elseif (isset($_POST['delete']) && $_POST['delete'] == 1) crud_delete();
+
+    else display_interface($crud_form_1);
 }
+

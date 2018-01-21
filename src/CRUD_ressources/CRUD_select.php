@@ -24,7 +24,12 @@ function crud_select(){
                                     <input type="hidden" name="create" value="1"/>
                                     <input type="submit" name ="button" value = "Ajouter Utilisateur"/>
                                     </form>';
-            display_query_result($statement, $update_button, $create_button);
+            return display_query_result($statement, $update_button, $create_button);
+            //display_query_result($statement, $update_button, $create_button);
+
+
+
+
         }
     }
 
