@@ -7,19 +7,19 @@ function custom_nav(){
 		return "<li id='sous_menu_1_current'>
 			<form id='oui' action='index.php' method='POST'>
 				<input type='hidden' name='interface_choice' value='1'/>
-				<input type='submit' value='Operateur'/>
+				<input type='submit' value='Consultation'/>
 			</form>
 		</li>
 		<li id='sous_menu_2_off'>
 			<form id='oui' action='#' method='POST'>
 				<input type='hidden' name='interface_choice' value='2'/>
-				<input type='button' value='Gestionnaire'/>
+				<input type='button' value='Gestion Abonnés'/>
 			</form>
 		</li>
 		<li id='sous_menu_3_off'>
 			<form id='oui' action='#' method='POST'>
 				<input type='hidden' name='interface_choice' value='3'/>
-				<input type='button' value='Administrateur'/>
+				<input type='button' value='Administration'/>
 			</form>
 		</li>";
 	}				
@@ -29,19 +29,19 @@ function custom_nav(){
 		return "<li id='sous_menu_1_on'>
 			<form id='oui' action='index.php' method='POST'>
 				<input type='hidden' name='interface_choice' value='1'/>
-				<input type='submit' value='Operateur'/>
+				<input type='submit' value='Consultation'/>
 			</form>
 		</li>
 		<li id='sous_menu_2_current'>
 			<form id='oui' action='index.php' method='POST'>
 				<input type='hidden' name='interface_choice' value='2'/>
-				<input type='submit' value='Gestionnaire'/>
+				<input type='submit' value='Gestion Abonnés'/>
 			</form>
 		</li>
 		<li id='sous_menu_3_off'>
 			<form id='oui' action='#' method='POST'>
 				<input type='hidden' name='interface_choice' value='3'/>
-				<input type='button' value='Administrateur'/>
+				<input type='button' value='Administration'/>
 			</form>
 		</li>";
 	}				
@@ -51,19 +51,19 @@ function custom_nav(){
 		return "<li id='sous_menu_1_current'>
 			<form id='oui' action='index.php' method='POST'>
 				<input type='hidden' name='interface_choice' value='1'/>
-				<input type='submit' value='Operateur'/>
+				<input type='submit' value='Consultation'/>
 			</form>
 		</li>
 		<li id='sous_menu_2_on'>
 			<form id='oui' action='index.php' method='POST'>
 				<input type='hidden' name='interface_choice' value='2'/>
-				<input type='submit' value='Gestionnaire'/>
+				<input type='submit' value='Gestion Abonnés'/>
 			</form>
 		</li>
 		<li id='sous_menu_3_off'>
 			<form id='oui' action='index.php' method='POST'>
 				<input type='hidden' name='interface_choice' value='3'/>
-				<input type='button' value='Administrateur'/>
+				<input type='button' value='Administration'/>
 			</form>
 		</li>";
 	}				
@@ -73,19 +73,19 @@ function custom_nav(){
 		return "<li id='sous_menu_1_current'>
 			<form id='oui' action='index.php' method='POST'>
 				<input type='hidden' name='interface_choice' value='1'/>
-				<input type='submit' value='Operateur'/>
+				<input type='submit' value='Consultation'/>
 			</form>
 		</li>
 		<li id='sous_menu_2_on'>
 			<form id='oui' action='index.php' method='POST'>
 				<input type='hidden' name='interface_choice' value='2'/>
-				<input type='submit' value='Gestionnaire'/>
+				<input type='submit' value='Gestion Abonnés'/>
 			</form>
 		</li>
 		<li id='sous_menu_3_on'>
 			<form id='oui' action='index.php' method='POST'>
 				<input type='hidden' name='interface_choice' value='3'/>
-				<input type='submit' value='Administrateur'/>
+				<input type='submit' value='Administration'/>
 			</form>
 		</li>";
 	}				
@@ -95,19 +95,19 @@ function custom_nav(){
 		return "<li id='sous_menu_1_on'>
 			<form id='oui' action='index.php' method='POST'>
 				<input type='hidden' name='interface_choice' value='1'/>
-				<input type='submit' value='Operateur'/>
+				<input type='submit' value='Consultation'/>
 			</form>
 		</li>
 		<li id='sous_menu_2_current'>
 			<form id='oui' action='index.php' method='POST'>
 				<input type='hidden' name='interface_choice' value='2'/>
-				<input type='submit' value='Gestionnaire'/>
+				<input type='submit' value='Gestion Abonnés'/>
 			</form>
 		</li>
 		<li id='sous_menu_3_on'>
 			<form id='oui' action='index.php' method='POST'>
 				<input type='hidden' name='interface_choice' value='3'/>
-				<input type='submit' value='Administrateur'/>
+				<input type='submit' value='Administration'/>
 			</form>
 		</li>";
 	}				
@@ -117,19 +117,19 @@ function custom_nav(){
 		return "<li id='sous_menu_1_on'>
 			<form id='oui' action='index.php' method='POST'>
 				<input type='hidden' name='interface_choice' value='1'/>
-				<input type='submit' value='Operateur'/>
+				<input type='submit' value='Consultation'/>
 			</form>
 		</li>
 		<li id='sous_menu_2_on'>
 			<form id='oui' action='index.php' method='POST'>
 				<input type='hidden' name='interface_choice' value='2'/>
-				<input type='submit' value='Gestionnaire'/>
+				<input type='submit' value='Gestion Abonnés'/>
 			</form>
 		</li>
 		<li id='sous_menu_3_current'>
 			<form id='oui' action='index.php' method='POST'>
 				<input type='hidden' name='interface_choice' value='3'/>
-				<input type='submit' value='Administrateur'/>
+				<input type='submit' value='Administration'/>
 			</form>
 		</li>";
 	}				

@@ -87,6 +87,14 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 						</nav>
 					</ul>
 
+										
+                        <picture id=\"e_egg_o\">
+                            <img on clic=\"hidden\" src=\"http://i0.kym-cdn.com/entries/icons/original/000/000/099/what-is-love-570898416.gif\" alt=\"-image-\">
+                            <img id=\"e_bus_o\" src=\"images/bus_t.png\" alt=\"-image-\">
+                        </picture>
+						
+
+					
 					<picture id=\"logo_o\">
 						<img src=\"images/bus_t.png\" alt=\"-image-\">
 					</picture>
@@ -122,7 +130,7 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 			<footer>
 			
 				<p>
-				<a>MENTIONS LÉGALES</a>
+				<a href=\"#\"_blank\">MENTIONS LÉGALES</a>
 				<a href=\"pages_html/contact.html\" target=\"_self\">CONTACT</a>
 				<a>&copy TEAM SEVEN</a>
 				</p>

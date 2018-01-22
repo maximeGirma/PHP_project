@@ -1,25 +1,27 @@
 /* ***********************************************************
 STAPA ACCES - shared style sheet
 
-V 0.1.11
+V 0.2.01
 *********************************************************** */
 
 /* **************************COLOR****************************
 *****************************CHART************************* */
-/* http://www.colorhexa.com/707ca0 							*/
+/* http://www.colorhexa.com/7094a0 							*/
 
-/*	background-color: #0f1016;	> noir						*/	
-/*	background-color: #1e222e;								*/
-/*	background-color: #707ca0;	> principale				*/
-/*	background-color: #ced2df;								*/
+/*	background-color: #0f1416;	> noir						*/	
+/*	background-color: #1e2a2e;	> sombre II					*/
+/*	background-color: #5d808c;	> sombre I					*/
+/*	background-color: #7094a0;	> principale				*/
+/*	background-color: #cedbdf;	> clair						*/
 /*	background-color: #fdfefe;	> blanc						*/
 
 /*	box-shadow: 0 4px 10px rgba(7,8,10,0.5);				*/
 
-/*	color: #0f1016;	défaut	titres							*/
-/*	color: #1e222e;	défaut	principale						*/
-/*	color: #5d698c;											*/
-/*	color: #ced2df;											*/
+/*	color: #0f1416;											*/
+/*	color: #1e2a2e;	titres									*/
+/*	color: #5d808c;	principale								*/
+/*	color: #828b8e;	texte grisé								*/
+/*	color: #cedbdf;											*/
 
 /* ***********************************************************
 *********************************************************** */
@@ -31,8 +33,8 @@ html {
 	border: 0;
 	overflow: auto;									
 	font-family: 'Palanquin', sans-serif;
-	color: #1e222e;
-	background-color: #0f1016;
+	color: #1e2a2e;
+	background-color: #0f1416;
 }
 
 body {	 
@@ -49,11 +51,9 @@ body {
 
 header {	 
 	margin: auto;
-	width: 1100px;
-	height: 100px;
-	padding-right: 20px;
-	padding-left: 20px;
-	background-color: #707ca0 ;
+	width: 1140px;
+	height: 60px;
+	background-color: #7094a0 ;
 }
 
 /* ***********************************************************
@@ -65,40 +65,73 @@ header {
 		
 *********************************************************** */
 #bann_m {
-	margin: 20px;
-	width: 1100px;
+	margin: 30px -80px 0 0;
+	width: 1300px;
 	height: 100px;
-	padding: 20px;
+	padding: 0px;
 	font-weight: bold;
-	background-color: #ced2df ;
-	border-radius: 8px;
+	background-color: #cedbdf ;
+	/* border-radius: 8px; */
 	float: right;
 	box-shadow: 0 2px 7px rgba(7,8,10,0.6);
 }
 
 	#bann_m h2 {	 
-		margin: 30px;
-		width: 1100px;
+		margin: 30px 80px 0 0px;
+		width: 1140px;
 		height: 100px;
-		color: #5d698c;
+		color: #5d808c;
 		font-size: 34px;
 /*			text-align: center;		*/
 		float: right;
 	}
 	
 	#bann_m h2 a {
-	margin: 20px;
-	margin-left: 180px;
+	margin: 0px 80px 0 130px;
 
 	}
 
+/* ***********************************************************
+	what is love ?
+
+*********************************************************** */
+				#e_egg_m {	 
+					position:absolute;
+					top:34px;
+					left:975px;
+					z-index: 0;
+				}		 
+			 
+					#e_egg_m img {	 
+						visibility: hidden;
+						/* opacity: 0 !Important;  */
+						width: 110px;
+						border: 0px;
+					}
+					
+					#e_egg_m:hover img {
+							visibility: visible;
+							/* transition: opacity 0.2s;  */
+							/* opacity: 1;  */
+					} 
+					
+					#e_bus_m {	 
+						position:absolute;
+						top: -30px;
+						left: -30px;
+						width: 170px !important;
+						border: 0px;
+					z-index: 1;
+					}
+					
 	#logo_m {	 
-		margin: -67px 10px 0 0;
+		/* position:relative; */
+		margin: -56px 130px 0 0;
 		float: right;
 	}
 
 		#logo_m img {	 
-			width: 240px;
+			width: 170px;
 			border: 0px;
 		}
 
@@ -117,26 +150,26 @@ header {
 
 *********************************************************** */
 #bann_o_bg {
-	margin: 0 0 0 -20px;
+	margin: 0 0 0 0;
 	width: 1140px;
-	height: 80px;
-	background-color: #707ca0 ;
+	height: 60px;
+	background-color: #7094a0 ;
 	position: fixed;
 }
 
 #bann_o {
-	margin: 20px 20px 20px -60px;
-	width: 1140px;
+	margin: 0px 0px 0px -80px;
+	width: 1300px;
 	height: 60px;
-	background-color: #ced2df ;
+	background-color: #cedbdf ;
 	position: fixed;
-	border-radius: 8px;
+	/* border-radius: 8px; */
 	box-shadow: 0 2px 6px rgba(7,8,10,0.4);
 }
 
 	#welcome {	 
-		margin: 10px 10px 10px 60px;
-		width: 280px;
+		margin: 8px 10px 8px 60px;
+		width: 300px;
 		text-align: left;
 		float: left;
 		line-height: 18px;
@@ -145,7 +178,7 @@ header {
 		#welcome a {
 			font-size: 18px;
 			font-weight: bold;
-			color: #5d698c;
+			color: #5d808c;
 		}
 
 		#username{
@@ -154,12 +187,12 @@ header {
 
 	#menu_utilisateur{
 		list-style: none;
-		width: 650px;
+		/* width: 650px; */
 		margin: 10px 0px 10px 0px;
 		padding-left: 0px;
 		height: 40px;
-		/* color: #ced2df; */
-		background-color: #5d698c ;
+		/* color: #cedbdf; */
+		background-color: #5d808c ;
 		float: left;
 		box-shadow: 0 -1px 2px rgba(7,8,10,0.4);
 	}
@@ -170,9 +203,10 @@ header {
 			margin: -0.01% 0 0 0;
 			width: 180px;
 			height: 99.79%;
-			background-color: #ced2df;
+			background-color: #cedbdf;
 			box-shadow: 0 1px 2px rgba(7,8,10,0.4);
 			float:left;
+		line-height: 0px;
 		}
 
 			#sous_menu_1_current input,
@@ -181,7 +215,7 @@ header {
 				text-decoration: none;
 				width: 140px;
 				margin: 10px 20px 10px 20px;
-				color: #1e222e;
+				color: #1e2a2e;
 				/* text-align: center; */
 				font-weight: bold;
 				font-size: 16px;
@@ -189,7 +223,7 @@ header {
 				background-color: rgba(0,0,0,0) ;
 				font-family: 'Palanquin', sans-serif;
 			}
-
+			
 		#sous_menu_1_on,
 		#sous_menu_2_on,
 		#sous_menu_3_on,
@@ -199,7 +233,7 @@ header {
 			margin: 0.01% 0 0 0;
 			width: 180px;
 			height: 99.79%;
-			background-color: #5d698c;
+			background-color: #5d808c;
 			box-shadow: 0 -1px 2px rgba(7,8,10,0.4);
 			float:left;
 		}
@@ -210,7 +244,7 @@ header {
 				text-decoration: none;
 				width: 140px;
 				margin: 10px 20px 10px 20px;
-				color: #ced2df;
+				color: #cedbdf;
 				font-weight: bold;
 				font-size: 16px;
 				border: 0;
@@ -224,7 +258,7 @@ header {
 				text-decoration: none;
 				width: 140px;
 				margin: 10px 20px 10px 20px;
-				color: #82858e;
+				color: #828b8e;
 				text-align: center;
 				font-weight: bold;
 				font-size: 16px;
@@ -234,32 +268,62 @@ header {
 			}
 
 		#deconnect {
-			width: 110px;
+			width: 180px;
 			height: 99.99%;
 			margin: 0.01% 0 0 0;
-			background-color: #1e222e ;
+			background-color: #1e2a2e ;
 			box-shadow: 0 -1px 2px rgba(7,8,10,0.4);
 			float: right;
 		}
 
 			#deconnect a {
 			text-decoration: none;
-			width: 70px;
+			width: 140px;
 			margin: 10px 20px 10px 20px;
 			text-align: center;
-			color: #ced2df;
+			color: #cedbdf;
 			font-weight: bold;
 			font-size: 16px;
 			float:left;
 		}
 
+/* ***********************************************************
+	what is love ?
+
+*********************************************************** */
+					#e_egg_o {	 
+						position:absolute;
+						top:12px;
+						left:1193px;
+						z-index: 0;
+					}		 
+				 
+						#e_egg_o img {	 
+							visibility: hidden;
+							width: 39px;
+							border: 0px;
+						}
+						
+						#e_egg_o:hover img {
+								visibility: visible;
+						} 
+						
+						#e_bus_o {	 
+							position:absolute;
+							top: -10px;
+							left: -9px;
+							width: 56px !important;
+							border: 0px;
+						z-index: 1;
+						}
+
 	#logo_o {	 
-		margin: -8px 30px 0 0;
+		margin: 2px 60px 0 0;
 		float: right;
 	}
 
 		#logo_o img {	 
-			width: 80px;
+			width: 56px;
 			border: 0px;
 		}
 
@@ -273,7 +337,7 @@ header {
 	margin: auto;
 	width: 1140px;
 	height: auto;
-	background-color: #707ca0 ;
+	background-color: #7094a0 ;
 }
 
 /* ***********************************************************
@@ -286,31 +350,31 @@ header {
 *********************************************************** */
 #main_m {
 	margin: auto;
-	height: 360px;
+	height: 420px;
 	padding: 40px 60px 40px 60px;
-	background-color: #707ca0 ;
+	background-color: #7094a0 ;
 }
 
 	#connect {
 		margin: 80px 10px 10px 200px;
 		width: 240px;
 		padding: 10px;
-		background-color: #5d698c ;
+		background-color: #5d808c ;
 		text-align: center;
 		float: left;
-		border-radius: 8px;
+		/* border-radius: 8px; */
 		box-shadow: 0 1px 8px rgba(7,8,10,0.7)
 	}
 
 		#connect p a {
 			text-decoration: none;
-			color: #ced2df;
+			color: #cedbdf;
 			font-weight: bold;
 			font-size: 18px;
 		}
 
 		#input {
-			background-color: #ced2df;
+			background-color: #cedbdf;
 			border: 0px;
 		}
 
@@ -318,10 +382,10 @@ header {
 			width: 160px;
 			padding: 10px;
 			border: 0px;
-			color: #ced2df;
+			color: #cedbdf;
 			font-weight: bold;
 			font-size: 20px;
-			background-color: #5d698c ;
+			background-color: #5d808c ;
 			font-family: 'Palanquin', sans-serif;
 		}
 
@@ -340,16 +404,16 @@ header {
 *********************************************************** */
 #main_o {
 	margin: auto;
-	padding: 40px 60px 40px 60px;
+	padding: 40px 60px 50px 60px;
 }
 
 	#main_o fieldset{
 		margin: auto;
 		padding: 20px 20px 20px 20px;
 		/* height: 400px; */
-		background-color: #ced2df;
-		border: 8px double #5d698c;
-		border-radius: 8px;
+		background-color: #cedbdf;
+		border: 6px double #5d808c;
+		/* border-radius: 8px; */
 	}
 
 	#main_o legend{
@@ -358,11 +422,11 @@ header {
 		font-size: 20px;
 		font-weight: bold;
 		text-align: center;
-		color: #ced2df;
-		background-color: #5d698c;
+		color: #cedbdf;
+		background-color: #5d808c;
 		border: 8px double;
-		border-radius: 4px;
-		border-color: #5d698c;
+		/* border-radius: 4px; */
+		border-color: #5d808c;
 		box-shadow: 0 1px 2px rgba(7,8,10,0.4)
 	}
 
@@ -370,7 +434,8 @@ header {
 			/* margin: 10px 30px 0 20px; */
 			width: 460px;
 			background-color: #fdfefe;
-			border-radius: 4px;
+			border: 0px;
+			/* border-radius: 4px; */
 			float:left;
 			clear: both;
 		}
@@ -378,24 +443,24 @@ header {
 			#t_requetes option {
 				padding-top: 5px;
 				height: 30px;
-				font-size: 18px;
+				font-size: 16px;
 				font-weight: bold;
-				color: #1e222e;
+				color: #1e2a2e;
 				font-family: 'Palanquin', sans-serif;
 			}
 
 		#desc_requetes{
-			margin: 0 20px 0 10px;
+			margin: 0 0 0 10px;
 			padding: 16px;
-			width: 420px;
+			width: 440px;
 			height: 80px;
 			font-size: 16px;
 			font-weight: bold;
-			color: #5d698c;
+			color: #5d808c;
 			text-align: justify;
-			background-color: #ced2df;
-			border-radius: 4px;
-			border: 2px solid #1e222e;
+			background-color: #cedbdf;
+			/* border-radius: 4px; */
+			border: 2px solid #1e2a2e;
 			float: right;
 			/* clear: both; */
 		}
@@ -409,10 +474,10 @@ header {
 				padding-top: 8px;
 				width: 180px;
 				height: 30px;
-				background-color: #5d698c ;
+				background-color: #5d808c ;
 				text-align: center;
 				font-weight: bold;
-				border-radius: 4px;
+				/* border-radius: 4px; */
 				box-shadow: 0 -1px 2px rgba(7,8,10,0.4)
 			}
 			
@@ -422,16 +487,16 @@ header {
 				}
 
 				#clear{
-				margin: -37px 0px 0 210px;
+				margin: -37px 0px 0 240px;
 
 				}
 
 				#random_id nav input {
 					border: 0px;
-					color: #1e222e;
+					color: #1e2a2e;
 					font-weight: bold;
-					font-size: 18px;
-					background-color: #5d698c ;
+					font-size: 16px;
+					background-color: #5d808c ;
 					font-family: 'Palanquin', sans-serif;
 
 				}
@@ -444,7 +509,8 @@ header {
 	
 *********************************************************** */
 	#tableau_operateur{
-		margin: auto;
+		min-width: 100%;
+		margin: 40px auto;
 		height: auto;
 		border-collapse: collapse;
 	}
@@ -452,16 +518,16 @@ header {
 	td{
 		padding: 0 4px 0 4px;
 		font-size: 12px;
-		color: #1e222e;
+		color: #1e2a2e;
 		/* text-align: center; */
-		background-color: #ced2df ;
+		background-color: #cedbdf ;
 		border: 1px solid;
 	}
 	
  tr:nth-child(1) { 
 	font-size: 14px;
 	color: #fdfefe;
-	background-color: #1e222e; 
+	background-color: #1e2a2e; 
  }
 
  tr:nth-child(3) { 
@@ -469,7 +535,7 @@ header {
  }
 
  tr:nth-child(5) { 
-	 background-color: #ced2df; 
+	 background-color: #cedbdf; 
  }
 
  tr:nth-child(7) { 
@@ -477,7 +543,7 @@ header {
  }
 
  tr:nth-child(9) { 
-	 background-color: #ced2df; 
+	 background-color: #cedbdf; 
  }
 
  tr:nth-child(11) { 
@@ -508,26 +574,26 @@ header {
 	
 *********************************************************** */
 #end {
-	margin: auto;
-	width: 1100px;
-	padding: 20px;
-	background-color: #707ca0 ;
+	margin: 0 0 0 80px;
+	width: 1140px;
+	padding: 0 0 0 0;
+	background-color: #7094a0 ;
 }
 
 #end footer {	 
-	margin: 20px 0 0 20px;
-	width: 1140px;
+	margin: 0 0 0 -80px;
+	width: 1300px;
 	padding-top: 10px;
 	height: 60px;
-	background-color: #1e222e;
-	border-radius: 4px;
+	background-color: #1e2a2e;
+	/* border-radius: 4px; */
 	box-shadow: 0 -2px 7px rgba(7,8,10,0.6)
 }
 
 	#end footer a {	 
 		text-decoration: none;
-		margin: 0 0 0 170px;
-		color: #5d698c;
+		margin: 0 145px 0 155px;
+		color: #5d808c;
 		text-align: center;
 		font-size: 16px;
 	}
