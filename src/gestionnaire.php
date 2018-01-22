@@ -15,10 +15,19 @@ function gestionnaire()
 
 
 
-    $gestion_interface = '<form action="index.php" method="POST">
-            <label>nom de la personne recherchée</label>
+    $gestion_interface = '
+            
+            <section>
+            <form action="index.php" method="POST">
+            <label>Afficher les informations de tout les abonnés</label><br/>
+            <input type="hidden" name="display_personnes" value="1">
+            <input type="submit" value="Afficher"</form>
+            
+            <form action="index.php" method="POST">
+            <label>rechercher une personne par son nom</label><br>
             <input name="gestion_recherche" required/>
-            <input type="submit" value="rechercher"></form>';
+            <input type="submit" value="rechercher"></form>
+            </section><br/><br/><br/><br/>';
     $display_content ="";
 
 
