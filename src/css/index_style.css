@@ -98,7 +98,7 @@ header {
 				#e_egg_m {	 
 					position:absolute;
 					top:34px;
-					left:975px;
+					left:983px;
 					z-index: 0;
 				}		 
 			 
@@ -602,5 +602,9 @@ header {
 	}
 
 
-	
-	
+
+#contact_formulaire
+{
+margin:auto;
+text-align: center;
+}

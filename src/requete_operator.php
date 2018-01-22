@@ -53,15 +53,15 @@ function operator_interface()
 								<input id=\"sub_req\" value=\"AFFICHER\" name=\"REQUEST!\" type=\"submit\">
                                    			
 							</nav>
-							
-							<nav id=\"clear\" >
-								<input id=\"effacer_button\" value=\"EFFACER\" name=\"REQUEST!\" type=\"submit\">
-							</nav>	
+					</form><form action='index.php' method='POST'>
+                                <nav id=\"clear\" >
+                                    <input id=\"effacer_button\" value=\"EFFACER\" name=\"REQUEST!\" type=\"submit\">
+                                </nav>		
+                            </form>
 							
 						</div>	
 						
-					</form>
-					
+											
 				</fieldset>";
 
 

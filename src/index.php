@@ -29,11 +29,13 @@ if(is_connected() == False)
         if($infos_utilisateur==FALSE)display_connect_page('error');
         else init_session($infos_utilisateur);
     }
-}else {
+}
+
+if (is_connected() == True){
 
     if (isset($_POST['deconnexion']) && $_POST['deconnexion'] == 1) {
 
-        session_destroy();;
+        session_destroy();
         display_connect_page();
     }else {
 
@@ -54,9 +56,12 @@ if(is_connected() == False)
                     end_session();
 
             }
-        } elseif ($_SESSION['tracker'] == 1 && $_SESSION['id_type_utilisateur'] >= 1) operator_interface();
+        }
+        elseif ($_SESSION['tracker'] == 1 && $_SESSION['id_type_utilisateur'] >= 1) operator_interface();
         elseif ($_SESSION['tracker'] == 2 && $_SESSION['id_type_utilisateur'] >= 2) gestionnaire();
         elseif ($_SESSION['tracker'] == 3 && $_SESSION['id_type_utilisateur'] >= 3) crud_interface();
+
+
         else {
             switch ($_SESSION['id_type_utilisateur']) {
                 case 1:
