@@ -276,7 +276,7 @@ header {
 			float: right;
 		}
 
-			#deconnect a {
+			#deconnect input {
 			text-decoration: none;
 			width: 140px;
 			margin: 10px 20px 10px 20px;
@@ -284,6 +284,9 @@ header {
 			color: #cedbdf;
 			font-weight: bold;
 			font-size: 16px;
+				border: 0;
+			background-color: rgba(0,0,0,0) ;
+				font-family: 'Palanquin', sans-serif;
 			float:left;
 		}
 

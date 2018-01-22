@@ -9,7 +9,7 @@ function get_description(description_number)
         "Afficher le nombre d’abonnements en cours de validité pour chacun des types d’abonnements",
         "Afficher le chiffre d’affaires réalisé sur l’année en cours pour chacun des types d’abonnements",
         "Afficher les informations du représentant légal d’un usager donné" +
-        "<input type=\"text\" name=\"additional_parameter\" placeholder='ID du mineur'>",
+        "<input type=\"text\" name=\"additional_parameter\" required placeholder='ID du mineur'>",
         "Afficher le nombre d’usagers par année et par établissement scolaire"
     ];
     return description[description_number];

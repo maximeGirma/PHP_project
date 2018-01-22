@@ -14,7 +14,7 @@ function init_session(array $infos_utilisateur) {
 	$id_type_utilisateur=$infos_utilisateur[1];
 	$prenom_utilisateur=$infos_utilisateur[2];
 	$nom_utilisateur=$infos_utilisateur[3];
-	
+
 	$_SESSION['id_utilisateur'] = $id_utilisateur;
 	$_SESSION['id_type_utilisateur'] = $id_type_utilisateur;
 	$_SESSION['prenom_utilisateur'] = $prenom_utilisateur;
@@ -42,6 +42,7 @@ function is_connected(){
 
     if(isset($_SESSION['connected']))
     {
+
         if(timeout_session())return FALSE;
 
         if ($_SESSION['connected'] != TRUE)
@@ -56,7 +57,7 @@ function is_connected(){
 
 function end_session()
 {
-    session_unset();
+
     session_destroy();
 }
 

@@ -8,7 +8,7 @@
 /*-- ---------------------------
 STAPA ACCES - page opérateur (utilisateurs)
 PHP diplay
-V 0.1.08
+V 0.1.09
 ---------------------------- */
 
 require_once "custom_nav.php";
@@ -83,17 +83,19 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 							
 						
 						<nav id=\"deconnect\">
-							<a href=\"end_session.php\" target=\"_self\">Quitter</a>
+							<form id='oui' action='index.php' method='POST'>
+                                <input type='hidden' name='deconnexion' value='1'/>
+                                <input id =\"deconnexion_button\" type='submit' value='Quitter'/>
+			                </form>
 						</nav>
 					</ul>
 
 										
-                        <picture id=\"e_egg_o\">
-                            <img on clic=\"hidden\" src=\"http://i0.kym-cdn.com/entries/icons/original/000/000/099/what-is-love-570898416.gif\" alt=\"-image-\">
-                            <img id=\"e_bus_o\" src=\"images/bus_t.png\" alt=\"-image-\">
-                        </picture>
+					<picture id=\"e_egg_o\">
+						<img on clic=\"hidden\" src=\"http://i0.kym-cdn.com/entries/icons/original/000/000/099/what-is-love-570898416.gif\" alt=\"-image-\">
+						<img id=\"e_bus_o\" src=\"images/bus_t.png\" alt=\"-image-\">
+					</picture>
 						
-
 					
 					<picture id=\"logo_o\">
 						<img src=\"images/bus_t.png\" alt=\"-image-\">
@@ -160,37 +162,41 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 
 function display_query_result($statement, $optionnal_string = "", $optionnal_string_2 = "")
 {
+    $string_to_return ="";
     $cols_id_activator = TRUE;
     while ($item = $statement->fetch(PDO::FETCH_ASSOC)) {
-        echo '<form action="index.php" method="post">';
-        echo '<table>';
-        echo '<tr>';
+        $string_to_return.= '<form action="index.php" method="post">';
+        $string_to_return.= '<table>';
+        $string_to_return.= '<tr>';
         if ($cols_id_activator) {
             foreach ($item as $key => $element) {
-                echo '<th>' . $key . '</th>';
+                $string_to_return.= '<th>' . $key . '</th>';
             }
             $cols_id_activator = false;
         }
-        echo '</tr> <tr>';
+        $string_to_return.= '</tr> <tr>';
         foreach ($item as $key => $value) {
 
             if ($key == 'id_utilisateur') {
-                echo '<input name="modifier" type="hidden" value = "' . $value . '">';
+                $string_to_return.= '<input name="modifier" type="hidden" value = "' . $value . '">';
             }
-            echo '<td>';
+            $string_to_return.= '<td>';
 
-            echo $value;
-            echo '</td>';
+            $string_to_return.= $value;
+            $string_to_return.= '</td>';
 
         }
-        echo '<td>';
+        $string_to_return.= '<td>';
 
 
-        echo $optionnal_string;
-        echo '</td>';
-        echo '</tr>';
-        echo '</table></form>';
+        $string_to_return.= $optionnal_string;
+        $string_to_return.= '</td>';
+        $string_to_return.= '</tr>';
+        $string_to_return.= '</table></form>';
 
     }
-    echo $optionnal_string_2;
+    $string_to_return.= $optionnal_string_2;
+    return $string_to_return;
 }
+
+

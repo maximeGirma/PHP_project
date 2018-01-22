@@ -32,17 +32,17 @@ function display_connect_page($error=""){
                 <header>	
     
                     <hgroup id="bann_m">
-					
+ 					
                         <picture id="e_egg_m">
                             <img src="http://i0.kym-cdn.com/entries/icons/original/000/000/099/what-is-love-570898416.gif" alt="-image-">
                             <img id="e_bus_m" src="images/bus_t.png" alt="-image-">
                         </picture>
 						
-                        <h2>
+                       <h2>
                         <a>S T A P A</a> 
                         <a>A C C E S</a>
                         <picture  id="logo_m">
-                            <img src="images/bus_t.png" alt="-image-">
+                            <img src="images/bus_t.png"  alt="-image-">
                         </picture>
                         </h2>
                     </hgroup>
