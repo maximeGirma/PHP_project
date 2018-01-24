@@ -4,6 +4,10 @@
  * User: maxime
  * Date: 20/01/18
  * Time: 16:10
+ * La fonction gestionnaire est appellée par index.php et permet au gestionnaire de modifier la BDD
+ * Elle affiche une interface qui permet de rechercher un nom dans la base puis selon les arguments reçus
+ * elle affiche différentes interfaces qui permettent de modifier les données de la base.
+ * Elle utilise des requetes préconstruites et stockées dans
  */
 
 function gestionnaire()
