@@ -132,7 +132,73 @@ function custom_nav(){
 				<input type='submit' value='Administration'/>
 			</form>
 		</li>";
-	}				
+	}
+
+
+    else if ($_SESSION['id_type_utilisateur'] == 1) {
+
+        return "<li id='sous_menu_1_on'>
+			<form id='oui' action='index.php' method='POST'>
+				<input type='hidden' name='interface_choice' value='1'/>
+				<input type='submit' value='Consultation'/>
+			</form>
+		</li>
+		<li id='sous_menu_2_off'>
+			<form id='oui' action='#' method='POST'>
+				<input type='hidden' name='interface_choice' value='2'/>
+				<input type='submit' value='Gestion Abonnés'/>
+			</form>
+		</li>
+		<li id='sous_menu_3_off'>
+			<form id='oui' action='#' method='POST'>
+				<input type='hidden' name='interface_choice' value='3'/>
+				<input type='submit' value='Administration'/>
+			</form>
+		</li>";
+    }
+    else if ($_SESSION['id_type_utilisateur'] == 2) {
+
+        return "<li id='sous_menu_1_on'>
+			<form id='oui' action='index.php' method='POST'>
+				<input type='hidden' name='interface_choice' value='1'/>
+				<input type='submit' value='Consultation'/>
+			</form>
+		</li>
+		<li id='sous_menu_2_on'>
+			<form id='oui' action='index.php' method='POST'>
+				<input type='hidden' name='interface_choice' value='2'/>
+				<input type='submit' value='Gestion Abonnés'/>
+			</form>
+		</li>
+		<li id='sous_menu_3_off'>
+			<form id='oui' action='#' method='POST'>
+				<input type='hidden' name='interface_choice' value='3'/>
+				<input type='submit' value='Administration'/>
+			</form>
+		</li>";
+    }
+    else if ($_SESSION['id_type_utilisateur'] == 3) {
+
+        return "<li id='sous_menu_1_on'>
+			<form id='oui' action='index.php' method='POST'>
+				<input type='hidden' name='interface_choice' value='1'/>
+				<input type='submit' value='Consultation'/>
+			</form>
+		</li>
+		<li id='sous_menu_2_on'>
+			<form id='oui' action='index.php' method='POST'>
+				<input type='hidden' name='interface_choice' value='2'/>
+				<input type='submit' value='Gestion Abonnés'/>
+			</form>
+		</li>
+		<li id='sous_menu_3_on'>
+			<form id='oui' action='index.php' method='POST'>
+				<input type='hidden' name='interface_choice' value='3'/>
+				<input type='submit' value='Administration'/>
+			</form>
+		</li>";
+    }
+
 }
 
 

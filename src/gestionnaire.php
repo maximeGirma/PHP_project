@@ -64,8 +64,6 @@ function gestionnaire()
     }elseif(isset($_POST['id_usager'])){
 
 
-
-
         $modifier = ' personnes.id_personne = '.$_POST['id_usager'].' ';
 
         if ($statement = bdd_acces($gestion_query . $modifier . ';')) {
@@ -74,6 +72,22 @@ function gestionnaire()
             $statement->execute();
             $item = $statement->fetchObject();
 
+            $city_list_returned = bdd_acces($city_query);
+            $city_list_temp = $city_list_returned->fetchAll();
+            $city_list = [];
+            foreach ($city_list_temp as $city){
+                $city_list[] = $city[0];
+            }
+            $display_city ="";
+            foreach($city_list as $city)
+            {
+                if($city == $item->VILLE)
+                {
+                    $display_city .= '<option selected>' . $city . '</option>';
+                }else{
+                    $display_city .= '<option>' . $city . '</option>';
+                }
+            }
 
                 $display_content = '<form id ="formulaire_gestion" action="index.php" method="post">
                 <table><tr><td><label for="nom">Nom : </label></td>
@@ -89,32 +103,38 @@ function gestionnaire()
                 <tr><td><p><label>Rue:</label></td>
                 <td><input name="rue" type="text" required value="'. $item->RUE.'"></p></td></tr>
                 <tr><td><p><label>Ville:</label></td>
-                <td><input name="ville" type ="text" required value="'. $item->VILLE.'"></p></td></tr>
-                <tr><td><p><label>Code Postal:</label></td>
-                <td><input name="tel_num" type ="text" required value="'. $item->NUMERO_DE_TELEPHONE.'"></p></td></tr>
+                <td><select name="ville" required ></p>
+                '.$display_city.'</select></td></tr>
                 
-                <input name="update" type="hidden" value = "1">
+                
+                <tr><td colspan="2"><input name="update" type="hidden" value = "1">
                 <input name="id_utilisateur" type="hidden" value = "' . $item->id_utilisateur . '">
-                <input type="submit" value="Modifier">
+                <input type="submit" value="Modifier"></td></tr>
+                </table>
                 </form>';
 
 
     }
     }
     if (isset($_POST['update'])) {
-        echo $gestionnaire_update_query;
+
+        $temporary = bdd_acces($get_city_code);
+        $_SESSION['id_ville'] = $temporary->fetch()[0];
+
+
         if (bdd_acces($gestionnaire_update_query))
         {
             echo 'modif done!';
-            die();
-        }else 'meh...jamais du premier coup';
+
+        }else echo 'meh...jamais du premier coup';
 
     }
     display_interface($gestion_interface, $display_content);
 }
 
 
-/*
+/*<tr><td><label>Numero de telephone</label></td>
+                <td><input name="tel_num" type ="text" required value="'. $item->NUMERO_DE_TELEPHONE.'"></p></td></tr>
 <tr><td><p><label>Type de téléphone:</label></td>
                 <td><input name="type_tel" ="text" required value="'. $item->TYPE_DE_TELEPHONE.'"></p></td></tr></table>
 */

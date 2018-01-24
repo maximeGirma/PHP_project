@@ -14,6 +14,7 @@ require_once 'requete_operator.php';
 require_once 'CRUD_interface.php';
 require_once 'bdd_access.php';
 require_once 'gestionnaire.php';
+require_once 'display.php';
 
 
 
@@ -38,7 +39,7 @@ if (is_connected() == True){
         session_destroy();
         display_connect_page();
     }else {
-
+        update_timeout();
         if (isset($_POST['interface_choice'])) {
             switch ($_POST['interface_choice']) {
                 case 1:
@@ -63,22 +64,9 @@ if (is_connected() == True){
 
 
         else {
-            switch ($_SESSION['id_type_utilisateur']) {
-                case 1:
-                    if ($_SESSION['id_type_utilisateur'] >= 1) operator_interface();
-                    break;
-                case 2:
-                    if ($_SESSION['id_type_utilisateur'] >= 2) gestionnaire();
-                    break;
-                case 3:
-                    if ($_SESSION['id_type_utilisateur'] >= 3) crud_interface();
-                    break;
-                default:
-                    save_error("index.php->ligne 31 to 39 : error id_type_utilisateur");
-                    error_alert();
-                    end_session();
-                    echo 'pouet';// header('Location: connect.php');
-            }
+
+            display_interface();
+
         }
     }
 
