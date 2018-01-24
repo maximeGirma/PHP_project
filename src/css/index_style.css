@@ -605,7 +605,13 @@ header {
 
 #contact_formulaire
 {
-margin:auto;
-text-align: center;
+	margin:auto;
+	text-align: center;
 }
 
+#formulaire_gestion
+{
+	margin : auto;
+	margin-left: 30%;
+	text-align : justify;
+}

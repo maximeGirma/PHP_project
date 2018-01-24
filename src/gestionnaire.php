@@ -9,25 +9,20 @@
 function gestionnaire()
 {
     $_SESSION['tracker']=2;
+
     require_once 'display.php';
     include 'requetes_file.php';
     require_once 'requete_operator.php';
-
+    require_once 'bdd_access.php';
 
 
     $gestion_interface = '
-            
-            <section>
             <form action="index.php" method="POST">
-            <label>Afficher les informations de tout les abonnés</label><br/>
-            <input type="hidden" name="display_personnes" value="1">
-            <input type="submit" value="Afficher"</form>
-            
-            <form action="index.php" method="POST">
-            <label>rechercher une personne par son nom</label><br>
-            <input name="gestion_recherche" required/>
-            <input type="submit" value="rechercher"></form>
-            </section><br/><br/><br/><br/>';
+                <label>rechercher une personne par son nom</label><br>
+                <input name="gestion_recherche" />
+                <input type="submit" value="rechercher">
+            </form>
+            ';
     $display_content ="";
 
 
@@ -71,7 +66,7 @@ function gestionnaire()
 
 
 
-        $modifier = ' personnes.id_personne = '.$_POST['id_usager'];
+        $modifier = ' personnes.id_personne = '.$_POST['id_usager'].' ';
 
         if ($statement = bdd_acces($gestion_query . $modifier . ';')) {
 
@@ -79,31 +74,47 @@ function gestionnaire()
             $statement->execute();
             $item = $statement->fetchObject();
 
-            $display_content= '<form action="index.php" method="post">
-                <label for="nom">nouveau nom : </label>
-                <input name="nom" type="text" required value="' . $item->NOM . '">
-                <label for="prenom">nouveau prenom : </label>
-                <input name="prenom" type="text" required value="' . $item->PRENOM . '">
-                <br/>
-                <label for="email">nouvel email: </label>
-                <input name="e_mail" type="text" required value="'.$item->EMAIL.'">
-                <label for="date de naissance">nouvelle date de naissance: </label>
-                <input name="naissance" type="text" required value="'.$item->DATE_DE_NAISSANCE.'">
+
+                $display_content = '<form id ="formulaire_gestion" action="index.php" method="post">
+                <table><tr><td><label for="nom">Nom : </label></td>
+                <td><input name="nom" type="text" required value="' . $item->NOM . '"></p></td></tr>
+                <tr><td><p><label for="prenom">Prenom : </label></td>
+                <td><input name="prenom" type="text" required value="' . $item->PRENOM . '"></p></td></tr>
+                <tr><td><p><label for="email">Email: </label></td>
+                <td><input name="e_mail" type="text" required value="' . $item->EMAIL . '"></p></td></tr>
+                <tr><td><p><label for="date de naissance">Date de naissance: </label></td>
+                <td><input name="naissance" type="text" required value="' . $item->DATE_DE_NAISSANCE . '"></p></td></tr>
+                <tr><td><p><label>Numero de rue:</label></td>
+                <td><input name="numero_de_rue" type="text" required value="'. $item->NUMERO_RUE.'"></p></td></tr>
+                <tr><td><p><label>Rue:</label></td>
+                <td><input name="rue" type="text" required value="'. $item->RUE.'"></p></td></tr>
+                <tr><td><p><label>Ville:</label></td>
+                <td><input name="ville" type ="text" required value="'. $item->VILLE.'"></p></td></tr>
+                <tr><td><p><label>Code Postal:</label></td>
+                <td><input name="tel_num" type ="text" required value="'. $item->NUMERO_DE_TELEPHONE.'"></p></td></tr>
                 
                 <input name="update" type="hidden" value = "1">
                 <input name="id_utilisateur" type="hidden" value = "' . $item->id_utilisateur . '">
                 <input type="submit" value="Modifier">
-                </form>'
-                ;
-
-
-        }
-
-
+                </form>';
 
 
     }
+    }
+    if (isset($_POST['update'])) {
+        echo $gestionnaire_update_query;
+        if (bdd_acces($gestionnaire_update_query))
+        {
+            echo 'modif done!';
+            die();
+        }else 'meh...jamais du premier coup';
 
+    }
     display_interface($gestion_interface, $display_content);
 }
 
+
+/*
+<tr><td><p><label>Type de téléphone:</label></td>
+                <td><input name="type_tel" ="text" required value="'. $item->TYPE_DE_TELEPHONE.'"></p></td></tr></table>
+*/
