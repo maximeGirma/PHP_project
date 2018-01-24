@@ -1,10 +1,14 @@
-<!-- ---------------------------
-STAPA ACCES - page connexion
 
-V 0.1.06
----------------------------- -->
 <?php
+/* * Created by IntelliJ IDEA.
+ * User: maxime
+ * Date: 20/01/18
+ * Time: 16:10
 
+Affiche la page de connexion au système. Cette fonction est apellée par index.php et peut prendre
+un argument, si un argument est renseigné, un message pré-fait sera affiché au dessus des champs de
+ connexion.
+ */
 function display_connect_page($error=""){
     if($error!=''){
         $error = "<style>#error_connect{color:red;}</style><p id='error_connect'>

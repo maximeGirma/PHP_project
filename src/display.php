@@ -6,9 +6,20 @@
  * Time: 09:54
  */
 /*-- ---------------------------
-STAPA ACCES - page opérateur (utilisateurs)
-PHP diplay
-V 0.1.09
+ * Created by IntelliJ IDEA.
+ * User: Peter
+ * Date: 12/01/18
+ * Time: 14:51
+ *  Version 1.0
+ * Display_interface() est appelé par soit par index.php soit par les différentes fonctions d'interface.
+ * Elle affiche le template du site et appelle custom_nav() pour generer un menu dynamique.
+ * Elle peut prendre jusqu'a 4 arguments sous forme de chaînes de caractères pour afficher du contenu
+ * entre le header et le footer.
+ *
+ *
+ * display_query_result() est appelé par crud_interface() et sert à afficher certains retour
+ * de requetes SQL.
+ * TODO : Supprimer display_query_result et utiliser display_interface() à la place.
 ---------------------------- */
 
 require_once "custom_nav.php";

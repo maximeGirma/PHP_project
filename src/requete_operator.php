@@ -8,7 +8,7 @@
  *
  * La fonction operateur_interface est appelée par index.php et sert à afficher le contenu de la
  * base de données. La fonction appelle dislay_interface() pour afficher l'interface. Puis, si elle
- * a recu  l'argument adéquat elle affiche le resultat d'une requete pré-enregistré dans requetes_files.php
+ * a recu  l'argument adéquat elle affiche le resultat d'une requete pré-enregistré dans queries_files.php
  * toujours grace à display_interface()
  */
 
@@ -18,7 +18,7 @@ function operator_interface()
     $_SESSION['tracker']=1;
 
 
-    include 'requetes_file.php';
+    include 'queries_file.php';
     require_once "display.php";
     require_once 'bdd_access.php';
 

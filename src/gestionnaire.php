@@ -7,7 +7,8 @@
  * La fonction gestionnaire est appellée par index.php et permet au gestionnaire de modifier la BDD
  * Elle affiche une interface qui permet de rechercher un nom dans la base puis selon les arguments reçus
  * elle affiche différentes interfaces qui permettent de modifier les données de la base.
- * Elle utilise des requetes préconstruites et stockées dans
+ * Elle utilise des requetes préconstruites et stockées dans queries_files.php
+ *L'affichage des resultats se fait grace à la fonction display_interface()
  */
 
 function gestionnaire()
@@ -15,7 +16,7 @@ function gestionnaire()
     $_SESSION['tracker']=2;
 
     require_once 'display.php';
-    include 'requetes_file.php';
+    include 'queries_file.php';
     require_once 'requete_operator.php';
     require_once 'bdd_access.php';
 

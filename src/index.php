@@ -4,6 +4,7 @@
  * User: maxime
  * Date: 18/01/18
  * Time: 18:51
+ *Version 0.9
  *
  * index.php recoit toutes les requetes $_POST provenant du client et appelle diférentes fonctions
  * selon la demande.
@@ -21,8 +22,6 @@ require_once 'CRUD_interface.php';
 require_once 'bdd_access.php';
 require_once 'gestionnaire.php';
 require_once 'display.php';
-
-
 
 
 session_start();

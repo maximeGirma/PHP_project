@@ -1,5 +1,16 @@
 <?php
-//1 - afficher les propriétés des usagers
+
+/*
+ * Created by IntelliJ IDEA.
+ * User: maxime
+ * Date: 18/01/18
+ * Time: 18:51
+ * Version 0.9
+ *
+ * queries_file.php contient les principales requêtes utilisées pour acceder à la base de données.
+ */
+
+
 $normal_query = array(
 "SELECT
 personnes.id_personne

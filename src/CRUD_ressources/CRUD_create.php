@@ -4,6 +4,16 @@
  * User: maxime
  * Date: 19/01/18
  * Time: 11:25
+ * Version 0.9
+ *
+ * crud_display_create_interface() est appelé par crud_interface() et affiche l'interface
+ * de creation d'utilisateur.
+ * TODO : Remplacer cette fonction par l'usage de display_interface()
+ *
+ * crud_create() est appelé par crud_interface()
+ * Elle utilise les $_POST renseignés par l'administrateur pour créer un nouvel utilisateur
+ * dans la base de données. Renvoie True si la requete reussit, sinon False
+ * TODO : Ajouter le renvoi du true/false
  */
 
 

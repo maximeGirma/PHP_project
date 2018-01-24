@@ -1,7 +1,26 @@
 <?php
+/*
+ * Created by IntelliJ IDEA.
+ * User: maxime
+ * Date: 18/01/18
+ * Time: 18:51
+ * Version 0.9
+ * session.php contient les différentes fonctions relatives aux session
+ * Voir les cartouches commentaires de chaque fonction
+ * TODO: Supprimer end_session() au profis d'un simple session_destroy()
+ */
+
 
 function init_session(array $infos_utilisateur) {
-
+/*
+ * Created by IntelliJ IDEA.
+ * User: Peter
+ * Date: 18/01/18
+ * Time: 18:51
+ * Version 1
+ *
+ * init_session() est appelé par index.php. Elle prend en argument un tableau de string qu'elle
+ */
 	$SID = session_id();
 	
 	if(empty($SID)) {
