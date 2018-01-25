@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d3e18af-3cb2-4cfc-81b5-0ef7ac4585e7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/CRUD_interface.php" afterPath="$PROJECT_DIR$/src/CRUD_interface.php" />
-      <change beforePath="$PROJECT_DIR$/src/CRUD_ressources/CRUD_create.php" afterPath="$PROJECT_DIR$/src/CRUD_ressources/CRUD_create.php" />
-      <change beforePath="$PROJECT_DIR$/src/CRUD_ressources/CRUD_delete.php" afterPath="$PROJECT_DIR$/src/CRUD_ressources/CRUD_delete.php" />
-      <change beforePath="$PROJECT_DIR$/src/CRUD_ressources/CRUD_select.php" afterPath="$PROJECT_DIR$/src/CRUD_ressources/CRUD_select.php" />
-      <change beforePath="$PROJECT_DIR$/src/CRUD_ressources/CRUD_update.php" afterPath="$PROJECT_DIR$/src/CRUD_ressources/CRUD_update.php" />
-      <change beforePath="$PROJECT_DIR$/src/bdd_access.php" afterPath="$PROJECT_DIR$/src/bdd_access.php" />
-      <change beforePath="$PROJECT_DIR$/src/connect.php" afterPath="$PROJECT_DIR$/src/connect.php" />
-      <change beforePath="$PROJECT_DIR$/src/connexion.php" afterPath="$PROJECT_DIR$/src/connexion.php" />
-      <change beforePath="$PROJECT_DIR$/src/custom_nav.php" afterPath="$PROJECT_DIR$/src/custom_nav.php" />
-      <change beforePath="$PROJECT_DIR$/src/display.php" afterPath="$PROJECT_DIR$/src/display.php" />
-      <change beforePath="$PROJECT_DIR$/src/error.php" afterPath="$PROJECT_DIR$/src/error.php" />
-      <change beforePath="$PROJECT_DIR$/src/gestionnaire.php" afterPath="$PROJECT_DIR$/src/gestionnaire.php" />
-      <change beforePath="$PROJECT_DIR$/src/index.php" afterPath="$PROJECT_DIR$/src/index.php" />
-      <change beforePath="$PROJECT_DIR$/src/js/description_operator_query.js" afterPath="$PROJECT_DIR$/src/js/description_operator_query.js" />
-      <change beforePath="$PROJECT_DIR$/src/pages_html/CRUD_display.php" afterPath="$PROJECT_DIR$/src/pages_html/CRUD_display.php" />
-      <change beforePath="$PROJECT_DIR$/src/pages_html/contact.html" afterPath="$PROJECT_DIR$/src/pages_html/contact.html" />
-      <change beforePath="$PROJECT_DIR$/src/pages_html/welcome_page.php" afterPath="$PROJECT_DIR$/src/pages_html/welcome_page.php" />
-      <change beforePath="$PROJECT_DIR$/src/queries_file.php" afterPath="$PROJECT_DIR$/src/queries_file.php" />
-      <change beforePath="$PROJECT_DIR$/src/queries_operator.php" afterPath="$PROJECT_DIR$/src/queries_operator.php" />
-      <change beforePath="$PROJECT_DIR$/src/session.php" afterPath="$PROJECT_DIR$/src/session.php" />
-      <change beforePath="$PROJECT_DIR$/test/test_pssw.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/test/test_pssw.php" afterPath="" />
-    </list>
+    <list default="true" id="5d3e18af-3cb2-4cfc-81b5-0ef7ac4585e7" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -164,12 +141,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="queries_operator.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="queries_operator.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/queries_operator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="70" lean-forward="false" selection-start-line="4" selection-start-column="70" selection-end-line="4" selection-end-column="70" />
+            <state relative-caret-position="756">
+              <caret line="42" column="69" lean-forward="true" selection-start-line="42" selection-start-column="69" selection-end-line="42" selection-end-column="69" />
               <folding>
+                <element signature="e#7#505#0#PHP" expanded="true" />
                 <marker date="1516887139627" expanded="true" signature="704:3359" ph="..." />
                 <marker date="1516887139627" expanded="true" signature="806:3016" ph="..." />
                 <marker date="1516887139627" expanded="true" signature="824:2685" ph="..." />
@@ -187,7 +165,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="session.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="session.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/session.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="218">
@@ -267,13 +245,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="connexion.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/connexion.php">
+      <file leaf-file-name="description_operator_query.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/description_operator_query.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+            <state relative-caret-position="240">
+              <caret line="16" column="41" lean-forward="false" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
               <folding>
-                <marker date="1516886932250" expanded="true" signature="1069:1344" ph="SELECT id_ut... utilisateur" />
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -581,16 +559,15 @@
       <workItem from="1516832410782" duration="1338000" />
       <workItem from="1516869742309" duration="2028000" />
       <workItem from="1516872528124" duration="5454000" />
-      <workItem from="1516879875608" duration="5591000" />
+      <workItem from="1516879875608" duration="6705000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156434000" />
+    <option name="totallyTimeSpent" value="157548000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1303" height="780" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -663,6 +640,7 @@
         <state relative-caret-position="264">
           <caret line="41" column="1" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="1" />
           <folding>
+            <element signature="e#7#505#0#PHP" expanded="true" />
             <marker date="1516887139627" expanded="true" signature="704:3359" ph="..." />
             <marker date="1516887139627" expanded="true" signature="806:3016" ph="..." />
             <marker date="1516887139627" expanded="true" signature="824:2685" ph="..." />
@@ -721,6 +699,7 @@
         <state relative-caret-position="336">
           <caret line="45" column="63" lean-forward="true" selection-start-line="45" selection-start-column="63" selection-end-line="45" selection-end-column="63" />
           <folding>
+            <element signature="e#7#505#0#PHP" expanded="true" />
             <marker date="1516887139627" expanded="true" signature="704:3359" ph="..." />
             <marker date="1516887139627" expanded="true" signature="806:3016" ph="..." />
             <marker date="1516887139627" expanded="true" signature="824:2685" ph="..." />
@@ -834,16 +813,6 @@
             <marker date="1516886567983" expanded="true" signature="1431:2668" ph="..." />
             <marker date="1516886567983" expanded="true" signature="2724:2996" ph="..." />
             <marker date="1516886567983" expanded="true" signature="3105:3495" ph="UPDATE `util... utilisateur" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/description_operator_query.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="3" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1127,11 +1096,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/session.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="87" column="16" lean-forward="true" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="16" />
+          <folding>
+            <element signature="e#6#290#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/description_operator_query.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="41" lean-forward="false" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/queries_operator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="70" lean-forward="false" selection-start-line="4" selection-start-column="70" selection-end-line="4" selection-end-column="70" />
+        <state relative-caret-position="756">
+          <caret line="42" column="69" lean-forward="true" selection-start-line="42" selection-start-column="69" selection-end-line="42" selection-end-column="69" />
           <folding>
+            <element signature="e#7#505#0#PHP" expanded="true" />
             <marker date="1516887139627" expanded="true" signature="704:3359" ph="..." />
             <marker date="1516887139627" expanded="true" signature="806:3016" ph="..." />
             <marker date="1516887139627" expanded="true" signature="824:2685" ph="..." />
@@ -1144,16 +1134,6 @@
             <marker date="1516887139627" expanded="true" signature="2866:3003" ph="..." />
             <marker date="1516887139627" expanded="true" signature="3055:3302" ph="..." />
             <marker date="1516887139627" expanded="true" signature="3106:3264" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/session.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="87" column="16" lean-forward="true" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="16" />
-          <folding>
-            <element signature="e#6#290#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
