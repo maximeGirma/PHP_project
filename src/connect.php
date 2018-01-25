@@ -1,10 +1,10 @@
 
 <?php
 /* * Created by IntelliJ IDEA.
- * User: maxime
+ * Author: MaximeGirma, GeoffroyAmiard, PeterBocquenet, KomlaganTeckou
  * Date: 20/01/18
  * Time: 16:10
-
+ * Version 1.0
 Affiche la page de connexion au système. Cette fonction est apellée par index.php et peut prendre
 un argument, si un argument est renseigné, un message pré-fait sera affiché au dessus des champs de
  connexion.

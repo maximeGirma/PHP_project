@@ -1,17 +1,22 @@
 <?php
 /**
  * Created by IntelliJ IDEA.
- * User: maxime
+ * Author: MaximeGirma, GeoffroyAmiard, PeterBocquenet, KomlaganTeckou
  * Date: 18/01/18
  * Time: 18:51
+ * Version 0.9
+ * index.php est la page principale de l'applicatif. Toutes les requetes clients -> serveur
+ * passent par là. L'index verifie la connexion avant d'appeller les fonctions nécessaires au
+ * fonctionnement du système, selon les requetes envoyées par le client.
  */
 
+require_once 'pages_html/welcome_page.php';
 require_once '../config.inc.php';
 require_once 'session.php';
 require_once 'error.php';
 require_once 'connexion.php';
 require_once 'connect.php';
-require_once 'requete_operator.php';
+require_once 'queries_operator.php';
 require_once 'CRUD_interface.php';
 require_once 'bdd_access.php';
 require_once 'gestionnaire.php';
@@ -22,7 +27,7 @@ session_start();
 
 if(is_connected() == False)
 {
-    end_session();
+    session_destroy();
     if(!isset($_POST['ID']) || !isset($_POST['PSW']))display_connect_page();
     else{
         $infos_utilisateur = connexion();
@@ -54,7 +59,7 @@ if (is_connected() == True){
                 default:
                     save_error("index.php->ligne 19 to 29 : error interface_choice");
                     error_alert();
-                    end_session();
+                    session_destroy();
 
             }
         }
@@ -65,7 +70,7 @@ if (is_connected() == True){
 
         else {
 
-            display_interface();
+            display_interface($welcome_page);
 
         }
     }

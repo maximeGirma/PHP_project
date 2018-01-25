@@ -1,10 +1,10 @@
 <?php
 /**
  * Created by IntelliJ IDEA.
- * User: maxime
+ * Author: MaximeGirma, GeoffroyAmiard, PeterBocquenet, KomlaganTeckou
  * Date: 12/01/18
  * Time: 14:51
- * Version 0.2
+ * Version 0.3
  * crud_interface() est appellé par index.php et appelle différentes fonctions d'administration
  * selon l'argument contenu dans des variables $_POST['']. Elle affiche ensuite le retour de ces
  * fonctions grâce au display_interface().
@@ -34,11 +34,11 @@ function crud_interface()
 
     elseif (isset($_POST['update'])) display_interface($crud_form_1,crud_update());
 
-    elseif (isset($_POST['create']) && $_POST['create'] == 1) crud_display_create_interface();
+    elseif (isset($_POST['create']) && $_POST['create'] == 1) display_interface(crud_display_create_interface());
 
-    elseif (isset($_POST['create']) && $_POST['create'] == 2) crud_create();
+    elseif (isset($_POST['create']) && $_POST['create'] == 2) display_interface($crud_form_1,crud_create());
 
-    elseif (isset($_POST['delete']) && $_POST['delete'] == 1) crud_delete();
+    elseif (isset($_POST['delete']) && $_POST['delete'] == 1) display_interface($crud_form_1,crud_delete());
 
     else display_interface($crud_form_1);
 }

@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by IntelliJ IDEA.
- * User: maxime
+ * Author: MaximeGirma, GeoffroyAmiard, PeterBocquenet, KomlaganTeckou
  * Date: 19/01/18
  * Time: 11:27
  * Version 1
@@ -30,7 +30,7 @@ function crud_select(){
                                     <input id="query_name" type="submit" name ="button" value = "Ajouter Utilisateur"/>
                                     </form>';
             return display_query_result($statement, $update_button, $create_button);
-            //display_query_result($statement, $update_button, $create_button);
+
 
 
 

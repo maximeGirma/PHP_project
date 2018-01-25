@@ -2,10 +2,10 @@
 
 /*
  * Created by IntelliJ IDEA.
- * User: maxime
+ * Author: MaximeGirma, GeoffroyAmiard, PeterBocquenet, KomlaganTeckou
  * Date: 18/01/18
  * Time: 18:51
- *
+ * Version 0.9
  * La fonction operateur_interface est appelée par index.php et sert à afficher le contenu de la
  * base de données. La fonction appelle dislay_interface() pour afficher l'interface. Puis, si elle
  * a recu  l'argument adéquat elle affiche le resultat d'une requete pré-enregistré dans queries_files.php
@@ -40,7 +40,15 @@ function operator_interface()
                                 <option value='5' onclick=\"description_query(5);\"> Chiffre d'affaire</option>
                                 <option value='6' onclick=\"description_query(6);\"> Informations représentant légal</option>
                                 <option value='7' onclick=\"description_query(7);\"> Usagers par année et établissement</option>
-
+                                <option value='8' >Requête 9</option>
+                                <option value='8' >Requête 10</option>
+                                <option value='8' >Requête 11</option>
+                                <option value='8' >Requête 12</option>
+                                <option value='8' >Requête 13</option>
+                                <option value='8' >Requête 14</option>
+                                <option value='8' >Requête 15</option>
+                                <option value='8' >Requête 16</option>
+    
 
 							<!-- ?? possible remplir par alimentation de \"table requetes\" (csv?,avec pramettres, pour ajouter des préset) ?? -->
 							</label>	
@@ -129,7 +137,7 @@ function operator_interface()
             }
 
         } else {
-            echo 'pas kabla';
+            display_interface($op_interface_html,'Une erreur innatendue s\'est produite');
         }
 
     } else {

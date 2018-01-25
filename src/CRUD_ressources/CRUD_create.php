@@ -1,26 +1,26 @@
 <?php
 /**
  * Created by IntelliJ IDEA.
- * User: maxime
+ * Author: MaximeGirma, GeoffroyAmiard, PeterBocquenet, KomlaganTeckou
  * Date: 19/01/18
  * Time: 11:25
  * Version 0.9
  *
- * crud_display_create_interface() est appelé par crud_interface() et affiche l'interface
- * de creation d'utilisateur.
- * TODO : Remplacer cette fonction par l'usage de display_interface()
+ * crud_display_create_interface() est appelé par crud_interface() et renvoie l'interface
+ * de creation d'utilisateur sous forme de string
+ *
  *
  * crud_create() est appelé par crud_interface()
  * Elle utilise les $_POST renseignés par l'administrateur pour créer un nouvel utilisateur
  * dans la base de données. Renvoie True si la requete reussit, sinon False
- * TODO : Ajouter le renvoi du true/false
+ * Renvoie un string informant du succes ou de l'echec de la requete
  */
 
 
 function crud_display_create_interface(){
 
 
-        echo '<center><form action="index.php" method="POST">
+        return '<center><form action="index.php" method="POST">
             <label for="nom">Nom : </label>
             <input name="nom" type="text" required>
             <label for="prenom">Prenom : </label>
@@ -81,10 +81,10 @@ function crud_create(){
             ';
 
         if (bdd_acces($create_query)) {
-            echo 'oh yeah';
-        } else echo 'oh no...';
+            return 'Modification effectuée';
+        } else return 'Une erreur s\'est produite, echec de la modification';
     } else {
-        echo 'Ce login est deja utilisé';
+        return 'Ce login est deja utilisé';
     }
 
 }

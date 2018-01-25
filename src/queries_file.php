@@ -2,7 +2,7 @@
 
 /*
  * Created by IntelliJ IDEA.
- * User: maxime
+ * Author: MaximeGirma, GeoffroyAmiard, PeterBocquenet, KomlaganTeckou
  * Date: 18/01/18
  * Time: 18:51
  * Version 0.9
@@ -35,20 +35,22 @@ AS 'ADRESSE'
 AS 'VILLE'
 ,ville_cp.code_post
 AS 'CODE POSTAL'
-,telephone.num_telephone
+,MIN(telephone.num_telephone)
 AS 'NUMERO DE TELEPHONE'
-,type_telephone.denom_typ_tel
-AS 'TYPE DE TELEPHONE'
+
 /*venant de la table personnes: */
 FROM
 personnes
 /*jointe avec les tables suivantes*/
 INNER JOIN joindre ON personnes.id_personne = joindre.id_personne
 INNER JOIN telephone ON joindre.id_tel = telephone.id_tel
-INNER JOIN type_telephone ON telephone.id_type_tel = type_telephone.id_type_tel
+
 INNER JOIN habite ON personnes.id_personne = habite.id_personne
 INNER JOIN adresse ON habite.id_adresse = adresse.id_adresse
 INNER JOIN ville_cp ON adresse.id_ville = ville_cp.id_ville
+GROUP BY personnes.id_personne, adresse.num_rue,adresse.rue,adresse.residence,adresse.batiment,
+ville_cp.nom_commune,ville_cp.code_post
+ 
 ORDER BY personnes.nom ASC",
 "SELECT
 
@@ -221,7 +223,7 @@ AS 'PRENOM'
 AS 'NOM'
 ,personnes.email
 AS 'EMAIL'
-,personnes.naissance AS 'DATE_DE_NAISSANCE'
+,personnes.naissance AS 'NAISSANCE'
 
 ,adresse.num_rue
 AS 'NUMERO_RUE'
@@ -233,20 +235,20 @@ AS 'RUE'
 AS 'VILLE'
 ,ville_cp.code_post
 AS 'CODE_POSTAL'
-,telephone.num_telephone
-AS 'NUMERO_DE_TELEPHONE'
-,type_telephone.denom_typ_tel
-AS 'TYPE_DE_TELEPHONE'
+,MIN(telephone.num_telephone)
+AS 'NUMERO DE TELEPHONE'
+
 /*venant de la table personnes: */
 FROM
 personnes
 /*jointe avec les tables suivantes*/
 INNER JOIN joindre ON personnes.id_personne = joindre.id_personne
 INNER JOIN telephone ON joindre.id_tel = telephone.id_tel
-INNER JOIN type_telephone ON telephone.id_type_tel = type_telephone.id_type_tel
+
 INNER JOIN habite ON personnes.id_personne = habite.id_personne
 INNER JOIN adresse ON habite.id_adresse = adresse.id_adresse
 INNER JOIN ville_cp ON adresse.id_ville = ville_cp.id_ville
+
 WHERE ";
 
 

@@ -1,13 +1,12 @@
 <?php
 /**
  * Created by IntelliJ IDEA.
- * User: maxime
- * Date: 19/01/18
+ * Author: MaximeGirma, GeoffroyAmiard, PeterBocquenet, KomlaganTeckou
  * Time: 10:56
  * Version 0.9
  * crud_delete() est appelé par la fonction crud_interface(). Il efface de la base l'utilisateur
  * correspondant à l'ID renseigné par l'administrateur.
- * TODO: Renvoi True / False
+ * Renvoie un str informant du succes ou de l'echec de la requete
  */
 
 function crud_delete(){
@@ -21,8 +20,8 @@ function crud_delete(){
         id_utilisateur =\'' . $_POST['id_utilisateur'] . '\';';
 
     if (bdd_acces($delete_query)) {
-        echo 'user deleted';
+        return 'Utilisateur supprimé avec succès';
     } else {
-        echo 'pause?';
+        return 'Une erreur s\'est produite, echec lors de la suppression';
     }
 }
