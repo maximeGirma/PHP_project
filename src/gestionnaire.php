@@ -102,7 +102,7 @@ function gestionnaire()
                 <tr><td><p><label for="email">Email: </label></td>
                 <td><input name="e_mail" type="text" required value="' . $item->EMAIL . '"></p></td></tr>
                 <tr><td><p><label for="date de naissance">Date de naissance: </label></td>
-                <td><input name="naissance" type="text" required value="' . $item->DATE_DE_NAISSANCE . '"></p></td></tr>
+                <td><input name="naissance" type="text" required value="' . $item->NAISSANCE . '"></p></td></tr>
                 <tr><td><p><label>Numero de rue:</label></td>
                 <td><input name="numero_de_rue" type="text" required value="'. $item->NUMERO_RUE.'"></p></td></tr>
                 <tr><td><p><label>Rue:</label></td>

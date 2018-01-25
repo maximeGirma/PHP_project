@@ -40,7 +40,15 @@ function operator_interface()
                                 <option value='5' onclick=\"description_query(5);\"> Chiffre d'affaire</option>
                                 <option value='6' onclick=\"description_query(6);\"> Informations représentant légal</option>
                                 <option value='7' onclick=\"description_query(7);\"> Usagers par année et établissement</option>
-
+                                <option value='8' >Requête 9</option>
+                                <option value='8' >Requête 10</option>
+                                <option value='8' >Requête 11</option>
+                                <option value='8' >Requête 12</option>
+                                <option value='8' >Requête 13</option>
+                                <option value='8' >Requête 14</option>
+                                <option value='8' >Requête 15</option>
+                                <option value='8' >Requête 16</option>
+    
 
 							<!-- ?? possible remplir par alimentation de \"table requetes\" (csv?,avec pramettres, pour ajouter des préset) ?? -->
 							</label>	
