@@ -32,7 +32,7 @@ function crud_display_create_interface(){
             <input name="new_PSW" type="password" required>
             <br/>
             <br/>
-            <label for="id_type_user">type d\'utilisateur</label>
+            <label for="id_type_user">Type d\'utilisateur</label>
             <br/>
             <input type="radio"  name="id_type_user" value="1"><label>Opérateurs</label>
             <br/>
