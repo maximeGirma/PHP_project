@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by IntelliJ IDEA.
- * User: maxime
+ * Author: MaximeGirma, GeoffroyAmiard, PeterBocquenet, KomlaganTeckou
  * Date: 12/01/18
  * Time: 14:51
  * Version 0.3

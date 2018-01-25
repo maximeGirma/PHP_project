@@ -1,9 +1,10 @@
 <?php
 /**
  * Created by IntelliJ IDEA.
- * User: maxime
+ * Author: MaximeGirma, GeoffroyAmiard, PeterBocquenet, KomlaganTeckou
  * Date: 19/01/18
  * Time: 12:12
+ * Version 1.0
  * bdd_access est appellée par les différentes fonctions qui ont besoin d'acceder à la BDD.
  * Elle prend une requete SQL comme argument et renvoie le resultat renvoyé par la BDD ou un FALSE
  * si la requete à échoué.

@@ -1,8 +1,7 @@
 <?php
 /**
  * Created by IntelliJ IDEA.
- * User: maxime
- * Date: 19/01/18
+ * Author: MaximeGirma, GeoffroyAmiard, PeterBocquenet, KomlaganTeckou
  * Time: 10:56
  * Version 0.9
  * crud_delete() est appelé par la fonction crud_interface(). Il efface de la base l'utilisateur

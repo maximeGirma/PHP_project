@@ -2,7 +2,7 @@
 
 /*
  * Created by IntelliJ IDEA.
- * User: maxime
+ * Author: MaximeGirma, GeoffroyAmiard, PeterBocquenet, KomlaganTeckou
  * Date: 18/01/18
  * Time: 18:51
  * Version 0.9

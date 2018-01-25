@@ -1,20 +1,20 @@
 <?php
 /*
  * Created by IntelliJ IDEA.
- * User: Maxime
+ * Author: MaximeGirma, GeoffroyAmiard, PeterBocquenet, KomlaganTeckou
  * Date: 18/01/18
  * Time: 18:51
  * Version 0.9
  * session.php contient les différentes fonctions relatives aux session
  * Voir les cartouches commentaires de chaque fonction
- * TODO: Supprimer end_session() au profit d'un simple session_destroy()
+ *
  */
 
 
 function init_session(array $infos_utilisateur) {
 /*
  * Created by IntelliJ IDEA.
- * User: Peter
+ * Author: MaximeGirma, GeoffroyAmiard, PeterBocquenet, KomlaganTeckou
  * Date: 18/01/18
  * Time: 18:51
  * Version 1
@@ -26,9 +26,7 @@ function init_session(array $infos_utilisateur) {
 	if(empty($SID)) {
 		session_start();
 	}
-		
-	//echo 'Bienvenue ' . $_SESSION['prenom_utilisateur'] . $_SESSION['nom_utilisateur'], '.';
-	//echo "SID: ".SID."<br>session_id(): ".session_id()."<br>COOKIE: ".$_COOKIE["PHPSESSID"];
+
     $id_utilisateur = $infos_utilisateur[0];
 	$id_type_utilisateur=$infos_utilisateur[1];
 	$prenom_utilisateur=$infos_utilisateur[2];
@@ -45,14 +43,34 @@ function init_session(array $infos_utilisateur) {
 
 }
 
+
 function update_timeout()
 {
+/*
+ * Created by IntelliJ IDEA.
+ * Author: MaximeGirma, GeoffroyAmiard, PeterBocquenet, KomlaganTeckou
+ * Date: 22/01/18
+ * Time: 18:51
+ * Version 1
+ *
+ * update_timeout() met à jour l'uptime de l'utilisateur
+ */
+
     $_SESSION['started_time'] = time();
 }
 
 function timeout_session()
 {
-	
+    /*
+     * Created by IntelliJ IDEA.
+     * Author: MaximeGirma, GeoffroyAmiard, PeterBocquenet, KomlaganTeckou
+     * Date: 14/01/18
+     * Time: 18:51
+     * Version 1
+     *
+     * timeout_session() est appelé par is_connected() et renvoie un false si le timeout limite
+     * est dépassé (temps d'innactivité).
+     */
 	if(time() > $_SESSION['started_time'] + $_SESSION['timeout'])	{
 		$_SESSION['connected'] = FALSE;
 		return TRUE;
@@ -60,8 +78,17 @@ function timeout_session()
 }
 
 
-function is_connected(){
-
+function is_connected()
+{
+    /*
+     * Created by IntelliJ IDEA.
+     * Author: MaximeGirma, GeoffroyAmiard, PeterBocquenet, KomlaganTeckou
+     * Date: 16/01/18
+     * Time: 18:51
+     * Version 1
+     *is_connected()est appelé par l'index et verifie si l'utilisateur est connecté.
+     * Renvoie un True si oui, false sinon
+     */
 
 
     if(isset($_SESSION['connected']))
@@ -78,10 +105,3 @@ function is_connected(){
 
     }else return FALSE;
 }
-
-function end_session()
-{
-
-    session_destroy();
-}
-

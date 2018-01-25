@@ -1,8 +1,8 @@
 /* Created by IntelliJ IDEA.
- * User: Maxime
+ * Author: MaximeGirma, GeoffroyAmiard, PeterBocquenet, KomlaganTeckou
  * Date: 19/01/18
  * Time: 11:25
- * Version 1.0
+ * Version 0.9
  * description_query() est appelé onClick sur la page HTML renvoyé par operator_interface()
  * Elle affiche la description de requete stockée dans get_description() correspondant à l'argument
  * renseigné.
