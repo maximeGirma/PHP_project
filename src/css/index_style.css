@@ -1,7 +1,20 @@
 /* ***********************************************************
+**************************************************************
 STAPA ACCES - shared style sheet
 
 V 0.2.01
+**************************************************************
+************************ SOMMAIRE ****************************
+	HEADER : _m > pages index, connexion, accueil, contact, etc
+	HEADER : _o > pages interfaces utilisateurs.
+	CORPS DE PAGE :
+	CORPS DE PAGE : _m > pages index, connexion, contact, etc
+	CORPS DE PAGE : _o > pages interfaces utilisateurs, appel requêtes.
+	CORPS DE PAGE : resultat requete operateur.
+	CORPS DE PAGE : resultat requete personne.
+	CORPS DE PAGE : contact
+	CORPS DE PAGE : modif personne.
+	PIED DE PAGE
 *********************************************************** */
 
 /* **************************COLOR****************************
@@ -57,7 +70,7 @@ header {
 }
 
 /* ***********************************************************
-	HEADER : m > pages index, conn, contact, etc
+	HEADER : m > pages index, connexion, accueil, contact, etc
 	
 	- bannière grande
 		- titre
@@ -93,12 +106,11 @@ header {
 
 /* ***********************************************************
 	what is love ?
-
 *********************************************************** */
 				#e_egg_m {	 
 					position:absolute;
 					top:34px;
-					left:975px;
+					left:983px;
 					z-index: 0;
 				}		 
 			 
@@ -136,16 +148,16 @@ header {
 		}
 
 /* ***********************************************************
-	HEADER :  o > pages interfaces utils.
+	HEADER :  o > pages interfaces utilisateur.
 	
 	- arrière-plan bannière (cache le texte défilant en arrière plan)
 	- bannière petite statique
-		- Message accueil, nom utils
-		- menu
+		- Message accueil, nom utilisateur
+		- menu navigation
 			- boutons page actuelle
 			- boutons page accessible
 			- boutons page non accessible
-			- déconnexion
+			- boutons déconnexion
 		- logo petit
 
 *********************************************************** */
@@ -292,7 +304,6 @@ header {
 
 /* ***********************************************************
 	what is love ?
-
 *********************************************************** */
 					#e_egg_o {	 
 						position:absolute;
@@ -339,12 +350,12 @@ header {
 #main_bg {
 	margin: auto;
 	width: 1140px;
-	height: auto;
+	min-height: 500px;
 	background-color: #7094a0 ;
 }
 
 /* ***********************************************************
-	CORPS DE PAGE : m > pages index, connex, contact, etc
+	CORPS DE PAGE : _m > pages index, connexion, contact, etc
 	
 	- main phrasing
 		- bloc connexion	> page connexion seulement
@@ -393,16 +404,19 @@ header {
 		}
 
 /* ***********************************************************
-	CORPS DE PAGE : o > pages interfaces utils.
+	CORPS DE PAGE : _o > pages interfaces utilisateurs, appel requêtes.
 	
 	- phrasing interfaces
 		- fieldset / légende
-			-  page actuelle
+			- cadre de fonction principale (opé,ges,adm)
 			- liste choix requêtes
 			- description de la requete selectionnée
+			- champs
+			- radio select (admin)
 			- boutons
 				- lance-requête
 				- clear selection
+				- recherche
 
 *********************************************************** */
 #main_o {
@@ -410,7 +424,7 @@ header {
 	padding: 40px 60px 50px 60px;
 }
 
-	#main_o fieldset{
+	#main_o fieldset {
 		margin: auto;
 		padding: 20px 20px 20px 20px;
 		/* height: 400px; */
@@ -419,7 +433,7 @@ header {
 		/* border-radius: 8px; */
 	}
 
-	#main_o legend{
+	#main_o legend {
 		height: 23px;
 		width: 180px;
 		font-size: 20px;
@@ -433,7 +447,7 @@ header {
 		box-shadow: 0 1px 2px rgba(7,8,10,0.4)
 	}
 
-		#t_requetes{
+		#t_requetes {
 			/* margin: 10px 30px 0 20px; */
 			width: 460px;
 			background-color: #fdfefe;
@@ -452,7 +466,7 @@ header {
 				font-family: 'Palanquin', sans-serif;
 			}
 
-		#desc_requetes{
+		#desc_requetes {
 			margin: 0 0 0 10px;
 			padding: 16px;
 			width: 440px;
@@ -468,47 +482,87 @@ header {
 			/* clear: both; */
 		}
 
-		#random_id{
-			clear: both;
-			float: right;
+		#field_name {
+			margin: -5px 0 0 0;
+			padding: 3px;
+			width: 320px;
+			height: 21px;
+			font-size: 14px;
+			font-weight: bold;
+			color: #5d808c;
+			text-align: justify;
+			background-color: #fdfefe;
+			/* border-radius: 4px; */
+			border: 2px solid #1e2a2e;
+			/* float: right; */
+			/* clear: both; */
 		}
 
-			#random_id nav {
-				padding-top: 8px;
+		#admin_01 label:nth-child(1) {
+			font-size: 18px;
+			font-weight: bold;
+			color: #5d808c;
+			
+		}
+
+		#random_id {
+				clear: both;
+				float: right;
+			}
+
+				#random_id nav {
+					padding-top: 8px;
+					width: 180px;
+					height: 30px;
+					background-color: #5d808c ;
+					text-align: center;
+					font-weight: bold;
+					/* border-radius: 4px; */
+					box-shadow: 0 -1px 2px rgba(7,8,10,0.4);
+				}
+				
+					#query {
+					margin: -65px 270px 0 0;
+					}
+
+					#clear{
+					margin: -37px 0px 0 240px;
+
+					}
+
+					#random_id nav input {
+						border: 0px;
+						color: #1e2a2e;
+						font-weight: bold;
+						font-size: 16px;
+						background-color: #5d808c ;
+						font-family: 'Palanquin', sans-serif;
+
+					}
+
+			#query_name {
+				/* clear: both; */
+				/* float: right; */
+				border: 0px !important;
 				width: 180px;
 				height: 30px;
-				background-color: #5d808c ;
-				text-align: center;
-				font-weight: bold;
+				margin: -4px 436px 0px 0px;
 				/* border-radius: 4px; */
-				box-shadow: 0 -1px 2px rgba(7,8,10,0.4)
+				font-size: 16px;
+				font-weight: bold;
+				color: #1e2a2e !important;
+				background-color: #5d808c !important;
+				box-shadow: 0 -1px 2px rgba(7,8,10,0.4);
+				font-family: 'Palanquin', sans-serif !important;
+
 			}
-			
-				#query {
-				margin: -65px 270px 0 0;
-
-				}
-
-				#clear{
-				margin: -37px 0px 0 240px;
-
-				}
-
-				#random_id nav input {
-					border: 0px;
-					color: #1e2a2e;
-					font-weight: bold;
-					font-size: 16px;
-					background-color: #5d808c ;
-					font-family: 'Palanquin', sans-serif;
-
-				}
 
 
 /* ***********************************************************
-	CORPS DE PAGE : : resultat requete operateur.
+	CORPS DE PAGE : resultat requete operateur.
 	
 	- tableau
+	- entetes
 	
 *********************************************************** */
 	#tableau_operateur{
@@ -518,7 +572,7 @@ header {
 		border-collapse: collapse;
 	}
 	
-	td{
+	#tableau_operateur td{
 		padding: 0 4px 0 4px;
 		font-size: 12px;
 		color: #1e2a2e;
@@ -527,31 +581,76 @@ header {
 		border: 1px solid;
 	}
 	
- tr:nth-child(1) { 
-	font-size: 14px;
-	color: #fdfefe;
-	background-color: #1e2a2e; 
- }
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(1) { 
+		font-size: 13px;
+		color: #fdfefe;
+		background-color: #1e2a2e; 
+	 }
 
- tr:nth-child(3) { 
-	 background-color: #fdfefe; 
- }
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(2) td:nth-child(1) {
+		padding: 0 3px 0 3px;
+		font-size: 12px;
+		color: #1e2a2e;
+		/* text-align: center; */
+		background-color: #cedbdf ;
+		border: 1px solid;
+	}
+	
+	#tableau_operateur tbody:nth-child(1) {
+	}
 
- tr:nth-child(5) { 
-	 background-color: #cedbdf; 
- }
+	
+/* ***********************************************************
+	CORPS DE PAGE : resultat requete personne.
+	
+	- tableau
+	- boutons modif
+	
+*********************************************************** */
 
- tr:nth-child(7) { 
-	 background-color: #fdfefe; 
- }
 
- tr:nth-child(9) { 
-	 background-color: #cedbdf; 
- }
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(11) td:nth-child(13) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(10) td:nth-child(13) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(9) td:nth-child(13) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(8) td:nth-child(13) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(7) td:nth-child(13) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(6) td:nth-child(13) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(5) td:nth-child(13) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(4) td:nth-child(13) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(3) td:nth-child(13) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(2) td:nth-child(13) input:nth-child(1) {
+		border: 0px;
+		height: 30px;
+		margin: 0 -4px 0 -4px;
+		font-size: 14px;
+		font-weight: bold;
+		color: #1e2a2e;
+		background-color: #5d808c ;
+		/* box-shadow: 0 -1px 2px rgba(7,8,10,0.4); */
+		font-family: 'Palanquin', sans-serif;
 
- tr:nth-child(11) { 
-	 background-color: #fdfefe; 
- }
+	}
+
+/* ***********************************************************
+	CORPS DE PAGE : modif personne.
+	
+	- label
+	- champs
+	
+*********************************************************** */
+	#formulaire_gestion table tbody tr td label {
+		font-size: 14px;
+		font-weight: bold;
+		color: #1e2a2e;
+	}
+
+	#formulaire_gestion table tbody tr td input {
+		margin: 20px 0 0 0;
+		background-color: #fdfefe;
+		border: 1px solid #1e2a2e;
+		font-family: 'Palanquin', sans-serif;
+	}
+
 
 
 /* ***********************************************************
@@ -602,5 +701,16 @@ header {
 	}
 
 
-	
-	
+
+#contact_formulaire
+{
+	margin:auto;
+	text-align: center;
+}
+
+#formulaire_gestion
+{
+	margin : auto;
+	margin-left: 30%;
+	text-align : justify;
+}

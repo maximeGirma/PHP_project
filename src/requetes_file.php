@@ -210,26 +210,22 @@ AS 'PRENOM'
 AS 'NOM'
 ,personnes.email
 AS 'EMAIL'
-,date_format(personnes.naissance ,'%d/%m/%Y') AS 'DATE_DE_NAISSANCE'
-/* fonction 'date_format()' utilisée pour changer la forme de la date en jj/mm/aaa */
-,concat( adresse.num_rue
-,' ',
-/* fonction 'concat()' utilisée pour rassembler differentes données dans une seule colonne */
-adresse.rue
-,' ',
-ifnull(adresse.residence, ''),
-/* fonction 'ifnull()' utilisée pour remplacer les valeurs 'null' par la valeur souhaitée */
-ifnull(adresse.batiment, '')
-)
-AS 'ADRESSE'
+,personnes.naissance AS 'DATE_DE_NAISSANCE'
+
+,adresse.num_rue
+AS 'NUMERO_RUE'
+
+,adresse.rue 
+AS 'RUE'
+
 ,ville_cp.nom_commune
 AS 'VILLE'
 ,ville_cp.code_post
-AS 'CODE POSTAL'
+AS 'CODE_POSTAL'
 ,telephone.num_telephone
-AS 'NUMERO DE TELEPHONE'
+AS 'NUMERO_DE_TELEPHONE'
 ,type_telephone.denom_typ_tel
-AS 'TYPE DE TELEPHONE'
+AS 'TYPE_DE_TELEPHONE'
 /*venant de la table personnes: */
 FROM
 personnes
@@ -243,3 +239,39 @@ INNER JOIN ville_cp ON adresse.id_ville = ville_cp.id_ville
 WHERE ";
 
 
+
+$gestionnaire_update_query = '
+UPDATE 
+  `personnes`
+RIGHT JOIN habite ON personnes.id_personne = habite.id_personne
+RIGHT JOIN adresse ON habite.id_adresse = adresse.id_adresse
+RIGHT JOIN ville_cp ON adresse.id_ville = ville_cp.id_ville
+SET 
+  `nom`= \'' . $_POST['nom'] . '\',
+  `prenom`= \'' . $_POST['prenom'] . '\',
+  `naissance`= \'' . $_POST['naissance'] . '\',
+  `email`= \'' . $_POST['e_mail'] . '\',
+    
+    `num_rue` = \''.$_POST['numero_de_rue'].'\',
+    `rue` =\''.$_POST['rue'].'\',
+    adresse.id_ville = '.$_SESSION['id_ville'].'
+WHERE
+  personnes.id_personne= ' . $_POST['id_utilisateur'] .';' ;
+
+
+$city_query ="
+SELECT
+nom_commune
+FROM
+ville_cp
+";
+
+$get_city_code="
+SELECT
+id_ville
+FROM
+ville_cp
+WHERE
+nom_commune = '".$_POST['ville']."'";
+
+//`ìd_type_tel` = \''.$_POST['type_tel'].'\',

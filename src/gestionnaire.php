@@ -9,16 +9,23 @@
 function gestionnaire()
 {
     $_SESSION['tracker']=2;
+
     require_once 'display.php';
     include 'requetes_file.php';
     require_once 'requete_operator.php';
+    require_once 'bdd_access.php';
 
 
-
-    $gestion_interface = '<form action="index.php" method="POST">
-            <label>nom de la personne recherchée</label>
-            <input name="gestion_recherche" required/>
-            <input type="submit" value="rechercher"></form>';
+    $gestion_interface = '
+		<fieldset>
+		<legend>Rechercher</legend>
+            <form action="index.php" method="POST">
+                <label>Rechercher une personne par son nom</label><br><br>
+                <input id="field_name" name="gestion_recherche" placeholder="Nom" />
+                <input id="query_name" type="submit" value="AFFICHER">
+            </form>
+		</fieldset>
+            ';
     $display_content ="";
 
 
@@ -60,9 +67,7 @@ function gestionnaire()
     }elseif(isset($_POST['id_usager'])){
 
 
-
-
-        $modifier = ' personnes.id_personne = '.$_POST['id_usager'];
+        $modifier = ' personnes.id_personne = '.$_POST['id_usager'].' ';
 
         if ($statement = bdd_acces($gestion_query . $modifier . ';')) {
 
@@ -70,31 +75,69 @@ function gestionnaire()
             $statement->execute();
             $item = $statement->fetchObject();
 
-            $display_content= '<form action="index.php" method="post">
-                <label for="nom">nouveau nom : </label>
-                <input name="nom" type="text" required value="' . $item->NOM . '">
-                <label for="prenom">nouveau prenom : </label>
-                <input name="prenom" type="text" required value="' . $item->PRENOM . '">
-                <br/>
-                <label for="email">nouvel email: </label>
-                <input name="e_mail" type="text" required value="'.$item->EMAIL.'">
-                <label for="date de naissance">nouvelle date de naissance: </label>
-                <input name="naissance" type="text" required value="'.$item->DATE_DE_NAISSANCE.'">
+            $city_list_returned = bdd_acces($city_query);
+            $city_list_temp = $city_list_returned->fetchAll();
+            $city_list = [];
+            foreach ($city_list_temp as $city){
+                $city_list[] = $city[0];
+            }
+            $display_city ="";
+            foreach($city_list as $city)
+            {
+                if($city == $item->VILLE)
+                {
+                    $display_city .= '<option selected>' . $city . '</option>';
+                }else{
+                    $display_city .= '<option>' . $city . '</option>';
+                }
+            }
+
+                $display_content = '<form id ="formulaire_gestion" action="index.php" method="post">
+                <table><tr><td><label for="nom">Nom : </label></td>
+                <td><input name="nom" type="text" required value="' . $item->NOM . '"></p></td></tr>
+                <tr><td><p><label for="prenom">Prenom : </label></td>
+                <td><input name="prenom" type="text" required value="' . $item->PRENOM . '"></p></td></tr>
+                <tr><td><p><label for="email">Email : </label></td>
+                <td><input name="e_mail" type="text" required value="' . $item->EMAIL . '"></p></td></tr>
+                <tr><td><p><label for="date de naissance">Date de naissance: </label></td>
+                <td><input name="naissance" type="text" required value="' . $item->DATE_DE_NAISSANCE . '"></p></td></tr>
+                <tr><td><p><label>Numero de rue:</label></td>
+                <td><input name="numero_de_rue" type="text" required value="'. $item->NUMERO_RUE.'"></p></td></tr>
+                <tr><td><p><label>Rue :</label></td>
+                <td><input name="rue" type="text" required value="'. $item->RUE.'"></p></td></tr>
+                <tr><td><p><label>Ville :</label></td>
+                <td><select name="ville" required ></p>
+                '.$display_city.'</select></td></tr>
                 
-                <input name="update" type="hidden" value = "1">
+                
+                <tr><td colspan="2"><input name="update" type="hidden" value = "1">
                 <input name="id_utilisateur" type="hidden" value = "' . $item->id_utilisateur . '">
-                <input type="submit" value="Modifier">
-                </form>'
-                ;
-
-
-        }
-
-
+                <input id="query_name" type="submit" value="APPLIQUER"></td></tr>
+                </table>
+                </form>';
 
 
     }
+    }
+    if (isset($_POST['update'])) {
 
+        $temporary = bdd_acces($get_city_code);
+        $_SESSION['id_ville'] = $temporary->fetch()[0];
+
+
+        if (bdd_acces($gestionnaire_update_query))
+        {
+            echo 'modif done!';
+
+        }else echo 'meh...jamais du premier coup';
+
+    }
     display_interface($gestion_interface, $display_content);
 }
 
+
+/*<tr><td><label>Numero de telephone</label></td>
+                <td><input name="tel_num" type ="text" required value="'. $item->NUMERO_DE_TELEPHONE.'"></p></td></tr>
+<tr><td><p><label>Type de téléphone:</label></td>
+                <td><input name="type_tel" ="text" required value="'. $item->TYPE_DE_TELEPHONE.'"></p></td></tr></table>
+*/

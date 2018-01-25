@@ -86,7 +86,7 @@ function display_connect_page($error=""){
                 
                     <p>
 					<a href=\"#\"_blank\">MENTIONS LÉGALES</a>
-                    <a href="contact.html" target="_self">CONTACT</a>
+                    <a href="pages_html/contact.html" target="_self">CONTACT</a>
                     <a>&copy TEAM SEVEN</a>
                     </p>
                     

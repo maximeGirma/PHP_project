@@ -26,8 +26,13 @@ function init_session(array $infos_utilisateur) {
 
 }
 
+function update_timeout()
+{
+    $_SESSION['started_time'] = time();
+}
 
-function timeout_session(){
+function timeout_session()
+{
 	
 	if(time() > $_SESSION['started_time'] + $_SESSION['timeout'])	{
 		$_SESSION['connected'] = FALSE;

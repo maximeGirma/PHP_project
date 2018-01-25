@@ -36,10 +36,11 @@ V 0.1.06
 					<h2>
 					<a>S T A P A</a> 
 					<a>A C C E S</a>
-					<picture  id="logo_m">
+					<picture  id="logo_m" >
 						<img src="../images/bus_t.png"  alt="-image-">
 					</picture>
 					</h2>
+
 				</hgroup>
 				
 			</header>
@@ -53,12 +54,33 @@ V 0.1.06
 			
 				<section id="main_m">						
 				
-					<p id="contact">
-						<h1>CONTACT
-						</h1>
-						Essayer toujours les signaux de fumée...
-					</p>
-					
+					<form action="../index.php" method="POST" id="contact_formulaire">
+						<br/><br/>
+						<caption id="contact"><h1>CONTACT</h1></caption>
+						<div>
+							<label for="nom">Nom :</label>
+							<input type="text" id="nom" name="user_name" />
+						</div>
+						<div>
+							<label for="courriel">Courriel :</label>
+							<input type="email" id="courriel" name="user_email" />
+						</div>
+						<p>
+							<label for="statut">statut:</label>
+							<input type="radio" id="operateur" name="statut"><label> operateur </label>
+							<input type="radio" id="gestionnaire" name="statut"><label> gestionnaire </label>
+							<input type="radio" id="administrateur" name="statut"><label> administrateur </label>
+						</p>
+						<div>
+							<label for="message">Message :</label>
+							<textarea id="message" cols="50" rows="10" placeholder="veuilliez nous soumettre votre requete ici" name="user_message"></textarea>
+						</div>
+
+						<div class="button">
+							<button type="submit">Envoyer votre message</button>
+						</div>
+
+					</form>
 				</section>
 				
 			</div>
