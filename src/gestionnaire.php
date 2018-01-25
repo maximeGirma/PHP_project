@@ -72,8 +72,8 @@ function gestionnaire()
                 }
             }
 
-            $display_content .= '<td><input type="submit" name="update_gestion" value="Modifier"></td></form>';
-            $display_content .= '</tr>';
+            $display_content .= '<td><input type="submit" name="update_gestion" value="Modifier"></td>';
+            $display_content .= '</tr></form>';
             $error_search = 1;
         }
         $display_content .= '</table>';
@@ -82,10 +82,12 @@ function gestionnaire()
     }elseif(isset($_POST['id_usager'])){
 
 
-        $modifier = ' personnes.id_personne = '.$_POST['id_usager'].' ';
+        $modifier = ' personnes.id_personne = '.$_POST['id_usager'].' '.
+                    'GROUP BY personnes.id_personne, adresse.num_rue,adresse.rue,adresse.residence,adresse.batiment,
+                    ville_cp.nom_commune,ville_cp.code_post';
 
         if ($statement = bdd_acces($gestion_query . $modifier . ';')) {
-
+            
 
             $statement->execute();
             $item = $statement->fetchObject();
@@ -107,7 +109,7 @@ function gestionnaire()
                 }
             }
 
-                $display_content = '<form id ="formulaire_gestion" action="index.php" method="post">
+                $display_content = '<form id="formulaire_gestion" action="index.php" method="post">
                 <table><tr><td><label for="nom">Nom : </label></td>
                 <td><input name="nom" type="text" required value="' . $item->NOM . '"></p></td></tr>
                 <tr><td><p><label for="prenom">Prenom : </label></td>

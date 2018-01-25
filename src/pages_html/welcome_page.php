@@ -28,7 +28,7 @@ $welcome_page = '<html>
   <body id="demos">
    <script type="text/javascript">
     $(function() {
-        $("#datepicker" ).datepicker({
+        $("#query_name" ).datepicker({
         beforeShowDay: function(date){
             var b = (date.getDay() < 5);
             var c = "";
@@ -48,7 +48,7 @@ $welcome_page = '<html>
       });
    });
    </script>
-    <input type="button" id="datepicker" value="Calendrier"></p>
+    <input type="button"  id="query_name" value="Calendrier"></p>
   </body>
 </html>
 ';
