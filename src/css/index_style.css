@@ -2,7 +2,7 @@
 **************************************************************
 STAPA ACCES - shared style sheet
 
-V 0.2.01
+V 0.2.03
 **************************************************************
 ************************ SOMMAIRE ****************************
 	HEADER : _m > pages index, connexion, accueil, contact, etc
@@ -565,18 +565,19 @@ header {
 	- entetes
 	
 *********************************************************** */
-	#tableau_operateur{
+	#tableau_operateur {
+		width: 1020px;
 		/* min-width: 100%; */
 		margin: 40px auto;
 		height: auto;
 		border-collapse: collapse;
 	}
 	
+
 	#tableau_operateur td{
 		padding: 0 4px 0 4px;
 		font-size: 12px;
 		color: #1e2a2e;
-		/* text-align: center; */
 		background-color: #cedbdf ;
 		border: 1px solid;
 	}
@@ -613,20 +614,25 @@ header {
 	/* text-align: center; */
  /* }  */
  
-#tableau_operateur tbody:nth-child(1) tr:nth-child(2) td:nth-child(5) input:nth-child(1),
+#tableau_operateur tbody:nth-child(1) tr:nth-child(2) td {
+	width: 50px;
+	
+}
 
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(13) td:nth-child(11) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(12) td:nth-child(11) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(11) td:nth-child(11) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(10) td:nth-child(11) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(9) td:nth-child(11) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(8) td:nth-child(11) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(7) td:nth-child(11) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(6) td:nth-child(11) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(5) td:nth-child(11) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(4) td:nth-child(11) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(3) td:nth-child(11) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(2) td:nth-child(11) input:nth-child(1) {
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(2) td:nth-child(5) input:nth-child(1),
+
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(13) td:nth-child(13) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(12) td:nth-child(13) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(11) td:nth-child(13) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(10) td:nth-child(13) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(9) td:nth-child(13) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(8) td:nth-child(13) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(7) td:nth-child(13) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(6) td:nth-child(13) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(5) td:nth-child(13) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(4) td:nth-child(13) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(3) td:nth-child(13) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(2) td:nth-child(13) input:nth-child(1) {
 		border:  0px !important;
 		height: 30px;
 		margin: 0 -4px 0 -4px;
