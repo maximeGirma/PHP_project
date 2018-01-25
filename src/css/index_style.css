@@ -546,7 +546,7 @@ header {
 				border: 0px !important;
 				width: 180px;
 				height: 30px;
-				margin: -4px 436px 0px 0px;
+				margin: -4px 0px 0px 0px;
 				/* border-radius: 4px; */
 				font-size: 16px;
 				font-weight: bold;
@@ -615,24 +615,11 @@ header {
  /* }  */
  
 #tableau_operateur tbody:nth-child(1) tr:nth-child(2) td {
-	width: 50px;
 	
 }
+	/* #tableau_operateur tbody:nth-child(1) tr:nth-child(2) td:nth-child(5) input:nth-child(1), */
 
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(2) td:nth-child(5) input:nth-child(1),
-
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(13) td:nth-child(13) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(12) td:nth-child(13) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(11) td:nth-child(13) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(10) td:nth-child(13) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(9) td:nth-child(13) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(8) td:nth-child(13) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(7) td:nth-child(13) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(6) td:nth-child(13) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(5) td:nth-child(13) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(4) td:nth-child(13) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(3) td:nth-child(13) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(2) td:nth-child(13) input:nth-child(1) {
+	.butt_modif_int {
 		border:  0px !important;
 		height: 30px;
 		margin: 0 -4px 0 -4px;
