@@ -2,24 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d3e18af-3cb2-4cfc-81b5-0ef7ac4585e7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/CRUD_interface.php" afterPath="$PROJECT_DIR$/src/CRUD_interface.php" />
-      <change beforePath="$PROJECT_DIR$/src/CRUD_ressources/CRUD_create.php" afterPath="$PROJECT_DIR$/src/CRUD_ressources/CRUD_create.php" />
-      <change beforePath="$PROJECT_DIR$/src/CRUD_ressources/CRUD_delete.php" afterPath="$PROJECT_DIR$/src/CRUD_ressources/CRUD_delete.php" />
       <change beforePath="$PROJECT_DIR$/src/CRUD_ressources/CRUD_select.php" afterPath="$PROJECT_DIR$/src/CRUD_ressources/CRUD_select.php" />
       <change beforePath="$PROJECT_DIR$/src/CRUD_ressources/CRUD_update.php" afterPath="$PROJECT_DIR$/src/CRUD_ressources/CRUD_update.php" />
-      <change beforePath="$PROJECT_DIR$/src/bdd_access.php" afterPath="$PROJECT_DIR$/src/bdd_access.php" />
-      <change beforePath="$PROJECT_DIR$/src/connect.php" afterPath="$PROJECT_DIR$/src/connect.php" />
-      <change beforePath="$PROJECT_DIR$/src/connexion.php" afterPath="$PROJECT_DIR$/src/connexion.php" />
-      <change beforePath="$PROJECT_DIR$/src/custom_nav.php" afterPath="$PROJECT_DIR$/src/custom_nav.php" />
+      <change beforePath="$PROJECT_DIR$/src/css/index_style.css" afterPath="$PROJECT_DIR$/src/css/index_style.css" />
       <change beforePath="$PROJECT_DIR$/src/display.php" afterPath="$PROJECT_DIR$/src/display.php" />
-      <change beforePath="$PROJECT_DIR$/src/error.php" afterPath="$PROJECT_DIR$/src/error.php" />
       <change beforePath="$PROJECT_DIR$/src/gestionnaire.php" afterPath="$PROJECT_DIR$/src/gestionnaire.php" />
-      <change beforePath="$PROJECT_DIR$/src/index.php" afterPath="$PROJECT_DIR$/src/index.php" />
-      <change beforePath="$PROJECT_DIR$/src/js/description_operator_query.js" afterPath="$PROJECT_DIR$/src/js/description_operator_query.js" />
-      <change beforePath="$PROJECT_DIR$/src/requete_operator.php" afterPath="$PROJECT_DIR$/src/requete_operator.php" />
-      <change beforePath="$PROJECT_DIR$/src/requetes_file.php" afterPath="$PROJECT_DIR$/src/queries_file.php" />
-      <change beforePath="$PROJECT_DIR$/src/session.php" afterPath="$PROJECT_DIR$/src/session.php" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -432,16 +419,15 @@
       <workItem from="1516809075471" duration="2418000" />
       <workItem from="1516819107625" duration="1445000" />
       <workItem from="1516823483151" duration="1869000" />
-      <workItem from="1516872140303" duration="212000" />
+      <workItem from="1516872140303" duration="855000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="141103000" />
+    <option name="totallyTimeSpent" value="141746000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -669,7 +655,7 @@
         <state relative-caret-position="216">
           <caret line="21" column="95" lean-forward="false" selection-start-line="21" selection-start-column="95" selection-end-line="21" selection-end-column="95" />
           <folding>
-            <element signature="e#6#305#0#PHP" expanded="true" />
+            <element signature="e#6#305#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

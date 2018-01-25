@@ -35,7 +35,7 @@ function crud_display_update_interface(){
         $statement->execute();
         $item = $statement->fetchObject();
 
-        $string_to_return.= '<form action="index.php" method="post">
+        $string_to_return.= '<form id="user_edit" action="index.php" method="post">
                 <label for="nom">nom : </label>
                 <input name="nom" type="text" required value="' . $item->nom_utilisateur . '">
                 <label for="prenom">prenom : </label>
@@ -59,7 +59,7 @@ function crud_display_update_interface(){
                 <form action="index.php" method="post">
                 <input name="delete" type="hidden" value = "1">
                 <input name="id_utilisateur" type="hidden" value = "' . $item->id_utilisateur . '">
-                <input type="submit" value="supprimer utilisateur">
+                <input id="query_name" type="submit" value="supprimer utilisateur">
                 </form>';
 
                 return $string_to_return;

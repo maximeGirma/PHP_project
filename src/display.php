@@ -177,7 +177,7 @@ function display_query_result($statement, $optionnal_string = "", $optionnal_str
     $cols_id_activator = TRUE;
     while ($item = $statement->fetch(PDO::FETCH_ASSOC)) {
         $string_to_return.= '<form action="index.php" method="post">';
-        $string_to_return.= '<table>';
+        $string_to_return.= '<table id="tableau_operateur">';
         $string_to_return.= '<tr>';
         if ($cols_id_activator) {
             foreach ($item as $key => $element) {

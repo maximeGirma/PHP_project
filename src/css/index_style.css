@@ -11,7 +11,7 @@ V 0.2.01
 	CORPS DE PAGE : _m > pages index, connexion, contact, etc
 	CORPS DE PAGE : _o > pages interfaces utilisateurs, appel requêtes.
 	CORPS DE PAGE : resultat requete operateur.
-	CORPS DE PAGE : resultat requete personne.
+	CORPS DE PAGE : resultat requete personne/utilisateur.
 	CORPS DE PAGE : contact
 	CORPS DE PAGE : modif personne.
 	PIED DE PAGE
@@ -566,7 +566,7 @@ header {
 	
 *********************************************************** */
 	#tableau_operateur{
-		min-width: 100%;
+		/* min-width: 100%; */
 		margin: 40px auto;
 		height: auto;
 		border-collapse: collapse;
@@ -601,33 +601,41 @@ header {
 
 	
 /* ***********************************************************
-	CORPS DE PAGE : resultat requete personne.
+	CORPS DE PAGE : resultat requete personne/utilisateur.
 	
 	- tableau
 	- boutons modif
 	
 *********************************************************** */
 
+ /* #tableau_operateur tbody:nth-child(1) tr:nth-child(2) td:nth-child(5) { */
+	/* background-color: #5d808c; */
+	/* text-align: center; */
+ /* }  */
+ 
+#tableau_operateur tbody:nth-child(1) tr:nth-child(2) td:nth-child(5) input:nth-child(1),
 
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(11) td:nth-child(13) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(10) td:nth-child(13) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(9) td:nth-child(13) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(8) td:nth-child(13) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(7) td:nth-child(13) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(6) td:nth-child(13) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(5) td:nth-child(13) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(4) td:nth-child(13) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(3) td:nth-child(13) input:nth-child(1),
-	#tableau_operateur tbody:nth-child(1) tr:nth-child(2) td:nth-child(13) input:nth-child(1) {
-		border: 0px;
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(13) td:nth-child(11) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(12) td:nth-child(11) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(11) td:nth-child(11) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(10) td:nth-child(11) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(9) td:nth-child(11) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(8) td:nth-child(11) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(7) td:nth-child(11) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(6) td:nth-child(11) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(5) td:nth-child(11) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(4) td:nth-child(11) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(3) td:nth-child(11) input:nth-child(1),
+	#tableau_operateur tbody:nth-child(1) tr:nth-child(2) td:nth-child(11) input:nth-child(1) {
+		border:  0px !important;
 		height: 30px;
 		margin: 0 -4px 0 -4px;
 		font-size: 14px;
 		font-weight: bold;
-		color: #1e2a2e;
-		background-color: #5d808c ;
+		color: #1e2a2e !important;
+		background-color: #5d808c !important;
 		/* box-shadow: 0 -1px 2px rgba(7,8,10,0.4); */
-		font-family: 'Palanquin', sans-serif;
+		font-family: 'Palanquin', sans-serif !important;
 
 	}
 
@@ -652,6 +660,19 @@ header {
 	}
 
 
+/* ***********************************************************
+	CORPS DE PAGE : modif utilisateur.
+	
+	- label
+	- champs
+	
+*********************************************************** */
+	#user_edit {
+		margin: 40px auto;
+		height: auto;
+		padding: 5px;
+		border: 1px solid #1e2a2e;
+	}
 
 /* ***********************************************************
 	CORPS DE PAGE : contact

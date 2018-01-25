@@ -97,7 +97,7 @@ function gestionnaire()
                 }
             }
 
-                $display_content = '<form id ="formulaire_gestion" action="index.php" method="post">
+                $display_content = '<form id="formulaire_gestion" action="index.php" method="post">
                 <table><tr><td><label for="nom">Nom : </label></td>
                 <td><input name="nom" type="text" required value="' . $item->NOM . '"></p></td></tr>
                 <tr><td><p><label for="prenom">Prenom : </label></td>
