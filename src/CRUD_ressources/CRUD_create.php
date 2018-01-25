@@ -40,7 +40,7 @@ function crud_display_create_interface(){
             <input type="radio"  name="id_type_user" value="3"><label>Administrateurs</label>
             <input name="create" type="hidden" value = "2">
             <br/>
-            <input type="submit" value="Creer !"></center>';
+            <input id="query_name" type="submit" value="CREER"></center>';
 
 
 

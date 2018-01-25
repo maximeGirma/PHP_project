@@ -72,7 +72,7 @@ function gestionnaire()
                 }
             }
 
-            $display_content .= '<td><input type="submit" name="update_gestion" value="Modifier"></td>';
+            $display_content .= '<td><input class="butt_modif_int" type="submit" name="update_gestion" value="Modifier"></td>';
             $display_content .= '</tr></form>';
             $error_search = 1;
         }
