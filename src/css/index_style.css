@@ -571,6 +571,8 @@ header {
 		margin: 40px auto;
 		height: auto;
 		border-collapse: collapse;
+		margin:auto;
+		text-align: center;
 	}
 	
 
@@ -580,6 +582,7 @@ header {
 		color: #1e2a2e;
 		background-color: #cedbdf ;
 		border: 1px solid;
+
 	}
 	
 	#tableau_operateur tbody:nth-child(1) tr:nth-child(1) { 
@@ -661,11 +664,17 @@ header {
 	
 *********************************************************** */
 	#user_edit {
-		margin: 40px auto;
+		margin: auto; /*40px */
+		text-align:center;
 		height: auto;
 		padding: 5px;
 		border: 1px solid #1e2a2e;
+		display :flex;
+		flex-direction: column;
+		width: 400px;
 	}
+
+
 
 /* ***********************************************************
 	CORPS DE PAGE : contact

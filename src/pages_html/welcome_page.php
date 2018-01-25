@@ -28,11 +28,12 @@ $welcome_page = '<html>
         margin-left:100px;
         margin-right:200px;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         
     }
     #infos{
         width: 600px;
+        margin-left: 250px;
     }
     </style>
   </head>
