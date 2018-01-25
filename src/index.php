@@ -21,9 +21,12 @@ require_once 'CRUD_interface.php';
 require_once 'bdd_access.php';
 require_once 'gestionnaire.php';
 require_once 'display.php';
-
+require_once 'complain.php';
 
 session_start();
+
+if(isset($_POST['user_message']))save_complain();
+
 
 if(is_connected() == False)
 {
