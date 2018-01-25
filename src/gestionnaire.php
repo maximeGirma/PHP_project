@@ -18,7 +18,7 @@ function gestionnaire()
 
     require_once 'display.php';
     include 'queries_file.php';
-    require_once 'requete_operator.php';
+    require_once 'queries_operator.php';
     require_once 'bdd_access.php';
 
 
@@ -87,7 +87,7 @@ function gestionnaire()
                     ville_cp.nom_commune,ville_cp.code_post';
 
         if ($statement = bdd_acces($gestion_query . $modifier . ';')) {
-            
+
 
             $statement->execute();
             $item = $statement->fetchObject();
@@ -142,9 +142,8 @@ function gestionnaire()
 
         if (bdd_acces($gestionnaire_update_query))
         {
-            display_interface($gestion_interface, 'Modification effectuée avec succès');
-
-        }else display_interface($gestion_interface,'meh...jamais du premier coup');
+            $display_content = 'Modification effectuée avec succès';
+        }else $display_content = 'Une erreur s\'est produite, modification impossible.';
 
     }
     display_interface($gestion_interface, $display_content);

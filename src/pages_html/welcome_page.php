@@ -48,7 +48,16 @@ $welcome_page = '<html>
       });
    });
    </script>
-    <input type="button"  id="query_name" value="Calendrier"></p>
+    <section>
+        <div>
+            <input type="button"  id="query_name" value="Calendrier">
+        </div>
+        <div>
+            <h2>Informations</h2>
+            <p><h3>25/01/2018:</h3>Les employés souhaitant poser des congés pour les vacances 
+            d\'été doivent s\'adresser à au service RH</p>
+        </div>
+    </section>
   </body>
 </html>
 ';
