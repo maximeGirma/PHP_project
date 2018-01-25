@@ -2,10 +2,10 @@
 
 /*
  * Created by IntelliJ IDEA.
- * User: maxime
+ * User: Maxime
  * Date: 18/01/18
  * Time: 18:51
- *
+ *Version 0.9
  * La fonction operateur_interface est appelée par index.php et sert à afficher le contenu de la
  * base de données. La fonction appelle dislay_interface() pour afficher l'interface. Puis, si elle
  * a recu  l'argument adéquat elle affiche le resultat d'une requete pré-enregistré dans queries_files.php
@@ -137,7 +137,7 @@ function operator_interface()
             }
 
         } else {
-            echo 'pas kabla';
+            display_interface($op_interface_html,'Une erreur innatendue s\'est produite');
         }
 
     } else {

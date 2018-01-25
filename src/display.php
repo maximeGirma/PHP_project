@@ -19,7 +19,7 @@
  *
  * display_query_result() est appelé par crud_interface() et sert à afficher certains retour
  * de requetes SQL.
- * TODO : Supprimer display_query_result et utiliser display_interface() à la place.
+ *
 ---------------------------- */
 
 require_once "custom_nav.php";
@@ -173,11 +173,22 @@ function display_interface($content_1 = '',$content_2='',$content_3='',$content_
 
 function display_query_result($statement, $optionnal_string = "", $optionnal_string_2 = "")
 {
+    switch ($_POST['afficher']){
+        case 1: $type_user = 'Operateurs';
+            break;
+        case 2: $type_user = 'Gestionnaires';
+            break;
+        case 3: $type_user = 'Administrateurs';
+            break;
+        default:$type_user = '';
+            break;
+    }
     $string_to_return ="";
     $cols_id_activator = TRUE;
     while ($item = $statement->fetch(PDO::FETCH_ASSOC)) {
         $string_to_return.= '<form action="index.php" method="post">';
         $string_to_return.= '<table>';
+        $string_to_return.= '<caption>'.$type_user.'</caption>';
         $string_to_return.= '<tr>';
         if ($cols_id_activator) {
             foreach ($item as $key => $element) {
@@ -209,5 +220,4 @@ function display_query_result($statement, $optionnal_string = "", $optionnal_str
     $string_to_return.= $optionnal_string_2;
     return $string_to_return;
 }
-
 

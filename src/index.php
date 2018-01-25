@@ -4,14 +4,9 @@
  * User: maxime
  * Date: 18/01/18
  * Time: 18:51
- *Version 0.9
- *
- * index.php recoit toutes les requetes $_POST provenant du client et appelle diférentes fonctions
- * selon la demande.
- * Elle vérifie d'abord que l'utilisateur est connecté (et envoie un formulaire de connexion si besoin)
- * Puis elle redirige le client vers l'interface demandée si il dispose des droits suffisants.
  */
 
+require_once 'pages_html/welcome_page.php';
 require_once '../config.inc.php';
 require_once 'session.php';
 require_once 'error.php';
@@ -71,7 +66,7 @@ if (is_connected() == True){
 
         else {
 
-            display_interface();
+            display_interface($welcome_page);
 
         }
     }

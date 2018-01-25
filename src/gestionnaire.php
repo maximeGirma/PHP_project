@@ -1,9 +1,10 @@
 <?php
 /**
  * Created by IntelliJ IDEA.
- * User: maxime
+ * User: Maxime
  * Date: 20/01/18
  * Time: 16:10
+ * Version 0.6
  * La fonction gestionnaire est appellée par index.php et permet au gestionnaire de modifier la BDD
  * Elle affiche une interface qui permet de rechercher un nom dans la base puis selon les arguments reçus
  * elle affiche différentes interfaces qui permettent de modifier les données de la base.
@@ -22,18 +23,24 @@ function gestionnaire()
 
 
     $gestion_interface = '
+		<fieldset>
+		<legend>Rechercher</legend>
             <form action="index.php" method="POST">
-                <label>rechercher une personne par son nom</label><br>
-                <input name="gestion_recherche" />
-                <input type="submit" value="rechercher">
+                <label>Rechercher une personne par son nom</label><br><br>
+                <input id="field_name" name="gestion_recherche" placeholder="Nom" />
+                <input id="query_name" type="submit" value="AFFICHER">
             </form>
+		</fieldset>
             ';
     $display_content ="";
 
 
     if(isset($_POST['gestion_recherche'])) {
         $end_query= 'personnes.nom LIKE \'%'.$_POST['gestion_recherche'].'%\'';
+        $end_query.= ' GROUP BY personnes.id_personne, adresse.num_rue,adresse.rue,adresse.residence,adresse.batiment,
+                    ville_cp.nom_commune,ville_cp.code_post';
         $statement = bdd_acces($gestion_query . $end_query);
+
 
         $cols_id_activator = true;
         $display_content = "";
@@ -42,9 +49,11 @@ function gestionnaire()
         $display_content .= '<tr>';
 
         while ($item = $statement->fetch(PDO::FETCH_ASSOC)) {
+
+
             if ($cols_id_activator) {
                 foreach ($item as $key => $element) {
-                    $display_content .= '<th>' . $key . '</th>';
+                    if ($key != 'id_utilisateur') $display_content .= '<th>' . $key . '</th>';
                 }
                 $cols_id_activator = false;
             }
@@ -52,19 +61,23 @@ function gestionnaire()
             $display_content .= '<form action="index.php" method="POST">';
             foreach ($item as $key => $value) {
 
-                $display_content .= '<td>';
+
                 if ($key == 'id_utilisateur') {
                     $display_content .= '<input name="id_usager" type="hidden" value = "' . $value . '">';
+
+                } else {
+                    $display_content .= '<td>';
+                    $display_content .= $value;
+                    $display_content .= '</td>';
                 }
-                $display_content .= $value;
-                $display_content .= '</td>';
             }
 
             $display_content .= '<td><input type="submit" name="update_gestion" value="Modifier"></td></form>';
             $display_content .= '</tr>';
+            $error_search = 1;
         }
         $display_content .= '</table>';
-
+        if(!isset($error_search))$display_content = 'Votre recherche n\'a retourné aucun resultat';
 
     }elseif(isset($_POST['id_usager'])){
 
@@ -110,11 +123,9 @@ function gestionnaire()
                 <tr><td><p><label>Ville:</label></td>
                 <td><select name="ville" required ></p>
                 '.$display_city.'</select></td></tr>
-                
-                
                 <tr><td colspan="2"><input name="update" type="hidden" value = "1">
                 <input name="id_utilisateur" type="hidden" value = "' . $item->id_utilisateur . '">
-                <input type="submit" value="Modifier"></td></tr>
+                <input id="query_name" type="submit" value="APPLIQUER"></td></tr>
                 </table>
                 </form>';
 
@@ -129,17 +140,11 @@ function gestionnaire()
 
         if (bdd_acces($gestionnaire_update_query))
         {
-            echo 'modif done!';
+            display_interface($gestion_interface, 'Modification effectuée avec succès');
 
-        }else echo 'meh...jamais du premier coup';
+        }else display_interface($gestion_interface,'meh...jamais du premier coup');
 
     }
     display_interface($gestion_interface, $display_content);
 }
 
-
-/*<tr><td><label>Numero de telephone</label></td>
-                <td><input name="tel_num" type ="text" required value="'. $item->NUMERO_DE_TELEPHONE.'"></p></td></tr>
-<tr><td><p><label>Type de téléphone:</label></td>
-                <td><input name="type_tel" ="text" required value="'. $item->TYPE_DE_TELEPHONE.'"></p></td></tr></table>
-*/

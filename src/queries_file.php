@@ -235,20 +235,20 @@ AS 'RUE'
 AS 'VILLE'
 ,ville_cp.code_post
 AS 'CODE_POSTAL'
-,telephone.num_telephone
-AS 'No_DE_TELEPHONE'
-,type_telephone.denom_typ_tel
-AS 'TYPE_TELEPHONE'
+,MIN(telephone.num_telephone)
+AS 'NUMERO DE TELEPHONE'
+
 /*venant de la table personnes: */
 FROM
 personnes
 /*jointe avec les tables suivantes*/
 INNER JOIN joindre ON personnes.id_personne = joindre.id_personne
 INNER JOIN telephone ON joindre.id_tel = telephone.id_tel
-INNER JOIN type_telephone ON telephone.id_type_tel = type_telephone.id_type_tel
+
 INNER JOIN habite ON personnes.id_personne = habite.id_personne
 INNER JOIN adresse ON habite.id_adresse = adresse.id_adresse
 INNER JOIN ville_cp ON adresse.id_ville = ville_cp.id_ville
+
 WHERE ";
 
 

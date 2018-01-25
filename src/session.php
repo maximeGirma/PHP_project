@@ -1,13 +1,13 @@
 <?php
 /*
  * Created by IntelliJ IDEA.
- * User: maxime
+ * User: Maxime
  * Date: 18/01/18
  * Time: 18:51
  * Version 0.9
  * session.php contient les différentes fonctions relatives aux session
  * Voir les cartouches commentaires de chaque fonction
- * TODO: Supprimer end_session() au profis d'un simple session_destroy()
+ * TODO: Supprimer end_session() au profit d'un simple session_destroy()
  */
 
 
