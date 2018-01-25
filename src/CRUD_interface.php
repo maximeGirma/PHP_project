@@ -4,6 +4,10 @@
  * User: maxime
  * Date: 12/01/18
  * Time: 14:51
+ * Version 0.2
+ * crud_interface() est appellé par index.php et appelle différentes fonctions d'administration
+ * selon l'argument contenu dans des variables $_POST['']. Elle affiche ensuite le retour de ces
+ * fonctions grâce au display_interface().
  */
 
 function crud_interface()

@@ -4,6 +4,10 @@
  * User: maxime
  * Date: 19/01/18
  * Time: 10:56
+ * Version 0.9
+ * crud_delete() est appelé par la fonction crud_interface(). Il efface de la base l'utilisateur
+ * correspondant à l'ID renseigné par l'administrateur.
+ * TODO: Renvoi True / False
  */
 
 function crud_delete(){

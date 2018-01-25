@@ -1,5 +1,15 @@
 <?php
-
+/*
+ *  * Created by IntelliJ IDEA.
+ * User: maxime
+ * Date: 20/01/18
+ * Time: 16:10
+ * connexion() est appellée par index.php Elle récupere les super gloables $_POST['ID & PSW']
+ * puis les crypte. Elle les compare ensuite à la aux id et psw stockés dans la BDD.(grace à bdd_acces()
+ * Si les identifiants correspondent elle charge les infos permettant la création d'une session
+ * et les retourne dans un tableau.
+ * Sinon elle retourne un False
+ */
 
 function connexion()
 {

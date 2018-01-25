@@ -1,10 +1,27 @@
 <?php
 
+/*
+ * Created by IntelliJ IDEA.
+ * User: maxime
+ * Date: 18/01/18
+ * Time: 18:51
+ *
+ * La fonction operateur_interface est appelée par index.php et sert à afficher le contenu de la
+ * base de données. La fonction appelle dislay_interface() pour afficher l'interface. Puis, si elle
+ * a recu  l'argument adéquat elle affiche le resultat d'une requete pré-enregistré dans queries_files.php
+ * toujours grace à display_interface()
+ */
 
 
 function operator_interface()
 {
     $_SESSION['tracker']=1;
+
+
+    include 'queries_file.php';
+    require_once "display.php";
+    require_once 'bdd_access.php';
+
 
     $op_interface_html="<fieldset>
 				
@@ -23,14 +40,7 @@ function operator_interface()
                                 <option value='5' onclick=\"description_query(5);\"> Chiffre d'affaire</option>
                                 <option value='6' onclick=\"description_query(6);\"> Informations représentant légal</option>
                                 <option value='7' onclick=\"description_query(7);\"> Usagers par année et établissement</option>
-								<option>9 - Spam</option>
-								<option>10 - Spam</option>
-								<option>11 - Spam</option>
-								<option>12 - Spam</option>
-								<option>13 - Spam</option>
-								<option>14 - Spam</option>
-								<option>15 - Spam</option>
-								<option>16 - Spam</option>
+
 
 							<!-- ?? possible remplir par alimentation de \"table requetes\" (csv?,avec pramettres, pour ajouter des préset) ?? -->
 							</label>	
@@ -68,10 +78,6 @@ function operator_interface()
 
 
 
-
-    include 'requetes_file.php';
-    require_once "display.php";
-    require_once 'bdd_access.php';
 
     if(isset($_POST['additional_parameter'])){
 

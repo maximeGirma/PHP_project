@@ -4,6 +4,11 @@
  * User: maxime
  * Date: 20/01/18
  * Time: 16:10
+ * La fonction gestionnaire est appellée par index.php et permet au gestionnaire de modifier la BDD
+ * Elle affiche une interface qui permet de rechercher un nom dans la base puis selon les arguments reçus
+ * elle affiche différentes interfaces qui permettent de modifier les données de la base.
+ * Elle utilise des requetes préconstruites et stockées dans queries_files.php
+ *L'affichage des resultats se fait grace à la fonction display_interface()
  */
 
 function gestionnaire()
@@ -11,7 +16,7 @@ function gestionnaire()
     $_SESSION['tracker']=2;
 
     require_once 'display.php';
-    include 'requetes_file.php';
+    include 'queries_file.php';
     require_once 'requete_operator.php';
     require_once 'bdd_access.php';
 
@@ -97,15 +102,15 @@ function gestionnaire()
                 <td><input name="nom" type="text" required value="' . $item->NOM . '"></p></td></tr>
                 <tr><td><p><label for="prenom">Prenom : </label></td>
                 <td><input name="prenom" type="text" required value="' . $item->PRENOM . '"></p></td></tr>
-                <tr><td><p><label for="email">Email : </label></td>
+                <tr><td><p><label for="email">Email: </label></td>
                 <td><input name="e_mail" type="text" required value="' . $item->EMAIL . '"></p></td></tr>
                 <tr><td><p><label for="date de naissance">Date de naissance: </label></td>
                 <td><input name="naissance" type="text" required value="' . $item->DATE_DE_NAISSANCE . '"></p></td></tr>
                 <tr><td><p><label>Numero de rue:</label></td>
                 <td><input name="numero_de_rue" type="text" required value="'. $item->NUMERO_RUE.'"></p></td></tr>
-                <tr><td><p><label>Rue :</label></td>
+                <tr><td><p><label>Rue:</label></td>
                 <td><input name="rue" type="text" required value="'. $item->RUE.'"></p></td></tr>
-                <tr><td><p><label>Ville :</label></td>
+                <tr><td><p><label>Ville:</label></td>
                 <td><select name="ville" required ></p>
                 '.$display_city.'</select></td></tr>
                 

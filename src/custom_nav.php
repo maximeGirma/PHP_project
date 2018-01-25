@@ -1,5 +1,17 @@
 <?php
-
+/*
+ *  * Created by IntelliJ IDEA.
+ * User: maxime
+ * Date: 12/01/18
+ * Time: 14:51
+ * Version 0.1
+ * TODO : Refactorer le code.
+ *
+ * La fonction custom_nav est appelée par le display_interface().
+ * Elle retourne un code HTML pour le menu de navigation qui change selon le niveau
+ * de privilèges de l'utilisateur connecté ($_SESSION[id_utilisateur'])
+ * et la page actuelle ($_SESSION['tracker'])
+ */
 function custom_nav(){
 
 	if ($_SESSION['id_type_utilisateur'] == 1 && $_SESSION['tracker'] == 1) {

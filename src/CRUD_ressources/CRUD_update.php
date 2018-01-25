@@ -4,6 +4,17 @@
  * User: maxime
  * Date: 19/01/18
  * Time: 11:26
+ * Version 0.9
+ * crud_display_update_interface() est appelé par le crud_interface() et permet l'affichage
+ * de l'interface de modification d'un utilisateur précis. Le choix de l'utilisateur à modifier
+ * est renseigné par l'administrateur via un $_POST['modifier'], la fonction va chercher dans la bdd
+ * les données de l'utilisateur renseigné
+ * Puis elle retourne le str correspondant à l'interface à afficher.
+ *
+ *
+ * crud_update() est appelé par crud_interface(), elle met à jour les données de la bdd avec les données
+ * renseignées par l'administrateur dans le crud_display_update_interface().
+ * Renvoit un str pour signaler la reussite ou l'echec de la requete.
  */
 
 function crud_display_update_interface(){

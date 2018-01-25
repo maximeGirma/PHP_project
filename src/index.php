@@ -5,6 +5,7 @@
  * Date: 18/01/18
  * Time: 18:51
  */
+
 require_once '../config.inc.php';
 require_once 'session.php';
 require_once 'error.php';
@@ -15,8 +16,6 @@ require_once 'CRUD_interface.php';
 require_once 'bdd_access.php';
 require_once 'gestionnaire.php';
 require_once 'display.php';
-
-
 
 
 session_start();
@@ -38,6 +37,7 @@ if (is_connected() == True){
 
         session_destroy();
         display_connect_page();
+
     }else {
         update_timeout();
         if (isset($_POST['interface_choice'])) {
