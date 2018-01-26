@@ -32,7 +32,7 @@ function crud_display_create_interface(){
             <input name="new_PSW" type="password" required>
             <br/>
             <br/>
-            <label for="id_type_user">Type d\'utilisateur</label>
+            <label for="id_type_user"><b><u>Type d\'utilisateur :</u></b></label>
             <br/>
             <input type="radio"  name="id_type_user" value="1"><label>Opérateurs</label>
             <br/>
@@ -40,6 +40,7 @@ function crud_display_create_interface(){
             <br/>
             <input type="radio"  name="id_type_user" value="3"><label>Administrateurs</label>
             <input name="create" type="hidden" value = "2">
+            <br/>
             <br/>
             <input id="query_name" type="submit" value="CREER"></center>';
 

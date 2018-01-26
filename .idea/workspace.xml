@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d3e18af-3cb2-4cfc-81b5-0ef7ac4585e7" name="Default" comment="" />
+    <list default="true" id="5d3e18af-3cb2-4cfc-81b5-0ef7ac4585e7" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/CRUD_ressources/CRUD_create.php" afterPath="$PROJECT_DIR$/src/CRUD_ressources/CRUD_create.php" />
+      <change beforePath="$PROJECT_DIR$/src/CRUD_ressources/CRUD_update.php" afterPath="$PROJECT_DIR$/src/CRUD_ressources/CRUD_update.php" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,11 +25,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+            <state relative-caret-position="216">
+              <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -65,10 +68,14 @@
       <file leaf-file-name="CRUD_update.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CRUD_ressources/CRUD_update.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="846">
-              <caret line="47" column="21" lean-forward="false" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+            <state relative-caret-position="864">
+              <caret line="48" column="41" lean-forward="true" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
               <folding>
                 <element signature="e#6#819#0#PHP" expanded="true" />
+                <marker date="1516948364029" expanded="true" signature="910:1062" ph="SELECT `id_u... utilisateur" />
+                <marker date="1516948364029" expanded="true" signature="1431:2761" ph="..." />
+                <marker date="1516948364029" expanded="true" signature="2817:3077" ph="..." />
+                <marker date="1516948364029" expanded="true" signature="3186:3576" ph="UPDATE `util... utilisateur" />
               </folding>
             </state>
           </provider>
@@ -116,12 +123,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CRUD_create.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CRUD_create.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CRUD_ressources/CRUD_create.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="35" column="17" lean-forward="false" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="234">
+              <caret line="43" column="16" lean-forward="false" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+              <folding>
+                <marker date="1516948512752" expanded="true" signature="666:1760" ph="..." />
+                <marker date="1516948512752" expanded="true" signature="705:1751" ph="..." />
+                <marker date="1516948512752" expanded="true" signature="1832:1968" ph="SELECT login... utilisateur" />
+                <marker date="1516948512752" expanded="true" signature="2264:2762" ph="INSERT INTO utilisateur" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -265,9 +277,9 @@
         <option value="$PROJECT_DIR$/src/pages_html/welcome_page.php" />
         <option value="$PROJECT_DIR$/src/css/index_style.css" />
         <option value="$PROJECT_DIR$/src/display.php" />
+        <option value="$PROJECT_DIR$/config.inc.php" />
         <option value="$PROJECT_DIR$/src/CRUD_ressources/CRUD_update.php" />
         <option value="$PROJECT_DIR$/src/CRUD_ressources/CRUD_create.php" />
-        <option value="$PROJECT_DIR$/config.inc.php" />
       </list>
     </option>
   </component>
@@ -509,12 +521,12 @@
       <workItem from="1516914281129" duration="2470000" />
       <workItem from="1516947733485" duration="93000" />
       <workItem from="1516947884134" duration="131000" />
-      <workItem from="1516948073118" duration="9000" />
+      <workItem from="1516948073118" duration="441000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160763000" />
+    <option name="totallyTimeSpent" value="161195000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1303" height="780" extended-state="6" />
@@ -997,24 +1009,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CRUD_ressources/CRUD_update.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="846">
-          <caret line="47" column="21" lean-forward="false" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
-          <folding>
-            <element signature="e#6#819#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CRUD_ressources/CRUD_create.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="35" column="17" lean-forward="false" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/connect - WiL.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -1053,9 +1047,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+        <state relative-caret-position="216">
+          <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CRUD_ressources/CRUD_update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="48" column="41" lean-forward="true" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
+          <folding>
+            <element signature="e#6#819#0#PHP" expanded="true" />
+            <marker date="1516948364029" expanded="true" signature="910:1062" ph="SELECT `id_u... utilisateur" />
+            <marker date="1516948364029" expanded="true" signature="1431:2761" ph="..." />
+            <marker date="1516948364029" expanded="true" signature="2817:3077" ph="..." />
+            <marker date="1516948364029" expanded="true" signature="3186:3576" ph="UPDATE `util... utilisateur" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CRUD_ressources/CRUD_create.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="43" column="16" lean-forward="false" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
+          <folding>
+            <marker date="1516948512752" expanded="true" signature="666:1760" ph="..." />
+            <marker date="1516948512752" expanded="true" signature="705:1751" ph="..." />
+            <marker date="1516948512752" expanded="true" signature="1832:1968" ph="SELECT login... utilisateur" />
+            <marker date="1516948512752" expanded="true" signature="2264:2762" ph="INSERT INTO utilisateur" />
+          </folding>
         </state>
       </provider>
     </entry>

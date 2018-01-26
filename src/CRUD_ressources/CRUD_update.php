@@ -45,8 +45,8 @@ function crud_display_update_interface(){
                 <input name="new_ID" type="text" required>
                 <label for="new_PSW">Nouveau mot de passe: </label>
                 <input name="new_PSW" type="password" required>
-                <br/>
-                <label for="id_type_user">Type d\'utilisateur :</label>
+                <br/><br/>
+                <label for="id_type_user"><u>Type d\'utilisateur :</u></label>
                 <br/>
                 <input type="radio"  name="id_type_user" value="1"><label>Opérateur</label>
                 <br/>
