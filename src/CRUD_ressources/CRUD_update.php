@@ -36,30 +36,33 @@ function crud_display_update_interface(){
         $item = $statement->fetchObject();
 
         $string_to_return.= '<form id="user_edit" action="index.php" method="post">
-                <label for="nom">nom : </label>
-                <input name="nom" type="text" required value="' . $item->nom_utilisateur . '"><br/>
-                <label for="prenom">prenom : </label>
-                <input name="prenom" type="text" required value="' . $item->prenom_utilisateur . '"><br/>
-                
-                <label for="new_ID">nouveau login: </label>
-                <input name="new_ID" type="text" required><br/>
-                <label for="new_PSW">nouveau mot de passe: </label>
-                <input name="new_PSW" type="password" required><br/>
-                <label for="id_type_user"><b>type d\'utilisateur :</b></label>
+                <label for="nom">Nom : </label>
+                <input name="nom" type="text" required value="' . $item->nom_utilisateur . '">
+                <label for="prenom">Prenom : </label>
+                <input name="prenom" type="text" required value="' . $item->prenom_utilisateur . '">
                 <br/>
-                <input type="radio"  name="id_type_user" value="1"><label>Opérateurs</label>
+                <label for="new_ID">Nouveau login: </label>
+                <input name="new_ID" type="text" required>
+                <label for="new_PSW">Nouveau mot de passe: </label>
+                <input name="new_PSW" type="password" required>
                 <br/>
-                <input type="radio"  name="id_type_user" value="2"><label>Gestionnaires</label>
+                <label for="id_type_user">Type d\'utilisateur :</label>
                 <br/>
-                <input type="radio"  name="id_type_user" value="3"><label>Administrateurs</label>
+                <input type="radio"  name="id_type_user" value="1"><label>Opérateur</label>
+                <br/>
+                <input type="radio"  name="id_type_user" value="2"><label>Gestionnaire</label>
+                <br/>
+                <input type="radio"  name="id_type_user" value="3"><label>Administrateur</label>
+                <br/>
+                <br/>
                 <input name="update" type="hidden" value = "1">
-                <input name="id_utilisateur" type="hidden" value = "' . $item->id_utilisateur . '"><br/>
-                <input type="submit" value="Modifier">
+                <input name="id_utilisateur" type="hidden" value = "' . $item->id_utilisateur . '">
+                <input id="query_name" type="submit" value="MODIFIER">
                 </form>
                 <form action="index.php" method="post">
                 <input name="delete" type="hidden" value = "1">
                 <input name="id_utilisateur" type="hidden" value = "' . $item->id_utilisateur . '">
-                <input id="query_name" type="submit" value="supprimer utilisateur">
+                <input id="query_name" type="submit" value="SUPPRIMER">
                 </form>';
 
                 return $string_to_return;

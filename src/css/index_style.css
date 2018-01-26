@@ -2,7 +2,7 @@
 **************************************************************
 STAPA ACCES - shared style sheet
 
-V 0.2.03
+V 0.2.05
 **************************************************************
 ************************ SOMMAIRE ****************************
 	HEADER : _m > pages index, connexion, accueil, contact, etc
@@ -571,8 +571,6 @@ header {
 		margin: 40px auto;
 		height: auto;
 		border-collapse: collapse;
-		margin:auto;
-		text-align: center;
 	}
 	
 
@@ -582,7 +580,6 @@ header {
 		color: #1e2a2e;
 		background-color: #cedbdf ;
 		border: 1px solid;
-
 	}
 	
 	#tableau_operateur tbody:nth-child(1) tr:nth-child(1) { 
@@ -612,15 +609,6 @@ header {
 	
 *********************************************************** */
 
- /* #tableau_operateur tbody:nth-child(1) tr:nth-child(2) td:nth-child(5) { */
-	/* background-color: #5d808c; */
-	/* text-align: center; */
- /* }  */
- 
-#tableau_operateur tbody:nth-child(1) tr:nth-child(2) td {
-	
-}
-	/* #tableau_operateur tbody:nth-child(1) tr:nth-child(2) td:nth-child(5) input:nth-child(1), */
 
 	.butt_modif_int {
 		border:  0px !important;
@@ -635,6 +623,8 @@ header {
 
 	}
 
+/* #tableau_operateur tbody tr:nth-child(2) td:nth-child(5)	 */
+	
 /* ***********************************************************
 	CORPS DE PAGE : modif personne.
 	
@@ -664,17 +654,28 @@ header {
 	
 *********************************************************** */
 	#user_edit {
-		margin: auto; /*40px */
-		text-align:center;
+		margin: 15px auto;
 		height: auto;
-		padding: 5px;
-		border: 1px solid #1e2a2e;
-		display :flex;
-		flex-direction: column;
-		width: 400px;
+		/* border: 1px solid #1e2a2e; */
 	}
 
+	#user_edit label {
+		margin: 10px 10px 10px 10px;
+		font-size: 14px;
+		font-weight: bold;
+		color: #1e2a2e;
+	}
 
+	#user_edit input {
+		margin: 10px 0 0 0;
+		padding: 3px 3px 2px 3px;
+		border: 1px solid #1e2a2e;
+		font-size: 14px;
+		font-weight: bold;
+		color: #5d808c;
+		background-color: #fdfefe;
+		font-family: 'Palanquin', sans-serif;
+	}
 
 /* ***********************************************************
 	CORPS DE PAGE : contact

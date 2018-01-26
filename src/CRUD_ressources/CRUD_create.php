@@ -23,25 +23,24 @@ function crud_display_create_interface(){
         return '<center><form action="index.php" method="POST">
             <label for="nom">Nom : </label>
             <input name="nom" type="text" required>
-            <br/>
             <label for="prenom">Prenom : </label>
             <input name="prenom" type="text" required >
             <br/>
             <label for="new_ID">Login: </label>
             <input name="new_ID" type="text" required>
-            <br/>
             <label for="new_PSW">Mot de passe: </label>
             <input name="new_PSW" type="password" required>
-            <br/><br/>
-            <label for="id_type_user"><b>type d\'utilisateur :</b></label>
-            <br/>            
+            <br/>
+            <br/>
+            <label for="id_type_user">Type d\'utilisateur</label>
+            <br/>
             <input type="radio"  name="id_type_user" value="1"><label>Opérateurs</label>
             <br/>
             <input type="radio"  name="id_type_user" value="2"><label>Gestionnaires</label>
             <br/>
             <input type="radio"  name="id_type_user" value="3"><label>Administrateurs</label>
             <input name="create" type="hidden" value = "2">
-            <br/><br/>
+            <br/>
             <input id="query_name" type="submit" value="CREER"></center>';
 
 
